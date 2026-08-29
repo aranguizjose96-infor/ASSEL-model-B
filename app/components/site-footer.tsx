@@ -6,8 +6,8 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="footer-grid">
         <div className="footer-brand">
-          <Link className="brand" href="/">
-            <span className="brand-mark"><i /></span><span className="brand-copy"><strong>ASSEL</strong><small>Prevención · Seguridad</small></span>
+          <Link className="footer-brand-logo" href="/" aria-label="ASSEL SpA, ir al inicio">
+            <img src="/brand/logo-assel-oficial.png" alt="ASSEL SpA — Asesoría en Salud y Seguridad Laboral" />
           </Link>
           <p>Asesoría técnica con mirada humana para construir entornos de trabajo más seguros, saludables y sostenibles.</p>
         </div>
