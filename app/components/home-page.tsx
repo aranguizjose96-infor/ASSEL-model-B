@@ -1,8 +1,27 @@
 'use client';
 
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { useSiteContent } from './content-provider';
 import { HeroVideoRotator } from './hero-video-rotator';
+
+const serviceResults: Record<string, string> = {
+  'gestion-preventiva': 'Una hoja de ruta preventiva clara y aplicable.',
+  'cumplimiento-documental': 'Evidencia ordenada, vigente y fácil de demostrar.',
+  capacitacion: 'Equipos que comprenden y aplican la prevención.',
+};
+
+function ServiceIcon({ id }: { id: string }) {
+  if (id === 'gestion-preventiva') {
+    return <span className="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 20 6v5c0 5-3.3 8.1-8 10-4.7-1.9-8-5-8-10V6l8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span>;
+  }
+
+  if (id === 'cumplimiento-documental') {
+    return <span className="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v5h5M10 13h5M10 17h5"/><path d="m4 14 1.5 1.5L8 13"/></svg></span>;
+  }
+
+  return <span className="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c.4-4.4 2.2-6.5 5.5-6.5s5.1 2.1 5.5 6.5M13.5 15c3.9-.8 6.5 1 7 5"/><path d="m16.5 3 .7 1.5 1.6.2-1.2 1.1.3 1.6-1.4-.8-1.4.8.3-1.6-1.2-1.1 1.6-.2z"/></svg></span>;
+}
 
 function RailIcon({ type }: { type: 'evidence' | 'anticipation' | 'people' }) {
   if (type === 'evidence') {
@@ -20,6 +39,25 @@ export function HomePage() {
   const { content } = useSiteContent();
   const featuredServices = content.services.slice(0, 3);
   const featuredCases = content.cases.slice(0, 2);
+
+  useEffect(() => {
+    const elements = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
+    if (!('IntersectionObserver' in window)) {
+      elements.forEach((element) => element.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.18 });
+
+    elements.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, [content]);
 
   return (
     <main>
@@ -45,16 +83,16 @@ export function HomePage() {
 
       <section className="services-preview">
         <div className="section-heading"><p className="eyebrow dark"><span /> Soluciones ASSEL</p><div><h2>Seguridad que se integra<br />a tu forma de trabajar.</h2><p>No entregamos documentos para archivar. Diseñamos sistemas preventivos claros, utilizables y sostenibles.</p></div></div>
-        <div className="service-grid">{featuredServices.map((service) => <article className="service-card" key={service.id}><div className="service-meta"><span>{service.number}</span><small>{service.tag}</small></div><h3>{service.title}</h3><p>{service.summary}</p><Link href="/servicios">Conocer solución <span>↗</span></Link></article>)}</div>
+        <div className="service-grid">{featuredServices.map((service) => <article className="service-card" data-reveal key={service.id}><div className="service-meta"><span>{service.number}</span><small>{service.tag}</small></div><ServiceIcon id={service.id} /><h3>{service.title}</h3><p>{service.summary}</p><p className="service-result"><span>Resultado</span>{serviceResults[service.id] || service.benefits[0]}</p><Link href="/servicios">Conocer solución <span>↗</span></Link></article>)}</div>
         <Link className="text-link section-link" href="/servicios">Ver todas las soluciones <span>→</span></Link>
       </section>
 
       <section className="why-section">
-        <div className="why-image"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1500&q=82" alt="Profesional de seguridad revisando una operación industrial" /><div className="image-note"><small>Nuestro enfoque</small><strong>Presencia técnica.<br />Cercanía real.</strong></div></div>
-        <div className="why-content"><p className="eyebrow dark"><span /> Por qué ASSEL</p><h2>La prevención funciona cuando las personas pueden usarla.</h2><p>Traducimos la normativa y el conocimiento técnico en herramientas simples para jefaturas, supervisores y equipos de trabajo.</p><div className="why-list"><div><span>01</span><p><b>Mirada operacional</b><small>Soluciones diseñadas para funcionar en terreno.</small></p></div><div><span>02</span><p><b>Acompañamiento cercano</b><small>Estamos presentes desde el diagnóstico hasta la verificación.</small></p></div><div><span>03</span><p><b>Evidencia y trazabilidad</b><small>Cada avance queda respaldado y listo para ser demostrado.</small></p></div></div><Link className="button-dark" href="/nosotros">Conoce nuestra forma de trabajar <span>↗</span></Link></div>
+        <div className="why-image"><img src="/images/assel-inspeccion-prevencion.webp" alt="Profesional de prevención asesorando a un trabajador durante una inspección industrial" /><div className="image-note"><small>Nuestro enfoque</small><strong>Presencia técnica.<br />Cercanía real.</strong></div></div>
+        <div className="why-content"><p className="eyebrow dark"><span /> Por qué ASSEL</p><h2>La prevención funciona cuando las personas pueden usarla.</h2><p>Convertimos normativa y conocimiento técnico en decisiones claras que jefaturas y equipos pueden aplicar en terreno.</p><div className="why-list"><div data-reveal><span>01</span><p><b>Mirada operacional</b><small>Soluciones diseñadas para funcionar en terreno.</small></p></div><div data-reveal><span>02</span><p><b>Acompañamiento cercano</b><small>Presentes desde el diagnóstico hasta la verificación.</small></p></div><div data-reveal><span>03</span><p><b>Evidencia y trazabilidad</b><small>Avances respaldados y listos para ser demostrados.</small></p></div></div><Link className="button-dark" href="/nosotros">Conoce nuestra forma de trabajar <span>↗</span></Link></div>
       </section>
 
-      <section className="regulation-band"><div><span className="regulation-number">44</span><p><small>Gestión preventiva actualizada</small><strong>DS N.º 44</strong></p></div><p>Apoyamos a tu empresa a construir una gestión preventiva participativa, documentada y orientada a la mejora continua.</p><Link href="/contacto">Evaluar mi situación <span>↗</span></Link></section>
+      <section className="regulation-band" data-reveal><div className="regulation-mark"><span className="regulation-number">44</span><p><small>Gestión preventiva actualizada</small><strong>DS N.º 44</strong></p></div><div className="regulation-copy"><span className="regulation-status">Normativa vigente</span><p>Apoyamos a tu empresa a construir una gestión preventiva participativa, documentada y orientada a la mejora continua.</p></div><Link href="/contacto">Evaluar mi situación <span>↗</span></Link></section>
 
       <section className="case-preview-section"><div className="case-preview-head"><div><p className="eyebrow dark"><span /> Experiencia aplicada</p><h2>Resultados que<br />se pueden explicar.</h2></div><p>Cada desafío requiere una respuesta distinta. Estos casos representan cómo convertimos brechas complejas en avances visibles.</p></div><div className="case-preview-grid">{featuredCases.map((item, index) => <Link href="/casos-de-exito" className="home-case" key={item.id}><img src={item.image} alt="" /><div className="home-case-overlay" /><span>0{index + 1} / {item.sector}</span><div><h3>{item.title}</h3><p>{item.metric}</p></div><b>↗</b></Link>)}</div></section>
 
