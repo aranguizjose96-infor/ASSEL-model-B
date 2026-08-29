@@ -53,7 +53,7 @@ export function NosotrosContent() {
           <div className="team-profile-copy"><small>CEO</small><h3>Cristóbal Andrés Valdés Navarrete</h3><p>Ingeniero en Prevención de Riesgos · ITOP · NFPA 25 · Instructor de Trabajos Críticos</p><a className="team-profile-email" href="mailto:cristobal.valdes@assel.cl">cristobal.valdes@assel.cl</a></div>
         </article>
         <article data-about-reveal>
-          <div className="team-portrait"><Image src="/images/perfil-provisorio-02.png" alt="Retrato provisional de Hernán Patricio Valdés Chacón" width={500} height={500} sizes="(max-width: 760px) 230px, 250px" /><span>02</span></div>
+          <div className="team-portrait"><Image src="/images/perfil-provisorio-01.png" alt="Retrato provisional de Hernán Patricio Valdés Chacón" width={500} height={500} sizes="(max-width: 760px) 230px, 250px" /><span>02</span></div>
           <div className="team-profile-copy"><small>Cofundador</small><h3>Hernán Patricio Valdés Chacón</h3><p>Ingeniero Mecánico · Ingeniero Civil Industrial · MBA · Coach Integral</p><a className="team-profile-email" href="mailto:hernan.valdes@assel.cl">hernan.valdes@assel.cl</a></div>
         </article>
       </div>
