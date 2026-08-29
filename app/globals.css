@@ -211,8 +211,9 @@ nav a.active::after {
 .assurance-heading h2 { margin: 0; font-size: 27px; line-height: 1.07; letter-spacing: -.035em; }
 .orbit { width: 88px; height: 88px; display: grid; place-items: center; border: 1px solid rgba(184,244,61,.45); border-radius: 50%; position: relative; }
 .orbit::before { content: ''; position: absolute; inset: 9px; border: 1px dashed rgba(255,255,255,.26); border-radius: 50%; }
-.orbit::after { content: ''; position: absolute; width: 8px; height: 8px; right: 6px; top: 17px; background: var(--green); border-radius: 50%; }
+.orbit::after { content: ''; position: absolute; width: 8px; height: 8px; left: 50%; top: 50%; margin: -4px; background: var(--green); border-radius: 50%; box-shadow: 0 0 0 4px rgba(184,244,61,.1), 0 0 12px rgba(184,244,61,.45); transform: rotate(0deg) translateX(39px); animation: orbit-360 4.8s linear infinite; will-change: transform; }
 .orbit b { font-size: 20px; }
+@keyframes orbit-360 { to { transform: rotate(360deg) translateX(39px); } }
 .assurance-list { border-top: 1px solid var(--line); }
 .assurance-list > div { display: grid; grid-template-columns: 31px 1fr 24px; align-items: center; gap: 9px; min-height: 63px; border-bottom: 1px solid var(--line); }
 .assurance-list > div > span { font-size: 12px; color: var(--green); }
@@ -314,6 +315,7 @@ nav a.active::after {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; }
   .hero-video { transition: none !important; transform: none; }
+  .orbit::after { animation: none; transform: rotate(-35deg) translateX(39px); }
 }
 
 /* Shared navigation */
