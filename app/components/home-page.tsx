@@ -4,6 +4,18 @@ import Link from 'next/link';
 import { useSiteContent } from './content-provider';
 import { HeroVideoRotator } from './hero-video-rotator';
 
+function RailIcon({ type }: { type: 'evidence' | 'anticipation' | 'people' }) {
+  if (type === 'evidence') {
+    return <span className="rail-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 20 6v5c0 5-3.3 8.1-8 10-4.7-1.9-8-5-8-10V6l8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span>;
+  }
+
+  if (type === 'anticipation') {
+    return <span className="rail-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M22 12h-3M12 22v-3M2 12h3"/></svg></span>;
+  }
+
+  return <span className="rail-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3.5 19c.4-4 2.2-6 5.5-6s5.1 2 5.5 6M14 14c3.8-.7 6 1 6.5 4.5"/></svg></span>;
+}
+
 export function HomePage() {
   const { content } = useSiteContent();
   const featuredServices = content.services.slice(0, 3);
@@ -28,7 +40,7 @@ export function HomePage() {
             <p className="assurance-foot">Santiago · Cobertura nacional</p>
           </aside>
         </div>
-        <div className="hero-rail"><p><span>01</span> Cumplimiento que se demuestra</p><p><span>02</span> Riesgos que se anticipan</p><p><span>03</span> Equipos que se involucran</p><div className="scroll-cue"><i /> Descubre cómo</div></div>
+        <div className="hero-rail"><p><RailIcon type="evidence" /><strong>Cumplimiento que se demuestra</strong></p><p><RailIcon type="anticipation" /><strong>Riesgos que se anticipan</strong></p><p><RailIcon type="people" /><strong>Equipos que se involucran</strong></p></div>
       </section>
 
       <section className="services-preview">
