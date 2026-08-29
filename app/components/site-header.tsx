@@ -29,7 +29,7 @@ export function SiteHeader() {
     <header className={`global-header ${isHome && !scrolled ? 'is-transparent' : 'is-solid'} ${open ? 'menu-open' : ''}`}>
       <div className="header-inner">
         <Link className="header-brand-lockup" href="/" aria-label="ASSEL SpA, Asesoría en Salud y Seguridad Laboral, ir al inicio">
-          <img src="/brand/assel-navbar-lockup.png" alt="" />
+          <img src="/brand/logo-assel-oficial.png" alt="" />
         </Link>
 
         <nav className="desktop-nav" aria-label="Navegación principal">
