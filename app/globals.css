@@ -641,13 +641,7 @@ nav a.active::after {
 .inner-cta h2 { max-width: 850px; margin: 0; font-size: clamp(39px, 4.3vw, 65px); line-height: 1.02; letter-spacing: -.055em; }
 .inner-cta > div > p:not(.eyebrow) { margin: 18px 0 0; color: rgba(255,255,255,.58); }
 .inner-cta .button-primary { flex: 0 0 auto; }
-.site-footer { padding: 100px max(48px, calc((100% - 1320px) / 2)) 25px; background: #03151b; color: white; }
-.footer-lead { padding-bottom: 90px; display: flex; justify-content: space-between; align-items: end; border-bottom: 1px solid var(--line); }
-.footer-lead h2 { margin: 0; font-size: clamp(41px, 5vw, 70px); line-height: .98; letter-spacing: -.06em; }
-.footer-circle { width: 135px; height: 135px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(255,255,255,.35); border-radius: 50%; font-size: 13px; transition: background .2s ease, color .2s ease; }
-.footer-circle b { align-self: flex-end; color: var(--green); font-size: 20px; }
-.footer-circle:hover { background: var(--green); color: var(--ink); border-color: var(--green); }
-.footer-circle:hover b { color: var(--ink); }
+.site-footer { padding: 70px max(48px, calc((100% - 1320px) / 2)) 25px; background: #03151b; color: white; }
 .footer-grid { padding: 60px 0; display: grid; grid-template-columns: 1.4fr repeat(3, .65fr); gap: 60px; }
 .footer-grid > div:not(.footer-brand) { display: flex; flex-direction: column; gap: 13px; }
 .footer-grid > div > small { margin-bottom: 8px; color: var(--green); font-size: 12px; text-transform: uppercase; letter-spacing: .13em; }
@@ -796,9 +790,7 @@ nav a.active::after {
   .field-row { grid-template-columns: 1fr; gap: 0; }
   .form-heading { flex-direction: column; }
   .inner-cta { padding: 70px 20px; flex-direction: column; align-items: flex-start; }
-  .site-footer { padding: 75px 20px 20px; }
-  .footer-lead { align-items: flex-start; flex-direction: column; gap: 40px; }
-  .footer-circle { width: 115px; height: 115px; }
+  .site-footer { padding: 55px 20px 20px; }
   .footer-grid { grid-template-columns: 1fr; gap: 38px; }
   .footer-base { flex-direction: column; }
   .admin-login-page { padding: 15px; }

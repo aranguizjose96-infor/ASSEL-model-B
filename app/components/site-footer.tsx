@@ -3,13 +3,6 @@ import Link from 'next/link';
 export function SiteFooter() {
   return (
     <footer className="site-footer">
-      <div className="footer-lead">
-        <div>
-          <p className="eyebrow"><span /> El siguiente paso</p>
-          <h2>Una operación más segura<br />comienza con una conversación.</h2>
-        </div>
-        <Link className="footer-circle" href="/contacto"><span>Hablemos</span><b>↗</b></Link>
-      </div>
       <div className="footer-grid">
         <div className="footer-brand">
           <Link className="brand" href="/">
