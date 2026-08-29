@@ -378,20 +378,10 @@ nav a.active::after {
 }
 .header-brand-lockup {
   width: min(260px, 100%);
-  padding: 8px 11px;
-  box-sizing: border-box;
   display: block;
-  background: rgba(255,255,255,.96);
-  border: 1px solid rgba(255,255,255,.88);
-  border-radius: 5px;
-  box-shadow: 0 10px 28px rgba(0,0,0,.2);
+  filter: drop-shadow(0 7px 16px rgba(0,0,0,.2));
 }
-.header-brand-lockup img {
-  display: block;
-  width: 100%;
-  height: auto;
-  filter: none;
-}
+.header-brand-lockup > img { width: 100%; height: auto; display: block; }
 .desktop-nav { display: flex; align-items: center; gap: 34px; font-size: 15px; font-weight: 600; }
 .desktop-nav a { position: relative; padding: 43px 0 42px; color: rgba(255,255,255,.68); transition: color .2s ease; }
 .desktop-nav a:hover, .desktop-nav a.active { color: white; }

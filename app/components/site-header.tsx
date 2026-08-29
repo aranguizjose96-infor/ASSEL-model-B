@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
@@ -30,7 +31,7 @@ export function SiteHeader() {
     <header className={`global-header ${isHome && !scrolled ? 'is-transparent' : 'is-solid'} ${open ? 'menu-open' : ''}`}>
       <div className="header-inner">
         <Link className="header-brand-lockup" href="/" aria-label="ASSEL SpA, Asesoría en Salud y Seguridad Laboral, ir al inicio">
-          <img src="/brand/logo-assel-oficial.png" alt="" />
+          <Image src="/brand/logo-assel-navbar-v3.png" alt="" width={1200} height={400} priority sizes="(max-width: 760px) 215px, 260px" />
         </Link>
 
         <nav className="desktop-nav" aria-label="Navegación principal">
