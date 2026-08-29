@@ -626,6 +626,7 @@ nav a.active::after {
 .contact-social-icon.instagram .instagram-dot { fill: currentColor; stroke: none; }
 .contact-options p { margin: 0; display: flex; flex-direction: column; }
 .contact-options small { color: #7a888a; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; }
+.contact-options > a:nth-of-type(3) small { text-transform: none; }
 .contact-options strong { margin-top: 5px; font-size: 14px; }
 .contact-options b { color: var(--green-deep); }
 .contact-hours { margin-top: 35px; padding: 22px; background: white; }

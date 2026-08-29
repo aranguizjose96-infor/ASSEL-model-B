@@ -16,7 +16,7 @@ export function HomePage() {
         <div className="hero-wash" />
         <div className="hero-content" id="inicio">
           <div className="hero-copy">
-            <p className="eyebrow"><span /> Gestión preventiva para empresas que avanzan</p>
+            <p className="eyebrow"><span /> Gestión preventiva para empresas y comunidades que avanzan</p>
             <h1>{content.heroTitle}<br /><em>{content.heroAccent}</em></h1>
             <p className="hero-intro">{content.heroIntro}</p>
             <div className="hero-actions"><Link className="button-primary" href="/contacto">Conversemos de tu empresa <span>→</span></Link><Link className="button-ghost" href="/servicios"><span className="play">＋</span> Explorar servicios</Link></div>
