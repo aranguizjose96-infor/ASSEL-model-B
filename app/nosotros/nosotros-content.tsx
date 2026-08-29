@@ -46,10 +46,16 @@ export function NosotrosContent() {
     </section>
 
     <section className="about-team">
-      <div className="about-team-heading" data-about-reveal><p className="eyebrow"><span /> 02 · Quiénes forman ASSEL</p><h2>Dos miradas.<br />Un mismo compromiso.</h2><p>ASSEL reúne criterio estratégico y acompañamiento técnico para conectar la prevención con la realidad de cada organización.</p><small>Perfiles e imágenes provisionales · Se reemplazarán con información oficial.</small></div>
+      <div className="about-team-heading" data-about-reveal><p className="eyebrow"><span /> 02 · Quiénes forman ASSEL</p><h2>Dos miradas.<br />Un mismo compromiso.</h2><p>ASSEL reúne criterio estratégico y acompañamiento técnico para conectar la prevención con la realidad de cada organización.</p><small>Fotografías provisionales · Se reemplazarán con imágenes oficiales.</small></div>
       <div className="team-profiles">
-        <article data-about-reveal><div className="team-portrait"><Image src="/images/perfil-provisorio-01.png" alt="Retrato provisional del integrante 01 de ASSEL" width={500} height={500} sizes="(max-width: 760px) 230px, 250px" /><span>01</span></div><div className="team-profile-copy"><small>Integrante 01 · Nombre por confirmar</small><h3>Dirección y estrategia preventiva</h3><p>Conecta la gestión de seguridad con los objetivos del negocio, orientando prioridades, decisiones y relaciones de colaboración de largo plazo.</p><b>Perfil profesional en preparación</b></div></article>
-        <article data-about-reveal><div className="team-portrait"><Image src="/images/perfil-provisorio-02.png" alt="Retrato provisional del integrante 02 de ASSEL" width={500} height={500} sizes="(max-width: 760px) 230px, 250px" /><span>02</span></div><div className="team-profile-copy"><small>Integrante 02 · Nombre por confirmar</small><h3>Gestión técnica y acompañamiento</h3><p>Transforma necesidades y brechas en acciones aplicables, acompañando la implementación y el aprendizaje de los equipos.</p><b>Perfil profesional en preparación</b></div></article>
+        <article data-about-reveal>
+          <div className="team-portrait"><Image src="/images/perfil-provisorio-01.png" alt="Retrato provisional de Cristóbal Andrés Valdés Navarrete" width={500} height={500} sizes="(max-width: 760px) 230px, 250px" /><span>01</span></div>
+          <div className="team-profile-copy"><small>CEO</small><h3>Cristóbal Andrés Valdés Navarrete</h3><p>Ingeniero en Prevención de Riesgos · ITOP · NFPA 25 · Instructor de Trabajos Críticos</p><a className="team-profile-email" href="mailto:cristobal.valdes@assel.cl">cristobal.valdes@assel.cl</a></div>
+        </article>
+        <article data-about-reveal>
+          <div className="team-portrait"><Image src="/images/perfil-provisorio-02.png" alt="Retrato provisional de Hernán Patricio Valdés Chacón" width={500} height={500} sizes="(max-width: 760px) 230px, 250px" /><span>02</span></div>
+          <div className="team-profile-copy"><small>Cofundador</small><h3>Hernán Patricio Valdés Chacón</h3><p>Ingeniero Mecánico · Ingeniero Civil Industrial · MBA · Coach Integral</p><a className="team-profile-email" href="mailto:hernan.valdes@assel.cl">hernan.valdes@assel.cl</a></div>
+        </article>
       </div>
     </section>
 

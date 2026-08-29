@@ -531,9 +531,11 @@ nav a.active::after {
 .team-portrait > span { position: absolute; right: 8%; bottom: 5%; width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: var(--green); color: var(--ink); font-size: 11px; font-weight: 850; box-shadow: 0 0 0 6px var(--ink); }
 .team-profile-copy { padding-top: 25px; border-top: 1px solid var(--line); }
 .team-profile-copy > small { color: rgba(255,255,255,.4); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
-.team-profile-copy h3 { margin: 13px auto 0; max-width: 310px; font-size: clamp(23px, 2.3vw, 31px); line-height: 1.08; letter-spacing: -.04em; }
+.team-profile-copy h3 { margin: 13px auto 0; max-width: 360px; font-size: clamp(21px, 1.9vw, 27px); line-height: 1.12; letter-spacing: -.035em; }
 .team-profile-copy p { margin: 16px auto 0; max-width: 330px; color: rgba(255,255,255,.56); font-size: 13px; line-height: 1.65; }
 .team-profile-copy b { margin-top: 22px; display: block; color: var(--green); font-size: 10px; letter-spacing: .09em; text-transform: uppercase; }
+.team-profile-email { margin-top: 20px; display: inline-flex; align-items: center; color: var(--green); font-size: 12px; font-weight: 750; letter-spacing: .02em; text-decoration: none; transition: color .2s ease; }
+.team-profile-email:hover { color: white; }
 .about-evidence { padding: 105px max(48px, calc((100% - 1320px) / 2)); background: white; }
 .about-section-heading { display: grid; grid-template-columns: .72fr 1.25fr .72fr; gap: 45px; align-items: end; }
 .about-section-heading > h2 { margin: 0; font-size: clamp(42px, 4.6vw, 68px); line-height: 1; letter-spacing: -.055em; }
