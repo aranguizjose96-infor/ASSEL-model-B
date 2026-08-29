@@ -24,7 +24,13 @@ export function ContentProvider({ children }: { children: React.ReactNode }) {
     const timer = window.setTimeout(() => {
       const saved = window.localStorage.getItem(STORAGE_KEY);
       if (saved) {
-        try { setContent(JSON.parse(saved)); } catch { window.localStorage.removeItem(STORAGE_KEY); }
+        try {
+          const parsed = JSON.parse(saved) as SiteContent;
+          setContent({
+            ...parsed,
+            services: parsed.services.map((service) => service.id === 'capacitacion' ? { ...service, image: '/images/capacitacion-cultura.jpg' } : service),
+          });
+        } catch { window.localStorage.removeItem(STORAGE_KEY); }
       }
       setHydrated(true);
     }, 0);

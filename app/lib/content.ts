@@ -57,7 +57,7 @@ export const defaultServices: Service[] = [
     scope: ['Charlas y talleres presenciales', 'Inducciones y derecho a saber', 'Campañas de cultura preventiva', 'Entrenamiento a supervisores'],
     benefits: ['Mayor participación', 'Mensajes comprensibles', 'Liderazgo visible'],
     audience: 'Equipos operativos, supervisores y organizaciones que buscan activar una cultura preventiva real.',
-    image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=82',
+    image: '/images/capacitacion-cultura.jpg',
   },
   {
     id: 'auditorias', number: '04', tag: 'Verificación', title: 'Auditorías e inspecciones',
