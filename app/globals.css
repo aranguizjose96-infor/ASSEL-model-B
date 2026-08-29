@@ -324,8 +324,8 @@ nav a.active::after {
   color: white;
   transition: background .25s ease, box-shadow .25s ease;
 }
-.global-header.is-solid { background: rgba(15,59,45,.98); box-shadow: 0 10px 34px rgba(0,0,0,.12); backdrop-filter: blur(16px); }
-.global-header.is-transparent { background: rgba(15,59,45,.84); backdrop-filter: blur(12px); }
+.global-header.is-solid { background: rgba(5,28,35,.96); box-shadow: 0 10px 34px rgba(0,0,0,.12); backdrop-filter: blur(16px); }
+.global-header.is-transparent { background: transparent; }
 .header-inner {
   width: min(1440px, calc(100% - 64px));
   height: 104px;
