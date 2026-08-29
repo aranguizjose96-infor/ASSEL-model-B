@@ -336,16 +336,14 @@ nav a.active::after {
   border-bottom: 1px solid var(--line);
 }
 .header-brand-lockup {
-  width: min(300px, 100%);
-  aspect-ratio: 331 / 66;
+  width: min(270px, 100%);
+  aspect-ratio: 300 / 95;
   display: block;
-  overflow: hidden;
 }
 .header-brand-lockup img {
   display: block;
   width: 100%;
   height: auto;
-  transform: translateY(-4.35%);
 }
 .desktop-nav { display: flex; align-items: center; gap: 34px; font-size: 15px; font-weight: 600; }
 .desktop-nav a { position: relative; padding: 43px 0 42px; color: rgba(255,255,255,.68); transition: color .2s ease; }
@@ -679,7 +677,7 @@ nav a.active::after {
 @media (max-width: 760px) {
   .global-header .header-cta { display: none; }
   .header-inner { height: 82px; width: calc(100% - 30px); grid-template-columns: 1fr auto; }
-  .header-brand-lockup { width: min(235px, calc(100vw - 88px)); }
+  .header-brand-lockup { width: min(215px, calc(100vw - 88px)); }
   .hero-content { padding-top: 145px; }
   .why-image, .profile-image { min-height: 440px; }
   .why-content, .profile-content { padding: 74px 22px; }
