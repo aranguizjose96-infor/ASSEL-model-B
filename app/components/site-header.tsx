@@ -13,9 +13,10 @@ const links = [
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+  const [openPath, setOpenPath] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const isHome = pathname === '/';
+  const open = openPath === pathname;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -23,8 +24,6 @@ export function SiteHeader() {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-
-  useEffect(() => setOpen(false), [pathname]);
 
   return (
     <header className={`global-header ${isHome && !scrolled ? 'is-transparent' : 'is-solid'} ${open ? 'menu-open' : ''}`}>
@@ -39,15 +38,15 @@ export function SiteHeader() {
         </nav>
 
         <Link className="header-cta" href="/contacto">Solicitar asesoría <span aria-hidden="true">↗</span></Link>
-        <button className="menu-button" type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? 'Cerrar menú' : 'Abrir menú'}>
+        <button className="menu-button" type="button" onClick={() => setOpenPath(open ? null : pathname)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? 'Cerrar menú' : 'Abrir menú'}>
           <span /><span />
         </button>
       </div>
 
       <div className="mobile-menu" id="mobile-menu">
         <nav aria-label="Navegación móvil">
-          {links.map(([href, label], index) => <Link href={href} key={href}><small>0{index + 1}</small>{label}<span>↗</span></Link>)}
-          <Link href="/contacto"><small>05</small>Contáctanos<span>↗</span></Link>
+          {links.map(([href, label], index) => <Link href={href} onClick={() => setOpenPath(null)} key={href}><small>0{index + 1}</small>{label}<span>↗</span></Link>)}
+          <Link href="/contacto" onClick={() => setOpenPath(null)}><small>05</small>Contáctanos<span>↗</span></Link>
         </nav>
         <p>Santiago de Chile · Cobertura nacional</p>
       </div>

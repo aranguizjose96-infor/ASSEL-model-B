@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PageHero } from '../components/page-hero';
 
-export const metadata: Metadata = { title: 'Nosotros | ASSEL SpA', description: 'Conoce el enfoque técnico y humano de ASSEL para la prevención de riesgos laborales.' };
+export const metadata: Metadata = { title: 'Nosotros', description: 'Conoce el enfoque técnico y humano de ASSEL para la prevención de riesgos laborales.' };
 
 export default function NosotrosPage() {
   return <main className="inner-page"><PageHero index="02" eyebrow="Quiénes somos" title="Experiencia técnica." accent="Criterio humano." intro="Somos un equipo consultor que entiende la prevención como una capacidad de gestión: práctica, cercana y conectada con los objetivos de cada organización." image="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=84" />

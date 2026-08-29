@@ -4,11 +4,15 @@ import { ContentProvider } from './components/content-provider';
 import { SiteChrome } from './components/site-chrome';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://assel.cl'),
   title: { default: 'ASSEL SpA | Prevención y seguridad laboral', template: '%s · ASSEL SpA' },
   description: 'Asesoría estratégica en prevención de riesgos, cumplimiento documental y cultura de seguridad para empresas en Chile.',
+  alternates: { canonical: '/' },
   openGraph: {
     title: 'ASSEL SpA | Prevenir con criterio. Avanzar con confianza.',
     description: 'Prevención y seguridad laboral para empresas que quieren avanzar con confianza.',
+    url: '/',
+    siteName: 'ASSEL SpA',
     images: [{ url: '/og.png', width: 1731, height: 909, alt: 'ASSEL SpA — Prevención y seguridad laboral' }],
     locale: 'es_CL',
     type: 'website',

@@ -18,17 +18,24 @@ const STORAGE_KEY = 'assel-demo-content-v1';
 
 export function ContentProvider({ children }: { children: React.ReactNode }) {
   const [content, setContent] = useState(defaultContent);
+  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
-    const saved = window.localStorage.getItem(STORAGE_KEY);
-    if (saved) {
-      try { setContent(JSON.parse(saved)); } catch { window.localStorage.removeItem(STORAGE_KEY); }
-    }
+    const timer = window.setTimeout(() => {
+      const saved = window.localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        try { setContent(JSON.parse(saved)); } catch { window.localStorage.removeItem(STORAGE_KEY); }
+      }
+      setHydrated(true);
+    }, 0);
+
+    return () => window.clearTimeout(timer);
   }, []);
 
   useEffect(() => {
+    if (!hydrated) return;
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(content));
-  }, [content]);
+  }, [content, hydrated]);
 
   const value = useMemo<ContentContextType>(() => ({
     content,

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { ContactForm } from '../components/contact-form';
 import { PageHero } from '../components/page-hero';
 
-export const metadata: Metadata = { title: 'Contacto | ASSEL SpA', description: 'Solicita una asesoría en prevención de riesgos y seguridad laboral con ASSEL SpA.' };
+export const metadata: Metadata = { title: 'Contacto', description: 'Solicita una asesoría en prevención de riesgos y seguridad laboral con ASSEL SpA.' };
 
 export default function ContactoPage() {
   return <main className="inner-page contact-page"><PageHero index="05" eyebrow="Conversemos" title="Cuéntanos el desafío." accent="Diseñemos la respuesta." intro="Una conversación inicial puede ayudarnos a entender tu contexto, ordenar prioridades y recomendar el mejor siguiente paso." />
