@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useSiteContent } from './content-provider';
+import { HeroVideoRotator } from './hero-video-rotator';
 
 export function HomePage() {
   const { content } = useSiteContent();
@@ -11,7 +12,7 @@ export function HomePage() {
   return (
     <main>
       <section className="hero">
-        <img className="hero-image" src="https://images.unsplash.com/photo-1704928341359-ff3c3744de30?auto=format&fit=crop&w=2200&q=88" alt="Vista de Santiago de Chile con la cordillera de Los Andes" />
+        <HeroVideoRotator />
         <div className="hero-wash" />
         <div className="hero-content" id="inicio">
           <div className="hero-copy">
