@@ -8,6 +8,7 @@ const links = [
   ['/', 'Inicio'],
   ['/nosotros', 'Nosotros'],
   ['/servicios', 'Servicios'],
+  ['/productos', 'Productos'],
   ['/casos-de-exito', 'Casos de éxito'],
 ];
 
@@ -45,7 +46,7 @@ export function SiteHeader() {
       <div className="mobile-menu" id="mobile-menu">
         <nav aria-label="Navegación móvil">
           {links.map(([href, label], index) => <Link href={href} onClick={() => setOpenPath(null)} key={href}><small>0{index + 1}</small>{label}<span>↗</span></Link>)}
-          <Link href="/contacto" onClick={() => setOpenPath(null)}><small>05</small>Contáctanos<span>↗</span></Link>
+          <Link href="/contacto" onClick={() => setOpenPath(null)}><small>06</small>Contáctanos<span>↗</span></Link>
         </nav>
         <p>Santiago de Chile · Cobertura nacional</p>
       </div>

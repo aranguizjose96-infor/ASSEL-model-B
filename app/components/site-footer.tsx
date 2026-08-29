@@ -17,7 +17,7 @@ export function SiteFooter() {
           </Link>
           <p>Asesoría técnica con mirada humana para construir entornos de trabajo más seguros, saludables y sostenibles.</p>
         </div>
-        <div><small>Navegación</small><Link href="/nosotros">Nosotros</Link><Link href="/servicios">Servicios</Link><Link href="/casos-de-exito">Casos de éxito</Link><Link href="/contacto">Contacto</Link></div>
+        <div><small>Navegación</small><Link href="/nosotros">Nosotros</Link><Link href="/servicios">Servicios</Link><Link href="/productos">Productos</Link><Link href="/casos-de-exito">Casos de éxito</Link><Link href="/contacto">Contacto</Link></div>
         <div><small>Contacto</small><a href="tel:+56920510214">+56 9 2051 0214</a><a href="mailto:aranguizjose96@gmail.com">aranguizjose96@gmail.com</a><p>Santiago de Chile</p></div>
         <div><small>Síguenos</small><span className="social-disabled">LinkedIn · Próximamente</span><span className="social-disabled">Instagram · Próximamente</span><Link href="/admin">Panel de demostración</Link></div>
       </div>
