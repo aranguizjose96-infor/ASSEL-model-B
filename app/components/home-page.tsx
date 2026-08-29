@@ -47,7 +47,6 @@ export function HomePage() {
       <section className="case-preview-section"><div className="case-preview-head"><div><p className="eyebrow dark"><span /> Experiencia aplicada</p><h2>Resultados que<br />se pueden explicar.</h2></div><p>Cada desafío requiere una respuesta distinta. Estos casos representan cómo convertimos brechas complejas en avances visibles.</p></div><div className="case-preview-grid">{featuredCases.map((item, index) => <Link href="/casos-de-exito" className="home-case" key={item.id}><img src={item.image} alt="" /><div className="home-case-overlay" /><span>0{index + 1} / {item.sector}</span><div><h3>{item.title}</h3><p>{item.metric}</p></div><b>↗</b></Link>)}</div></section>
 
       <section className="home-final-cta"><p className="eyebrow"><span /> Empecemos</p><h2>Tu próxima decisión preventiva<br />puede ser la más importante.</h2><Link className="button-primary" href="/contacto">Solicitar diagnóstico inicial <span>→</span></Link></section>
-      <a className="whatsapp-float" href="https://wa.me/56920510214?text=Hola%20ASSEL%2C%20quiero%20conocer%20sus%20servicios" aria-label="Contactar a ASSEL por WhatsApp"><span>WA</span><b>¿Hablamos?</b></a>
     </main>
   );
 }
