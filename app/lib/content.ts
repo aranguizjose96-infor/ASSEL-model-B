@@ -86,6 +86,42 @@ export const defaultServices: Service[] = [
     audience: 'Proyectos de construcción, montaje, mantenimiento, logística y servicios técnicos.',
     image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=82',
   },
+  {
+    id: 'implementacion-ds44', number: '07', tag: 'Normativa', title: 'Implementación del DS N.º 44',
+    summary: 'Una gestión preventiva actualizada, proporcional al tamaño y realidad de tu organización.',
+    description: 'Acompañamos la implementación y mejora de los instrumentos preventivos establecidos por el Decreto Supremo N.º 44, conectando diagnóstico, responsabilidades, participación de las personas trabajadoras y seguimiento en una ruta aplicable.',
+    scope: ['Diagnóstico de cumplimiento y brechas', 'Matriz de peligros y evaluación de riesgos', 'Programa de trabajo preventivo', 'Estructura, responsabilidades y seguimiento'],
+    benefits: ['Cumplimiento trazable', 'Riesgos mejor priorizados', 'Gestión preventiva sostenible'],
+    audience: 'Empresas, PYMES y organizaciones que necesitan implementar, actualizar o fortalecer su gestión preventiva conforme al DS N.º 44.',
+    image: '/images/assel-inspeccion-prevencion.webp',
+  },
+  {
+    id: 'ley-karin', number: '08', tag: 'Convivencia', title: 'Implementación de la Ley Karin',
+    summary: 'Protocolos, capacitación y acompañamiento para construir ambientes laborales respetuosos.',
+    description: 'Apoyamos a la organización en la prevención del acoso laboral, el acoso sexual y la violencia en el trabajo, mediante herramientas claras, formación y orientación documental alineada con la Ley N.º 21.643.',
+    scope: ['Diagnóstico de cumplimiento', 'Protocolo de prevención y canales de denuncia', 'Actualización del reglamento interno', 'Capacitación y orientación en procesos internos'],
+    benefits: ['Procedimientos claros', 'Mayor confianza de los equipos', 'Menor exposición organizacional'],
+    audience: 'Empresas, PYMES, instituciones y organizaciones que requieren implementar o fortalecer sus medidas preventivas y procedimientos internos.',
+    image: '/images/servicio-ley-karin.jpg',
+  },
+  {
+    id: 'planes-emergencia', number: '09', tag: 'Emergencias', title: 'Planes de emergencia y evacuación',
+    summary: 'Preparación práctica para responder de manera coordinada ante situaciones críticas.',
+    description: 'Diseñamos y actualizamos planes de emergencia ajustados a las amenazas, instalaciones y personas de cada organización o comunidad, definiendo procedimientos, roles y recursos para una respuesta oportuna.',
+    scope: ['Identificación de amenazas y escenarios', 'Procedimientos y rutas de evacuación', 'Roles, brigadas y puntos de encuentro', 'Capacitación, simulacros y mejora del plan'],
+    benefits: ['Respuesta coordinada', 'Roles conocidos', 'Mayor protección de personas e infraestructura'],
+    audience: 'Empresas, industrias, oficinas, centros logísticos, establecimientos educacionales, edificios y comunidades.',
+    image: '/images/servicio-emergencias.jpg',
+  },
+  {
+    id: 'patentes-seremi', number: '10', tag: 'Permisos', title: 'Patentes y trámites sanitarios',
+    summary: 'Acompañamiento documental para ordenar permisos municipales y gestiones ante la autoridad sanitaria.',
+    description: 'Orientamos la preparación, revisión y seguimiento de antecedentes para patentes comerciales, resoluciones sanitarias y trámites ante la SEREMI de Salud, considerando los requisitos aplicables a cada actividad.',
+    scope: ['Revisión inicial de requisitos y antecedentes', 'Preparación del expediente documental', 'Gestión y seguimiento de observaciones', 'Coordinación de trámites municipales y sanitarios'],
+    benefits: ['Expedientes más ordenados', 'Menos reprocesos', 'Visibilidad del estado de cada gestión'],
+    audience: 'Emprendimientos, PYMES y empresas que necesitan iniciar, regularizar o ampliar actividades sujetas a permisos municipales o sanitarios.',
+    image: '/images/servicio-tramites.jpg',
+  },
 ];
 
 export const defaultCases: CaseStudy[] = [

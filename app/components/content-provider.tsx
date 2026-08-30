@@ -26,9 +26,12 @@ export function ContentProvider({ children }: { children: React.ReactNode }) {
       if (saved) {
         try {
           const parsed = JSON.parse(saved) as SiteContent;
+          const savedServices = parsed.services.map((service) => service.id === 'capacitacion' ? { ...service, image: '/images/capacitacion-cultura.jpg' } : service);
+          const savedServiceIds = new Set(savedServices.map((service) => service.id));
           setContent({
+            ...defaultContent,
             ...parsed,
-            services: parsed.services.map((service) => service.id === 'capacitacion' ? { ...service, image: '/images/capacitacion-cultura.jpg' } : service),
+            services: [...savedServices, ...defaultContent.services.filter((service) => !savedServiceIds.has(service.id))],
           });
         } catch { window.localStorage.removeItem(STORAGE_KEY); }
       }
