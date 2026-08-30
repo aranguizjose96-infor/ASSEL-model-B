@@ -275,6 +275,16 @@ nav a.active::after {
 .section-heading > div > p { margin: 0; color: #607075; font-size: 15px; line-height: 1.7; }
 [data-reveal] { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s cubic-bezier(.22,.8,.32,1); }
 [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+.solutions-intro { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(42px, 6vw, 84px); align-items: center; }
+.solutions-intro .section-heading { display: block; }
+.solutions-intro .section-heading > .eyebrow { margin-bottom: 28px; }
+.solutions-intro .section-heading > div { display: block; }
+.solutions-intro .section-heading h2 { margin-bottom: 22px; }
+.solutions-intro .section-heading > div > p { max-width: 520px; }
+.solutions-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0; overflow: hidden; background: var(--ink); border: 1px solid rgba(7,29,36,.16); box-shadow: 0 22px 55px rgba(7,29,36,.13); }
+.solutions-video::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(7,29,36,.04), rgba(7,29,36,.16)); }
+.solutions-video video { width: 100%; height: 100%; display: block; object-fit: cover; }
+.solutions-intro + .service-grid { margin-top: 52px; }
 .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 52px; }
 .service-card { position: relative; min-height: 306px; padding: 24px 26px; display: flex; flex-direction: column; background: white; border-top: 3px solid var(--ink); transition: opacity .65s ease, transform .25s ease, background .25s ease, color .25s ease; }
 .service-card:nth-child(2) { transition-delay: .1s; }
@@ -342,6 +352,8 @@ nav a.active::after {
   .hero-rail p:last-child { border-bottom: 0; }
   .services-preview { padding: 76px 18px 92px; }
   .section-heading > div { grid-template-columns: 1fr; gap: 24px; }
+  .solutions-intro { grid-template-columns: 1fr; gap: 36px; }
+  .solutions-intro + .service-grid { margin-top: 44px; }
   .service-grid { grid-template-columns: 1fr; margin-top: 44px; }
   .service-card { min-height: 300px; }
   .whatsapp-float b { display: none; }

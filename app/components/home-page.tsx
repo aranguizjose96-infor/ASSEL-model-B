@@ -82,7 +82,14 @@ export function HomePage() {
       </section>
 
       <section className="services-preview">
-        <div className="section-heading"><p className="eyebrow dark"><span /> Soluciones ASSEL</p><div><h2>Seguridad que se integra<br />a tu forma de trabajar.</h2><p>No entregamos documentos para archivar. Diseñamos sistemas preventivos claros, utilizables y sostenibles.</p></div></div>
+        <div className="solutions-intro">
+          <div className="section-heading"><p className="eyebrow dark"><span /> Soluciones ASSEL</p><div><h2>Seguridad que se integra<br />a tu forma de trabajar.</h2><p>No entregamos documentos para archivar. Diseñamos sistemas preventivos claros, utilizables y sostenibles.</p></div></div>
+          <div className="solutions-video" data-reveal>
+            <video autoPlay muted loop playsInline preload="metadata" aria-label="Video de soluciones preventivas ASSEL en terreno">
+              <source src="/videos/soluciones-assel.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
         <div className="service-grid">{featuredServices.map((service) => <article className="service-card" data-reveal key={service.id}><div className="service-meta"><span>{service.number}</span><small>{service.tag}</small></div><ServiceIcon id={service.id} /><h3>{service.title}</h3><p>{service.summary}</p><p className="service-result"><span>Resultado</span>{serviceResults[service.id] || service.benefits[0]}</p><Link href="/servicios">Conocer solución <span>↗</span></Link></article>)}</div>
         <Link className="text-link section-link" href="/servicios">Ver todas las soluciones <span>→</span></Link>
       </section>
