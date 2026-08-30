@@ -6,6 +6,10 @@ export function MailIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg>;
 }
 
+export function ClockIcon() {
+  return <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" /><path d="M12 7v5l3.5 2" /></svg>;
+}
+
 export function GoogleMapsIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true"><defs><clipPath id="google-maps-pin"><path d="M12 1.5a8 8 0 0 0-8 8c0 5.7 8 13 8 13s8-7.3 8-13a8 8 0 0 0-8-8Z" /></clipPath></defs><g clipPath="url(#google-maps-pin)"><rect width="24" height="24" fill="#4285f4" /><path d="M-1 4 10.3 12.2 4.4 24H-1Z" fill="#34a853" /><path d="M6.2-1H25v7.1L13 12Z" fill="#ea4335" /><path d="m13 12 12-5.9V24H4.4Z" fill="#fbbc04" /></g><circle cx="12" cy="9.5" r="3.5" fill="white" /><circle cx="12" cy="9.5" r="2.1" fill="#4285f4" /></svg>;
 }

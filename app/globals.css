@@ -746,9 +746,15 @@ nav a.active::after {
 .contact-options > a:nth-of-type(3) small { text-transform: none; }
 .contact-options strong { margin-top: 5px; font-size: 14px; }
 .contact-options b { color: var(--green-deep); }
-.contact-hours { margin-top: 26px; padding: 18px 22px; background: white; }
-.contact-hours > small { color: #748285; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; }
-.contact-hours p { margin: 11px 0 0; font-size: 14px; line-height: 1.7; }
+.contact-hours { margin-top: 26px; min-height: 76px; padding: 15px 18px; display: grid; grid-template-columns: 42px minmax(0, 1fr) auto; align-items: center; gap: 14px; color: white; background: linear-gradient(120deg, #071d24, #0d313a); border: 1px solid rgba(174, 247, 41, .16); box-shadow: 0 16px 36px rgba(7, 29, 36, .12); }
+.contact-hours-icon { width: 38px; height: 38px; display: grid; place-items: center; color: var(--green); border: 1px solid rgba(174, 247, 41, .34); border-radius: 50%; background: rgba(174, 247, 41, .07); }
+.contact-hours-icon svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.contact-hours-copy small { display: block; color: #9daeb1; font-size: 10px; text-transform: uppercase; letter-spacing: .12em; }
+.contact-hours-copy p { margin: 6px 0 0; display: flex; align-items: baseline; gap: 8px; font-size: 13px; }
+.contact-hours-copy strong { font-size: 14px; }
+.contact-hours-copy span { color: #d6e0e2; }
+.contact-hours-status { display: flex; align-items: center; gap: 7px; color: var(--green); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; white-space: nowrap; }
+.contact-hours-status i { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(174, 247, 41, .1); }
 .contact-form { padding: 38px 42px; align-self: start; background: white; box-shadow: 0 25px 70px rgba(7,29,36,.07); }
 .form-heading { margin-bottom: 28px; display: flex; justify-content: space-between; align-items: start; gap: 30px; }
 .form-heading > span { max-width: 210px; color: #7a888a; font-size: 12px; line-height: 1.6; }
@@ -958,6 +964,9 @@ nav a.active::after {
   .modal-columns, .case-story { grid-template-columns: 1fr; }
   .case-modal-gallery { min-height: 430px; }
   .contact-layout { padding: 75px 18px; grid-template-columns: 1fr; }
+  .contact-hours { grid-template-columns: 42px minmax(0, 1fr); }
+  .contact-hours-copy p { flex-wrap: wrap; }
+  .contact-hours-status { grid-column: 2; }
   .contact-form { padding: 27px 20px; }
   .field-row { grid-template-columns: 1fr; gap: 0; }
   .form-heading { flex-direction: column; }
