@@ -759,6 +759,7 @@ nav a.active::after {
 .contact-form select { appearance: none; background: linear-gradient(45deg, transparent 50%, var(--ink) 50%) calc(100% - 12px) 53%/5px 5px no-repeat, linear-gradient(135deg, var(--ink) 50%, transparent 50%) calc(100% - 7px) 53%/5px 5px no-repeat; }
 .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus, .admin-editor input:focus, .admin-item input:focus, .admin-editor textarea:focus, .admin-item textarea:focus { border-color: var(--green-deep); }
 .contact-form label > small { color: #b24d3f; text-transform: none; letter-spacing: 0; }
+.contact-honeypot { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
 .submit-button { width: 100%; min-height: 58px; padding: 0 23px; display: flex; justify-content: space-between; align-items: center; border: 0; background: var(--green); color: var(--ink); font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; cursor: pointer; }
 .submit-button:disabled { opacity: .65; }
 .submit-button span { font-size: 19px; }
