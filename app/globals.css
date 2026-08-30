@@ -665,9 +665,9 @@ nav a.active::after {
 .method-section h2 { margin: 0; font-size: clamp(42px, 4.2vw, 64px); line-height: 1; letter-spacing: -.055em; }
 .method-steps { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid #dbe2dd; border-left: 1px solid #dbe2dd; }
 .method-steps article { min-height: 235px; padding: 26px; border-right: 1px solid #dbe2dd; border-bottom: 1px solid #dbe2dd; }
-.method-steps span { color: var(--green-deep); font-size: 12px; }
-.method-steps h3 { margin: 55px 0 10px; font-size: 18px; letter-spacing: -.025em; }
-.method-steps p { margin: 0; color: #6e7d80; font-size: 13px; line-height: 1.6; }
+.method-steps span { color: var(--green-deep); font-size: 13px; font-weight: 750; }
+.method-steps h3 { margin: 48px 0 12px; font-size: clamp(21px, 1.7vw, 24px); line-height: 1.15; letter-spacing: -.03em; }
+.method-steps p { margin: 0; color: #5f7074; font-size: 15px; line-height: 1.65; }
 
 /* Modals */
 .modal-backdrop { position: fixed; z-index: 100; inset: 0; padding: 28px; display: grid; place-items: center; overflow-y: auto; background: rgba(2,16,21,.84); backdrop-filter: blur(8px); }
