@@ -24,9 +24,7 @@ export function ContactForm() {
       <div className="form-heading"><p className="eyebrow dark"><span /> Solicitud de contacto</p><span>Respondemos habitualmente dentro de un día hábil.</span></div>
       <div className="field-row"><label>Nombre y apellido *<input name="nombre" aria-invalid={!!errors.nombre} />{errors.nombre && <small>{errors.nombre}</small>}</label><label>Empresa<input name="empresa" /></label></div>
       <div className="field-row"><label>Correo electrónico *<input name="correo" type="email" aria-invalid={!!errors.correo} />{errors.correo && <small>{errors.correo}</small>}</label><label>Teléfono<input name="telefono" type="tel" /></label></div>
-      <label>¿En qué podemos ayudarte? *<select name="motivo" defaultValue=""><option value="" disabled>Selecciona una opción</option><option>Gestión preventiva integral</option><option>Cumplimiento documental</option><option>Capacitación</option><option>Auditorías e inspecciones</option><option>Gestión HSE de proyecto</option><option>Otro desafío</option></select></label>
       <label>Mensaje *<textarea name="mensaje" rows={5} placeholder="Cuéntanos sobre tu empresa, proyecto o necesidad..." aria-invalid={!!errors.mensaje} />{errors.mensaje && <small>{errors.mensaje}</small>}</label>
-      <label className="privacy-check"><input type="checkbox" required /> <span>Acepto que ASSEL utilice estos datos exclusivamente para responder mi solicitud.</span></label>
       <button className="submit-button" type="submit" disabled={status === 'sending'}>{status === 'sending' ? 'Enviando…' : 'Enviar solicitud'} <span>→</span></button>
       <div className={`form-status ${status}`} role="status" aria-live="polite">{status === 'success' && 'Tu mensaje fue registrado correctamente. Esta demostración quedará lista para conectarse a EmailJS con las credenciales definitivas.'}{status === 'error' && Object.keys(errors).length > 0 && 'Revisa los campos marcados antes de continuar.'}</div>
     </form>
