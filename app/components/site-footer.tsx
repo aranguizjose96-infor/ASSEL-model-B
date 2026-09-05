@@ -15,7 +15,7 @@ export function SiteFooter() {
           <small>Registro público</small>
           <img src="/brand/chilecompra-proveedores-estado.jpeg" alt="Somos proveedores del Estado, Dirección ChileCompra" />
         </div>
-        <div className="footer-nav"><small>Navegación</small><Link href="/nosotros">Nosotros</Link><Link href="/servicios">Servicios</Link><Link href="/ventas-de-epp">Ventas de EPP</Link><Link href="/casos-de-exito">Casos de éxito</Link><Link href="/contacto">Contacto</Link></div>
+        <div className="footer-nav"><small>Navegación</small><Link href="/nosotros">Nosotros</Link><Link href="/servicios">Servicios</Link><Link href="/ventas-de-epp">Venta de EPP</Link><Link href="/casos-de-exito">Casos de éxito</Link><Link href="/contacto">Contacto</Link></div>
         <div><small>Contacto</small><a href="tel:+56971401031">+56 9 7140 1031</a><a href="mailto:contacto@assel.cl">contacto@assel.cl</a><p>Santiago de Chile</p></div>
         <div><small>Síguenos</small><a className="footer-social-link" href="https://www.linkedin.com/in/crist%C3%B3bal-vald%C3%A9s-85a6b81a5/" target="_blank" rel="noopener noreferrer" aria-label="Visitar el perfil de LinkedIn"><span className="footer-social-icon linkedin"><LinkedInIcon /></span><span>LinkedIn</span></a><a className="footer-social-link" href="https://www.instagram.com/assel_asesorias/" target="_blank" rel="noopener noreferrer" aria-label="Visitar el perfil de Instagram de ASSEL Asesorías"><span className="footer-social-icon instagram"><InstagramIcon /></span><span>Instagram</span></a><Link href="/admin">Panel de demostración</Link></div>
       </div>

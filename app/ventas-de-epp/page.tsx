@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { PageHero } from '../components/page-hero';
 
 export const metadata: Metadata = {
-  title: 'Ventas de EPP',
+  title: 'Venta de EPP',
   description: 'ASSEL distribuye elementos de protección personal para empresas y clientes B2B, con orientación técnica para compras corporativas.',
 };
 
@@ -39,7 +39,7 @@ export default function VentasEppPage() {
     <main className="inner-page epp-page">
       <PageHero
         index="04"
-        eyebrow="Ventas de EPP"
+        eyebrow="Venta de EPP"
         title="Distribución B2B."
         accent="Protección para empresas."
         intro="ASSEL también abastece elementos de protección personal para clientes empresariales, integrando criterio técnico, disponibilidad y acompañamiento preventivo."

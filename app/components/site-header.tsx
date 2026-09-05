@@ -9,7 +9,7 @@ const links = [
   ['/', 'Inicio'],
   ['/nosotros', 'Nosotros'],
   ['/servicios', 'Servicios'],
-  ['/ventas-de-epp', 'Ventas de EPP'],
+  ['/ventas-de-epp', 'Venta de EPP'],
   ['/casos-de-exito', 'Casos de éxito'],
 ];
 
