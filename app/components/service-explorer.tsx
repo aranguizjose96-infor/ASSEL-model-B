@@ -1,21 +1,13 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { type Service } from '../lib/content';
 import { useSiteContent } from './content-provider';
 
 export function ServiceExplorer() {
   const { content } = useSiteContent();
-  const [start, setStart] = useState(0);
   const [selected, setSelected] = useState<Service | null>(null);
   const services = content.services;
-  const visible = useMemo(() => services.length ? [0, 1, 2].map((offset) => services[(start + offset) % services.length]) : [], [services, start]);
-
-  useEffect(() => {
-    if (services.length < 2 || selected) return;
-    const timer = window.setInterval(() => setStart((value) => (value + 1) % services.length), 6000);
-    return () => window.clearInterval(timer);
-  }, [services.length, selected]);
 
   useEffect(() => {
     const close = (event: KeyboardEvent) => { if (event.key === 'Escape') setSelected(null); };
@@ -23,22 +15,19 @@ export function ServiceExplorer() {
     return () => window.removeEventListener('keydown', close);
   }, []);
 
-  const move = (direction: number) => setStart((value) => (value + direction + services.length) % services.length);
-
   return (
     <>
       <section className="service-explorer">
-        <div className="carousel-controls"><p>Explora nuestras soluciones</p><div><button onClick={() => move(-1)} aria-label="Servicios anteriores">←</button><span>{String(start + 1).padStart(2, '0')} / {String(services.length).padStart(2, '0')}</span><button onClick={() => move(1)} aria-label="Servicios siguientes">→</button></div></div>
-        <div className="services-carousel" aria-live="polite">
-          {visible.map((service, index) => service && (
-            <article className={`carousel-card card-${index}`} key={`${service.id}-${index}`}>
+        <div className="services-list-head"><p>Explora nuestras soluciones</p><span>{String(services.length).padStart(2, '0')} servicios disponibles</span></div>
+        <div className="services-card-grid">
+          {services.map((service) => (
+            <article className="service-tile" key={service.id}>
               <img src={service.image} alt="" />
-              <div className="carousel-card-overlay" />
-              <div className="carousel-card-content"><div><span>{service.number}</span><small>{service.tag}</small></div><h2>{service.title}</h2><p>{service.summary}</p><button onClick={() => setSelected(service)}>Ver detalle <span>↗</span></button></div>
+              <div className="service-tile-overlay" />
+              <div className="service-tile-content"><div><span>{service.number}</span><small>{service.tag}</small></div><h2>{service.title}</h2><p>{service.summary}</p><button onClick={() => setSelected(service)}>Ver detalle <span>↗</span></button></div>
             </article>
           ))}
         </div>
-        <div className="carousel-dots">{services.map((service, index) => <button key={service.id} className={index === start ? 'active' : ''} onClick={() => setStart(index)} aria-label={`Ir al servicio ${index + 1}`} />)}</div>
       </section>
 
       <section className="method-section">

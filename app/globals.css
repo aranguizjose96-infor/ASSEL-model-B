@@ -639,28 +639,23 @@ nav a.active::after {
 .product-process article p { margin: 0; color: #617175; font-size: 13px; line-height: 1.65; }
 
 /* Services */
-.service-explorer { padding: 100px max(48px, calc((100% - 1320px) / 2)) 120px; }
-.carousel-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
-.carousel-controls > p { margin: 0; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
-.carousel-controls > div { display: flex; align-items: center; gap: 18px; }
-.carousel-controls button { width: 43px; height: 43px; border: 1px solid #bdc8c3; background: transparent; color: var(--ink); cursor: pointer; }
-.carousel-controls span { font-size: 12px; letter-spacing: .1em; color: #758386; }
-.services-carousel { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-.carousel-card { position: relative; min-height: 520px; overflow: hidden; color: white; background: var(--ink); }
-.carousel-card > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.65); transition: transform .5s ease; }
-.carousel-card:hover > img { transform: scale(1.045); }
-.carousel-card-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(4,24,31,.96), rgba(4,24,31,.06) 75%); }
-.carousel-card-content { position: absolute; inset: 0; padding: 26px; display: flex; flex-direction: column; justify-content: flex-end; }
-.carousel-card-content > div { position: absolute; left: 26px; right: 26px; top: 24px; display: flex; justify-content: space-between; }
-.carousel-card-content > div span { color: var(--green); font-size: 12px; }
-.carousel-card-content > div small { font-size: 12px; text-transform: uppercase; letter-spacing: .12em; }
-.carousel-card h2 { margin: 0; font-size: 30px; line-height: 1.02; letter-spacing: -.04em; }
-.carousel-card p { margin: 14px 0 22px; color: rgba(255,255,255,.65); font-size: 14px; line-height: 1.6; }
-.carousel-card button { padding: 16px 0 0; display: flex; justify-content: space-between; border: 0; border-top: 1px solid rgba(255,255,255,.25); background: transparent; color: white; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
-.carousel-card button span { color: var(--green); font-size: 16px; }
-.carousel-dots { margin-top: 23px; display: flex; gap: 8px; }
-.carousel-dots button { width: 28px; height: 3px; padding: 0; border: 0; background: #cdd5d0; cursor: pointer; }
-.carousel-dots button.active { background: var(--green-deep); }
+.service-explorer { padding: 92px max(48px, calc((100% - 1320px) / 2)) 112px; }
+.services-list-head { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-bottom: 28px; }
+.services-list-head > p { margin: 0; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
+.services-list-head > span { color: #758386; font-size: 12px; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; }
+.services-card-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.service-tile { position: relative; min-height: 342px; overflow: hidden; color: white; background: var(--ink); }
+.service-tile > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.72) contrast(1.03); transition: transform .45s ease; }
+.service-tile:hover > img { transform: scale(1.04); }
+.service-tile-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(4,24,31,.94), rgba(4,24,31,.28) 68%, rgba(4,24,31,.1)); }
+.service-tile-content { position: absolute; inset: 0; padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; }
+.service-tile-content > div { position: absolute; left: 20px; right: 20px; top: 18px; display: flex; justify-content: space-between; gap: 12px; }
+.service-tile-content > div span { color: var(--green); font-size: 11px; font-weight: 800; }
+.service-tile-content > div small { font-size: 10px; text-align: right; text-transform: uppercase; letter-spacing: .12em; }
+.service-tile h2 { margin: 0; font-size: clamp(21px, 2vw, 25px); line-height: 1.05; letter-spacing: -.035em; }
+.service-tile p { margin: 11px 0 17px; color: rgba(255,255,255,.72); font-size: 13px; line-height: 1.5; }
+.service-tile button { width: 100%; padding: 14px 0 0; display: flex; justify-content: space-between; border: 0; border-top: 1px solid rgba(255,255,255,.25); background: transparent; color: white; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-align: left; text-transform: uppercase; cursor: pointer; }
+.service-tile button span { color: var(--green); font-size: 15px; }
 .method-section { padding: 110px max(48px, calc((100% - 1320px) / 2)); display: grid; grid-template-columns: .75fr 1.25fr; gap: 100px; background: white; }
 .method-section h2 { margin: 0; font-size: clamp(42px, 4.2vw, 64px); line-height: 1; letter-spacing: -.055em; }
 .method-steps { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid #dbe2dd; border-left: 1px solid #dbe2dd; }
@@ -886,8 +881,7 @@ nav a.active::after {
   .about-section-heading > p:not(.eyebrow) { grid-column: 2; }
   .purpose-section > .about-section-heading { grid-template-columns: 1fr 1.4fr; }
   .products-intro > div { grid-template-columns: 1fr; gap: 25px; }
-  .services-carousel { grid-template-columns: 1fr 1fr; }
-  .carousel-card.card-2 { display: none; }
+  .services-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .case-preview-grid { grid-template-columns: 1fr 1fr; }
   .contact-layout { gap: 50px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -950,9 +944,9 @@ nav a.active::after {
   .product-value-grid h3 { margin-top: 35px; }
   .product-process article { min-height: 240px; }
   .service-explorer { padding: 70px 18px 80px; }
-  .services-carousel { grid-template-columns: 1fr; }
-  .carousel-card { min-height: 500px; }
-  .carousel-card.card-1, .carousel-card.card-2 { display: none; }
+  .services-list-head { align-items: flex-start; flex-direction: column; gap: 9px; }
+  .services-card-grid { grid-template-columns: 1fr; }
+  .service-tile { min-height: 360px; }
   .method-section { padding: 75px 20px; grid-template-columns: 1fr; gap: 50px; }
   .method-steps { grid-template-columns: 1fr; }
   .cases-intro > div { grid-template-columns: 1fr; gap: 25px; }
