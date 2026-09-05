@@ -10,21 +10,24 @@ export const metadata: Metadata = {
 const eppCategories = [
   {
     number: '01',
-    title: 'Protección personal',
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1400&q=82',
-    description: 'Cascos, lentes, guantes, calzado de seguridad, ropa de trabajo y equipos para labores operativas.',
+    title: 'Cabeza, vista y audición',
+    image: '/images/epp-elementos-proteccion-personal.png',
+    focus: '44% 46%',
+    description: 'Cascos, lentes de seguridad y protectores auditivos para labores en terreno, plantas y zonas operativas.',
   },
   {
     number: '02',
-    title: 'Control de riesgos',
-    image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1400&q=82',
-    description: 'Productos orientados a disminuir exposiciones en terreno, bodegas, plantas y faenas.',
+    title: 'Manos y respiración',
+    image: '/images/epp-elementos-proteccion-personal.png',
+    focus: '50% 86%',
+    description: 'Guantes de trabajo, mascarillas y respiradores para disminuir exposición a polvo, partículas y contacto directo.',
   },
   {
     number: '03',
-    title: 'Apoyo operacional',
-    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1400&q=82',
-    description: 'Suministros para continuidad, reposición programada y estandarización de compras por área.',
+    title: 'Ropa y calzado',
+    image: '/images/epp-elementos-proteccion-personal.png',
+    focus: '18% 50%',
+    description: 'Calzado de seguridad, ropa de trabajo y prendas de alta visibilidad para continuidad operacional.',
   },
 ];
 
@@ -43,7 +46,7 @@ export default function VentasEppPage() {
         title="Distribución B2B."
         accent="Protección para empresas."
         intro="ASSEL también abastece elementos de protección personal para clientes empresariales, integrando criterio técnico, disponibilidad y acompañamiento preventivo."
-        image="https://images.unsplash.com/photo-1605152276897-4f618f831968?auto=format&fit=crop&w=2200&q=84"
+        image="/images/epp-elementos-proteccion-personal.png"
       />
 
       <section className="epp-intro">
@@ -59,7 +62,7 @@ export default function VentasEppPage() {
       <section className="epp-category-grid" aria-label="Categorías de elementos de protección personal">
         {eppCategories.map((category) => (
           <article className="epp-category-card" key={category.number}>
-            <img src={category.image} alt="" />
+            <img src={category.image} alt="" style={{ objectPosition: category.focus }} />
             <div>
               <span>{category.number}</span>
               <h2>{category.title}</h2>
