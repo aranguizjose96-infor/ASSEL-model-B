@@ -4,12 +4,7 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import { useSiteContent } from './content-provider';
 import { HeroVideoRotator } from './hero-video-rotator';
-
-const serviceResults: Record<string, string> = {
-  'gestion-preventiva': 'Una hoja de ruta preventiva clara y aplicable.',
-  'cumplimiento-documental': 'Evidencia ordenada, vigente y fácil de demostrar.',
-  capacitacion: 'Equipos que comprenden y aplican la prevención.',
-};
+import { siteContent } from '../lib/content';
 
 function ServiceIcon({ id }: { id: string }) {
   if (id === 'gestion-preventiva') {
@@ -37,6 +32,7 @@ function RailIcon({ type }: { type: 'evidence' | 'anticipation' | 'people' }) {
 
 export function HomePage() {
   const { content } = useSiteContent();
+  const copy = siteContent.home;
   const featuredServices = content.services.slice(0, 3);
   const featuredCases = content.cases.slice(0, 2);
 
@@ -66,44 +62,44 @@ export function HomePage() {
         <div className="hero-wash" />
         <div className="hero-content" id="inicio">
           <div className="hero-copy">
-            <p className="eyebrow"><span /> Gestión preventiva para empresas y comunidades que avanzan</p>
-            <h1>{content.heroTitle}<br /><em>{content.heroAccent}</em></h1>
-            <p className="hero-intro">{content.heroIntro}</p>
-            <div className="hero-actions"><Link className="button-primary" href="/contacto">Conversemos de tu empresa <span>→</span></Link><Link className="button-ghost" href="/servicios"><span className="play">＋</span> Explorar servicios</Link></div>
+            <p className="eyebrow"><span /> {copy.hero.eyebrow}</p>
+            <h1>{copy.hero.title}<br /><em>{copy.hero.accent}</em></h1>
+            <p className="hero-intro">{copy.hero.intro}</p>
+            <div className="hero-actions"><Link className="button-primary" href="/contacto">{copy.hero.primaryCta} <span>→</span></Link><Link className="button-ghost" href="/servicios"><span className="play">＋</span> {copy.hero.secondaryCta}</Link></div>
           </div>
           <aside className="assurance-card" aria-label="Método de trabajo ASSEL">
-            <div className="assurance-top"><span className="live-dot"><i /> Acompañamiento activo</span><span className="card-code">ASL / 360</span></div>
-            <div className="assurance-heading"><span className="orbit"><b>360°</b></span><div><small>Una mirada integral</small><h2>De la obligación<br />a la acción.</h2></div></div>
-            <div className="assurance-list"><div><span>01</span><p><b>Diagnosticar</b><small>Entender brechas y prioridades</small></p><i>✓</i></div><div><span>02</span><p><b>Implementar</b><small>Construir controles aplicables</small></p><i>✓</i></div><div><span>03</span><p><b>Acompañar</b><small>Medir, corregir y mejorar</small></p><i>✓</i></div></div>
-            <p className="assurance-foot">Santiago · Cobertura nacional</p>
+            <div className="assurance-top"><span className="live-dot"><i /> {copy.assurance.status}</span><span className="card-code">{copy.assurance.code}</span></div>
+            <div className="assurance-heading"><span className="orbit"><b>360°</b></span><div><small>{copy.assurance.kicker}</small><h2>{copy.assurance.title}</h2></div></div>
+            <div className="assurance-list">{copy.assurance.steps.map((step, index) => <div key={step.title}><span>0{index + 1}</span><p><b>{step.title}</b><small>{step.detail}</small></p><i>✓</i></div>)}</div>
+            <p className="assurance-foot">{copy.assurance.footer}</p>
           </aside>
         </div>
-        <div className="hero-rail"><p><RailIcon type="evidence" /><strong>Cumplimiento que se demuestra</strong></p><p><RailIcon type="anticipation" /><strong>Riesgos que se anticipan</strong></p><p><RailIcon type="people" /><strong>Equipos que se involucran</strong></p></div>
+        <div className="hero-rail"><p><RailIcon type="evidence" /><strong>{copy.rail[0]}</strong></p><p><RailIcon type="anticipation" /><strong>{copy.rail[1]}</strong></p><p><RailIcon type="people" /><strong>{copy.rail[2]}</strong></p></div>
       </section>
 
       <section className="services-preview">
         <div className="solutions-intro">
-          <div className="section-heading"><p className="eyebrow dark"><span /> Soluciones ASSEL</p><div><h2>Seguridad que se integra<br />a tu forma de trabajar.</h2><p>No entregamos documentos para archivar. Diseñamos sistemas preventivos claros, utilizables y sostenibles.</p></div></div>
+          <div className="section-heading"><p className="eyebrow dark"><span /> {copy.solutions.eyebrow}</p><div><h2>{copy.solutions.title}</h2><p>{copy.solutions.intro}</p></div></div>
           <div className="solutions-video" data-reveal>
             <video autoPlay muted loop playsInline preload="metadata" aria-label="Video de soluciones preventivas ASSEL en terreno">
               <source src="/videos/soluciones-assel.mp4" type="video/mp4" />
             </video>
           </div>
         </div>
-        <div className="service-grid">{featuredServices.map((service) => <article className="service-card" data-reveal key={service.id}><div className="service-meta"><span>{service.number}</span><small>{service.tag}</small></div><ServiceIcon id={service.id} /><h3>{service.title}</h3><p>{service.summary}</p><p className="service-result"><span>Resultado</span>{serviceResults[service.id] || service.benefits[0]}</p><Link href="/servicios">Conocer solución <span>↗</span></Link></article>)}</div>
-        <Link className="text-link section-link" href="/servicios">Ver todas las soluciones <span>→</span></Link>
+        <div className="service-grid">{featuredServices.map((service, index) => <article className="service-card" data-reveal key={service.id}><div className="service-meta"><span>{service.number}</span><small>{service.tag}</small></div><ServiceIcon id={service.id} /><h3>{service.title}</h3><p>{service.summary}</p><p className="service-result"><span>{copy.solutions.resultLabel}</span>{copy.solutions.results[index] || service.benefits[0]}</p><Link href="/servicios">{copy.solutions.cardLink} <span>↗</span></Link></article>)}</div>
+        <Link className="text-link section-link" href="/servicios">{copy.solutions.allLink} <span>→</span></Link>
       </section>
 
       <section className="why-section">
-        <div className="why-image"><img src="/images/assel-inspeccion-prevencion.webp" alt="Profesional de prevención asesorando a un trabajador durante una inspección industrial" /><div className="image-note"><small>Nuestro enfoque</small><strong>Presencia técnica.<br />Cercanía real.</strong></div></div>
-        <div className="why-content"><p className="eyebrow dark"><span /> Por qué ASSEL</p><h2>La prevención funciona cuando las personas pueden usarla.</h2><p>Convertimos normativa y conocimiento técnico en decisiones claras que jefaturas y equipos pueden aplicar en terreno.</p><div className="why-list"><div data-reveal><span>01</span><p><b>Mirada operacional</b><small>Soluciones diseñadas para funcionar en terreno.</small></p></div><div data-reveal><span>02</span><p><b>Acompañamiento cercano</b><small>Presentes desde el diagnóstico hasta la verificación.</small></p></div><div data-reveal><span>03</span><p><b>Evidencia y trazabilidad</b><small>Avances respaldados y listos para ser demostrados.</small></p></div></div><Link className="button-dark" href="/nosotros">Conoce nuestra forma de trabajar <span>↗</span></Link></div>
+        <div className="why-image"><img src="/images/assel-inspeccion-prevencion.webp" alt="Profesional de prevención asesorando a un trabajador durante una inspección industrial" /><div className="image-note"><small>{copy.why.imageKicker}</small><strong>{copy.why.imageTitle}</strong></div></div>
+        <div className="why-content"><p className="eyebrow dark"><span /> {copy.why.eyebrow}</p><h2>{copy.why.title}</h2><p>{copy.why.intro}</p><div className="why-list">{copy.why.attributes.map((attribute, index) => <div data-reveal key={attribute.title}><span>0{index + 1}</span><p><b>{attribute.title}</b><small>{attribute.detail}</small></p></div>)}</div><Link className="button-dark" href="/nosotros">{copy.why.cta} <span>↗</span></Link></div>
       </section>
 
-      <section className="regulation-band" data-reveal><div className="regulation-mark"><span className="regulation-number">44</span><p><small>Gestión preventiva actualizada</small><strong>DS N.º 44</strong></p></div><div className="regulation-copy"><span className="regulation-status">Normativa vigente</span><p>Apoyamos a tu empresa a construir una gestión preventiva participativa, documentada y orientada a la mejora continua.</p></div><Link href="/contacto">Evaluar mi situación <span>↗</span></Link></section>
+      <section className="regulation-band" data-reveal><div className="regulation-mark"><span className="regulation-number">44</span><p><small>{copy.regulation.kicker}</small><strong>{copy.regulation.title}</strong></p></div><div className="regulation-copy"><span className="regulation-status">{copy.regulation.status}</span><p>{copy.regulation.copy}</p></div><Link href="/contacto">{copy.regulation.cta} <span>↗</span></Link></section>
 
-      <section className="case-preview-section"><div className="case-preview-head"><div><p className="eyebrow dark"><span /> Experiencia aplicada</p><h2>Resultados que<br />se pueden explicar.</h2></div><p>Cada desafío requiere una respuesta distinta. Estos casos representan cómo convertimos brechas complejas en avances visibles.</p></div><div className="case-preview-grid">{featuredCases.map((item, index) => <Link href="/casos-de-exito" className="home-case" key={item.id}><img src={item.image} alt="" /><div className="home-case-overlay" /><span>0{index + 1} / {item.sector}</span><div><h3>{item.title}</h3><p>{item.metric}</p></div><b>↗</b></Link>)}</div></section>
+      <section className="case-preview-section"><div className="case-preview-head"><div><p className="eyebrow dark"><span /> {copy.cases.eyebrow}</p><h2>{copy.cases.title}</h2></div><p>{copy.cases.intro}</p></div><div className="case-preview-grid">{featuredCases.map((item, index) => <Link href="/casos-de-exito" className="home-case" key={item.id}><img src={item.image} alt="" /><div className="home-case-overlay" /><span>0{index + 1} / {item.sector}</span><div><h3>{item.title}</h3><p>{item.metric}</p></div><b>↗</b></Link>)}</div></section>
 
-      <section className="home-final-cta"><p className="eyebrow"><span /> Empecemos</p><h2>Tu próxima decisión preventiva<br />puede ser la más importante.</h2><Link className="button-primary" href="/contacto">Solicitar diagnóstico inicial <span>→</span></Link></section>
+      <section className="home-final-cta"><p className="eyebrow"><span /> {copy.finalCta.eyebrow}</p><h2>{copy.finalCta.title}</h2><Link className="button-primary" href="/contacto">{copy.finalCta.button} <span>→</span></Link></section>
     </main>
   );
 }

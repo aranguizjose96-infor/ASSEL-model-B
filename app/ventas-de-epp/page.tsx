@@ -1,67 +1,42 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PageHero } from '../components/page-hero';
+import { siteContent } from '../lib/content';
 
 export const metadata: Metadata = {
   title: 'Venta de EPP',
   description: 'ASSEL distribuye elementos de protección personal para empresas y clientes B2B, con orientación técnica para compras corporativas.',
 };
 
-const eppCategories = [
-  {
-    number: '01',
-    title: 'Cabeza, vista y audición',
-    image: '/images/epp-cabeza-vista-audicion.png',
-    description: 'Cascos, lentes de seguridad y protectores auditivos para labores en terreno, plantas y zonas operativas.',
-  },
-  {
-    number: '02',
-    title: 'Manos y respiración',
-    image: '/images/epp-manos-respiracion.png',
-    description: 'Guantes de trabajo, mascarillas y respiradores para disminuir exposición a polvo, partículas y contacto directo.',
-  },
-  {
-    number: '03',
-    title: 'Ropa y calzado',
-    image: '/images/epp-ropa-calzado.png',
-    description: 'Calzado de seguridad, ropa de trabajo y prendas de alta visibilidad para continuidad operacional.',
-  },
-];
-
-const b2bPoints = [
-  'Atención para empresas, instituciones y compras corporativas.',
-  'Selección de productos según actividad, exposición y necesidad operativa.',
-  'Cotizaciones y abastecimiento pensados para volumen, reposición y trazabilidad.',
-];
+const categoryImages = ['/images/epp-cabeza-vista-audicion.png', '/images/epp-manos-respiracion.png', '/images/epp-ropa-calzado.png'];
 
 export default function VentasEppPage() {
+  const copy = siteContent.epp;
   return (
     <main className="inner-page epp-page">
       <PageHero
         index="04"
-        eyebrow="Venta de EPP"
-        title="Distribución B2B."
-        accent="Protección para empresas."
-        intro="ASSEL también abastece elementos de protección personal para clientes empresariales, integrando criterio técnico, disponibilidad y acompañamiento preventivo."
+        eyebrow={copy.hero.eyebrow}
+        title={copy.hero.title}
+        accent={copy.hero.accent}
+        intro={copy.hero.intro}
         image="/images/epp-elementos-proteccion-personal.png"
       />
 
       <section className="epp-intro">
-        <p className="eyebrow dark"><span /> Abastecimiento corporativo</p>
+        <p className="eyebrow dark"><span /> {copy.intro.eyebrow}</p>
         <div>
-          <h2>Productos de seguridad para operaciones que necesitan continuidad.</h2>
-          <p>
-            Esta página informa la línea de distribución de EPP de ASSEL. No funciona como tienda online: el objetivo es orientar a empresas que requieren cotizar, planificar compras o estandarizar sus elementos de protección personal.
-          </p>
+          <h2>{copy.intro.title}</h2>
+          <p>{copy.intro.copy}</p>
         </div>
       </section>
 
       <section className="epp-category-grid" aria-label="Categorías de elementos de protección personal">
-        {eppCategories.map((category) => (
-          <article className="epp-category-card" key={category.number}>
-            <img src={category.image} alt="" />
+        {copy.categories.map((category, index) => (
+          <article className="epp-category-card" key={category.title}>
+            <img src={categoryImages[index]} alt="" />
             <div>
-              <span>{category.number}</span>
+              <span>0{index + 1}</span>
               <h2>{category.title}</h2>
               <p>{category.description}</p>
             </div>
@@ -71,11 +46,11 @@ export default function VentasEppPage() {
 
       <section className="epp-b2b-band">
         <div>
-          <p className="eyebrow"><span /> Clientes B2B</p>
-          <h2>Distribución para empresas, no venta minorista.</h2>
+          <p className="eyebrow"><span /> {copy.b2b.eyebrow}</p>
+          <h2>{copy.b2b.title}</h2>
         </div>
         <div className="epp-b2b-list">
-          {b2bPoints.map((point, index) => (
+          {copy.b2b.points.map((point, index) => (
             <article key={point}>
               <span>0{index + 1}</span>
               <p>{point}</p>
@@ -86,21 +61,19 @@ export default function VentasEppPage() {
 
       <section className="epp-supply-note">
         <div>
-          <p className="eyebrow dark"><span /> Como trabajamos</p>
-          <h2>Primero entendemos la operación, luego recomendamos el abastecimiento.</h2>
+          <p className="eyebrow dark"><span /> {copy.process.eyebrow}</p>
+          <h2>{copy.process.title}</h2>
         </div>
-        <p>
-          La venta de EPP se coordina mediante contacto directo. Revisamos rubro, cantidad, uso esperado y condiciones de trabajo para apoyar una compra coherente con la realidad de cada empresa.
-        </p>
+        <p>{copy.process.copy}</p>
       </section>
 
       <section className="inner-cta">
         <div>
-          <p className="eyebrow"><span /> Solicitud empresarial</p>
-          <h2>Conversemos sobre los EPP que necesita tu equipo.</h2>
-          <p>Podemos apoyar compras puntuales, reposicion periodica o levantamientos por area de trabajo.</p>
+          <p className="eyebrow"><span /> {copy.cta.eyebrow}</p>
+          <h2>{copy.cta.title}</h2>
+          <p>{copy.cta.intro}</p>
         </div>
-        <Link className="button-primary" href="/contacto">Solicitar cotización B2B <span>→</span></Link>
+        <Link className="button-primary" href="/contacto">{copy.cta.button} <span>→</span></Link>
       </section>
     </main>
   );

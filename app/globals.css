@@ -835,6 +835,7 @@ nav a.active::after {
 .admin-login-card form .button-dark { width: 100%; margin-top: 10px; }
 .admin-login-card form > small { display: block; margin-top: 16px; text-align: center; color: #839092; font-size: 12px; }
 .login-error { padding: 10px; background: #f4e5e2; color: #984134; font-size: 12px; }
+.admin-loading { padding: 24px; color: #657579; font-size: 14px; }
 .admin-page { min-height: 100vh; display: grid; grid-template-columns: 280px 1fr; background: #eef1ec; }
 .admin-sidebar { position: sticky; top: 0; height: 100vh; padding: 32px 27px; display: flex; flex-direction: column; background: var(--ink); color: white; }
 .admin-sidebar nav { margin-top: 80px; display: flex; flex-direction: column; gap: 5px; }
@@ -849,11 +850,19 @@ nav a.active::after {
 .admin-workspace > header { display: flex; justify-content: space-between; align-items: end; }
 .admin-workspace > header small { color: #758487; font-size: 12px; text-transform: uppercase; letter-spacing: .12em; }
 .admin-workspace > header h1 { margin: 6px 0 0; font-size: 43px; letter-spacing: -.045em; }
+.admin-header-actions { display: flex; gap: 10px; }
 .reset-button { padding: 10px 13px; border: 1px solid #bdc8c3; background: transparent; color: #627276; font-size: 12px; cursor: pointer; }
-.demo-warning { margin: 30px 0; padding: 15px 18px; display: flex; gap: 18px; background: #e3f2ca; font-size: 12px; }
-.demo-warning span { color: #5e6e65; }
-.admin-notice { position: fixed; z-index: 5; right: 30px; top: 30px; padding: 14px 20px; background: var(--green); color: var(--ink); box-shadow: 0 10px 30px rgba(0,0,0,.15); font-size: 12px; font-weight: 800; }
-.admin-editor { padding: 35px; background: white; }
+.admin-publish-button { padding: 11px 18px; border: 0; background: var(--ink); color: white; font-size: 12px; font-weight: 800; cursor: pointer; }
+.admin-publish-button:disabled, .reset-button:disabled { opacity: .45; cursor: not-allowed; }
+.admin-publish-status { margin: 28px 0 18px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px; border: 1px solid #d6ded9; background: rgba(255,255,255,.65); }
+.admin-publish-status > span { width: 9px; height: 9px; margin-top: 5px; flex: 0 0 9px; border-radius: 50%; background: #91a09a; }
+.admin-publish-status.is-deploying > span { background: #e4a32d; animation: livePulse 1.2s infinite; }
+.admin-publish-status.is-live > span { background: #63b719; }
+.admin-publish-status.is-error > span { background: #b24e3e; }
+.admin-publish-status b { display: block; font-size: 13px; }
+.admin-publish-status p { margin: 3px 0 0; color: #657579; font-size: 12px; line-height: 1.45; }
+.admin-page-editor { display: flex; flex-direction: column; gap: 14px; }
+.admin-editor { padding: 30px; background: white; }
 .editor-title, .admin-section-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
 .editor-title span { color: #758487; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; }
 .editor-title h2 { margin: 5px 0 0; font-size: 25px; }
@@ -865,7 +874,13 @@ nav a.active::after {
 .editor-preview p { max-width: 650px; color: rgba(255,255,255,.6); line-height: 1.6; }
 .admin-section-head p { color: #627276; font-size: 13px; }
 .admin-list { display: flex; flex-direction: column; gap: 10px; }
-.admin-item { background: white; }
+.admin-object-fields, .admin-array-list { display: flex; flex-direction: column; gap: 14px; }
+.admin-nested-group { padding: 20px; border: 1px solid #e0e6e1; background: #f8faf7; }
+.admin-nested-group > h3 { margin: 0 0 18px; color: #526467; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.admin-copy-field { margin: 0 !important; }
+.admin-copy-field > span { color: #657579; font-size: 12px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+.admin-copy-field input, .admin-copy-field textarea { margin-top: 8px; }
+.admin-item { border: 1px solid #e0e6e1; background: white; }
 .admin-item summary { min-height: 72px; padding: 15px 20px; display: grid; grid-template-columns: 55px 1fr 30px; align-items: center; cursor: pointer; list-style: none; }
 .admin-item summary > span { color: var(--green-deep); font-size: 12px; }
 .admin-item summary > div { display: flex; flex-direction: column; }
@@ -873,7 +888,17 @@ nav a.active::after {
 .admin-item summary small { margin-top: 4px; color: #7a888a; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; }
 .admin-item summary i { font-style: normal; font-size: 18px; }
 .admin-item[open] summary i { transform: rotate(45deg); }
-.admin-item form { padding: 25px; border-top: 1px solid #e1e6e2; }
+.admin-item-fields { padding: 22px; border-top: 1px solid #e1e6e2; }
+.admin-history { padding: 30px; background: white; }
+.admin-history-intro h2 { margin: 0 0 8px; font-size: 27px; }
+.admin-history-intro p { max-width: 720px; margin: 0 0 28px; color: #657579; line-height: 1.6; }
+.admin-history-list { display: flex; flex-direction: column; }
+.admin-history-list article { padding: 18px 0; display: flex; justify-content: space-between; align-items: center; gap: 24px; border-top: 1px solid #e0e6e1; }
+.admin-history-list article div { display: flex; flex-direction: column; gap: 5px; }
+.admin-history-list article b { font-size: 14px; }
+.admin-history-list article span, .admin-history-list article a { color: #738184; font-size: 12px; }
+.admin-history-list article a { color: var(--green-deep); }
+.admin-history-list article button { padding: 10px 13px; border: 1px solid #bdc8c3; background: transparent; color: #425457; font-size: 12px; cursor: pointer; }
 .editor-actions { display: flex; justify-content: space-between; }
 .delete-button { padding: 10px 14px; border: 1px solid #d9a9a2; background: transparent; color: #a0473a; font-size: 12px; cursor: pointer; }
 
@@ -1007,7 +1032,9 @@ nav a.active::after {
   .admin-sidebar-foot { margin-top: 35px; }
   .admin-workspace { padding: 40px 17px 70px; }
   .admin-workspace > header { align-items: flex-start; flex-direction: column; gap: 20px; }
-  .demo-warning { flex-direction: column; }
+  .admin-header-actions { width: 100%; }
+  .admin-header-actions button { flex: 1; }
   .admin-editor { padding: 24px 18px; }
   .editor-title { align-items: flex-start; flex-direction: column; gap: 20px; }
+  .admin-history-list article { align-items: flex-start; flex-direction: column; }
 }

@@ -4,22 +4,10 @@ import { useEffect, type CSSProperties } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PageHero } from '../components/page-hero';
-
-const methodSteps = [
-  ['01', 'Escuchar', 'Comprendemos la operación, sus personas y prioridades reales.'],
-  ['02', 'Diagnosticar', 'Identificamos brechas, riesgos y oportunidades de mejora.'],
-  ['03', 'Diseñar', 'Construimos una solución proporcional, clara y aplicable.'],
-  ['04', 'Acompañar', 'Implementamos, medimos y ajustamos junto a cada equipo.'],
-];
-
-const scales = [
-  ['01', 'Personas', 'Orientación directa para profesionales y responsables de pequeñas operaciones.'],
-  ['02', 'Micro y pequeñas empresas', 'Bases preventivas simples, ordenadas y preparadas para crecer.'],
-  ['03', 'Pymes', 'Gestión continua que conecta cumplimiento, operación y cultura.'],
-  ['04', 'Organizaciones globales', 'Trazabilidad y criterios consistentes entre sedes, procesos y equipos.'],
-];
+import { siteContent } from '../lib/content';
 
 export function NosotrosContent() {
+  const copy = siteContent.about;
   useEffect(() => {
     const elements = Array.from(document.querySelectorAll<HTMLElement>('[data-about-reveal], [data-about-method]'));
     if (!('IntersectionObserver' in window)) {
@@ -38,52 +26,52 @@ export function NosotrosContent() {
   }, []);
 
   return <main className="inner-page about-page">
-    <PageHero index="02" eyebrow="Quiénes somos" title="Aliados presentes." accent="Valor que permanece." intro="Integramos prevención, gestión y acompañamiento para proteger a las personas y fortalecer el negocio." image="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=84" />
+    <PageHero index="02" eyebrow={copy.hero.eyebrow} title={copy.hero.title} accent={copy.hero.accent} intro={copy.hero.intro} image="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=84" />
 
     <section className="about-story">
-      <div className="about-lead" data-about-reveal><p className="eyebrow dark"><span /> 01 · Propuesta de valor</p><h2>La prevención es una inversión que protege, ordena y permite avanzar.</h2></div>
-      <div className="about-copy" data-about-reveal><p>ASSEL transforma exigencias legales y riesgos operativos en decisiones comprensibles, controles utilizables y capacidades que permanecen dentro de la organización.</p><p>Más que entregar documentos, colaboramos para reducir incertidumbre, cuidar a las personas y agregar valor sostenible al negocio.</p><div className="signature"><span>AS</span><p><strong>Colaboración estratégica ASSEL</strong><small>Criterio técnico · Presencia activa · Valor sostenible</small></p></div></div>
+      <div className="about-lead" data-about-reveal><p className="eyebrow dark"><span /> {copy.value.eyebrow}</p><h2>{copy.value.title}</h2></div>
+      <div className="about-copy" data-about-reveal>{copy.value.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}<div className="signature"><span>AS</span><p><strong>{copy.value.signatureTitle}</strong><small>{copy.value.signatureDetail}</small></p></div></div>
     </section>
 
     <section className="about-team">
-      <div className="about-team-heading" data-about-reveal><p className="eyebrow"><span /> 02 · Quiénes forman ASSEL</p><h2>Dos miradas.<br />Un mismo compromiso.</h2><p>ASSEL reúne criterio estratégico y acompañamiento técnico para conectar la prevención con la realidad de cada organización.</p><small>Fotografías provisionales · Se reemplazarán con imágenes oficiales.</small></div>
+      <div className="about-team-heading" data-about-reveal><p className="eyebrow"><span /> {copy.team.eyebrow}</p><h2>{copy.team.title}</h2><p>{copy.team.intro}</p><small>{copy.team.note}</small></div>
       <div className="team-profiles">
         <article data-about-reveal>
           <div className="team-portrait"><Image src="/images/perfil-provisorio-01.png" alt="Retrato provisional de Cristóbal Andrés Valdés Navarrete" width={500} height={500} sizes="(max-width: 760px) 230px, 250px" /><span>01</span></div>
-          <div className="team-profile-copy"><small>CEO</small><h3>Cristóbal Andrés Valdés Navarrete</h3><p>Ingeniero en Prevención de Riesgos · ITOP · NFPA 25 · Instructor de Trabajos Críticos</p><a className="team-profile-email" href="mailto:cristobal.valdes@assel.cl">cristobal.valdes@assel.cl</a></div>
+          <div className="team-profile-copy"><small>{copy.team.members[0].role}</small><h3>{copy.team.members[0].name}</h3><p>{copy.team.members[0].credentials}</p><a className="team-profile-email" href={`mailto:${copy.team.members[0].email}`}>{copy.team.members[0].email}</a></div>
         </article>
         <article data-about-reveal>
           <div className="team-portrait"><Image src="/images/perfil-provisorio-01.png" alt="Retrato provisional de Hernán Patricio Valdés Chacón" width={500} height={500} sizes="(max-width: 760px) 230px, 250px" /><span>02</span></div>
-          <div className="team-profile-copy"><small>Cofundador</small><h3>Hernán Patricio Valdés Chacón</h3><p>Ingeniero Mecánico · Ingeniero Civil Industrial · MBA · Coach Integral</p><a className="team-profile-email" href="mailto:hernan.valdes@assel.cl">hernan.valdes@assel.cl</a></div>
+          <div className="team-profile-copy"><small>{copy.team.members[1].role}</small><h3>{copy.team.members[1].name}</h3><p>{copy.team.members[1].credentials}</p><a className="team-profile-email" href={`mailto:${copy.team.members[1].email}`}>{copy.team.members[1].email}</a></div>
         </article>
       </div>
     </section>
 
     <section className="about-evidence">
-      <div className="about-section-heading" data-about-reveal><p className="eyebrow dark"><span /> 03 · Experiencia y respaldo</p><h2>Confianza que se construye con evidencia.</h2><p>Este espacio está preparado para incorporar antecedentes verificables de ASSEL sin promesas genéricas ni cifras inventadas.</p></div>
-      <div className="evidence-grid"><article data-about-reveal><span>Experiencia</span><strong>Trayectoria profesional</strong><p>Años de experiencia y proyectos ejecutados se incorporarán cuando sean confirmados.</p><small>Dato por validar</small></article><article data-about-reveal><span>Credenciales</span><strong>Competencias demostrables</strong><p>Títulos, registros y certificaciones del equipo tendrán respaldo verificable.</p><small>Dato por validar</small></article><article data-about-reveal><span>Sectores</span><strong>Aplicación multisectorial</strong><p>Servicios, industria, logística, comercio y organizaciones con realidades diversas.</p><small>Cobertura por confirmar</small></article></div>
+      <div className="about-section-heading" data-about-reveal><p className="eyebrow dark"><span /> {copy.evidence.eyebrow}</p><h2>{copy.evidence.title}</h2><p>{copy.evidence.intro}</p></div>
+      <div className="evidence-grid">{copy.evidence.items.map((item) => <article data-about-reveal key={item.label}><span>{item.label}</span><strong>{item.title}</strong><p>{item.copy}</p><small>{item.note}</small></article>)}</div>
     </section>
 
     <section className="about-method">
-      <div className="about-section-heading" data-about-reveal><p className="eyebrow"><span /> 04 · Método de colaboración</p><h2>Trabajamos con tu empresa, no alrededor de ella.</h2><p>Un proceso continuo que convierte el diagnóstico en acción y la acción en mejora demostrable.</p></div>
-      <div className="about-method-track" data-about-method>{methodSteps.map(([number, title, copy]) => <article data-about-reveal key={number}><span>{number}</span><i /><h3>{title}</h3><p>{copy}</p></article>)}</div>
+      <div className="about-section-heading" data-about-reveal><p className="eyebrow"><span /> {copy.method.eyebrow}</p><h2>{copy.method.title}</h2><p>{copy.method.intro}</p></div>
+      <div className="about-method-track" data-about-method>{copy.method.steps.map((step, index) => <article data-about-reveal key={step.title}><span>0{index + 1}</span><i /><h3>{step.title}</h3><p>{step.copy}</p></article>)}</div>
     </section>
 
     <section className="scale-band about-scale">
-      <div data-about-reveal><p className="eyebrow"><span /> 05 · Alcance adaptable</p><h2>La misma cercanía.<br />Una escala diferente.</h2><p className="scale-intro">La solución crece en profundidad y alcance según la complejidad de cada organización.</p></div>
-      <div className="scale-progression">{scales.map(([number, title, copy], index) => <article data-about-reveal key={number}><div className="scale-level" style={{ '--scale-level': `${25 + index * 25}%` } as CSSProperties}><span>{number}</span><i /></div><div><strong>{title}</strong><p>{copy}</p></div></article>)}</div>
+      <div data-about-reveal><p className="eyebrow"><span /> {copy.scale.eyebrow}</p><h2>{copy.scale.title}</h2><p className="scale-intro">{copy.scale.intro}</p></div>
+      <div className="scale-progression">{copy.scale.items.map((item, index) => <article data-about-reveal key={item.title}><div className="scale-level" style={{ '--scale-level': `${25 + index * 25}%` } as CSSProperties}><span>0{index + 1}</span><i /></div><div><strong>{item.title}</strong><p>{item.copy}</p></div></article>)}</div>
     </section>
 
     <section className="purpose-section">
-      <div className="about-section-heading" data-about-reveal><p className="eyebrow dark"><span /> 06 · Nuestra dirección</p><h2>Un propósito común, tres compromisos claros.</h2></div>
-      <div className="purpose-grid purpose-grid-balanced"><article className="purpose-card-featured" data-about-reveal><small>01 / Propósito</small><h3>Co-crear entornos seguros, éticos y confiables que conviertan la seguridad y el bienestar en valor para las personas y el negocio.</h3></article><article data-about-reveal><small>02 / Misión</small><h3>Acompañar a nuestros clientes en la gestión de riesgos, fortaleciendo su operación y construyendo culturas de trabajo seguras y saludables.</h3></article><article data-about-reveal><small>03 / Visión</small><h3>Ser referentes en prevención y bienestar laboral por transformar organizaciones mediante colaboración, confianza y excelencia.</h3></article></div>
+      <div className="about-section-heading" data-about-reveal><p className="eyebrow dark"><span /> {copy.purpose.eyebrow}</p><h2>{copy.purpose.title}</h2></div>
+      <div className="purpose-grid purpose-grid-balanced">{copy.purpose.items.map((item, index) => <article className={index === 0 ? 'purpose-card-featured' : ''} data-about-reveal key={item.label}><small>{item.label}</small><h3>{item.copy}</h3></article>)}</div>
     </section>
 
     <section className="commercial-strategy">
-      <div className="strategy-heading" data-about-reveal><p className="eyebrow dark"><span /> 07 · Estrategia integral</p><h2>Entornos seguros.<br />Negocios más sólidos.</h2><p>La seguridad deja de ser un gasto aislado cuando responde de forma simultánea a las necesidades legales, operativas y humanas.</p></div>
-      <div className="strategy-body" data-about-reveal><blockquote>Una sola relación de colaboración para proteger personas, asegurar continuidad y demostrar cumplimiento.</blockquote><div className="strategy-pillars"><article><span>01</span><h3>Valor legal</h3><p>Obligaciones vigentes, evidencia disponible y menor exposición.</p></article><article><span>02</span><h3>Valor operacional</h3><p>Controles aplicables, menos interrupciones y mejores decisiones.</p></article><article><span>03</span><h3>Valor humano</h3><p>Equipos protegidos, involucrados y capaces de sostener mejoras.</p></article></div></div>
+      <div className="strategy-heading" data-about-reveal><p className="eyebrow dark"><span /> {copy.strategy.eyebrow}</p><h2>{copy.strategy.title}</h2><p>{copy.strategy.intro}</p></div>
+      <div className="strategy-body" data-about-reveal><blockquote>{copy.strategy.quote}</blockquote><div className="strategy-pillars">{copy.strategy.pillars.map((pillar, index) => <article key={pillar.title}><span>0{index + 1}</span><h3>{pillar.title}</h3><p>{pillar.copy}</p></article>)}</div></div>
     </section>
 
-    <section className="inner-cta"><div><p className="eyebrow"><span /> Conversemos</p><h2>Diseñemos una prevención proporcional a tu realidad.</h2><p>Partimos escuchando tu operación, sus riesgos y sus objetivos.</p></div><Link className="button-primary" href="/contacto">Iniciar una conversación <span>→</span></Link></section>
+    <section className="inner-cta"><div><p className="eyebrow"><span /> {copy.cta.eyebrow}</p><h2>{copy.cta.title}</h2><p>{copy.cta.intro}</p></div><Link className="button-primary" href="/contacto">{copy.cta.button} <span>→</span></Link></section>
   </main>;
 }

@@ -1,8 +1,10 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import { siteContent } from '../lib/content';
 
 export function ContactForm() {
+  const copy = siteContent.contact.form;
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [statusMessage, setStatusMessage] = useState('');
@@ -45,7 +47,7 @@ export function ContactForm() {
       formElement.reset();
       setErrors({});
       setStatus('success');
-      setStatusMessage('Gracias. Recibimos tu solicitud y te responderemos dentro de un día hábil.');
+      setStatusMessage(copy.success);
     } catch (error) {
       setStatus('error');
       setStatusMessage(error instanceof Error ? error.message : 'No pudimos enviar el mensaje. Inténtalo nuevamente.');
@@ -54,12 +56,12 @@ export function ContactForm() {
 
   return (
     <form className="contact-form" onSubmit={submit} noValidate aria-busy={status === 'sending'}>
-      <div className="form-heading"><p className="eyebrow dark"><span /> Solicitud de contacto</p><span>Respondemos habitualmente dentro de un día hábil.</span></div>
-      <div className="field-row"><label>Nombre y apellido *<input name="nombre" autoComplete="name" maxLength={120} aria-invalid={!!errors.nombre} />{errors.nombre && <small>{errors.nombre}</small>}</label><label>Empresa<input name="empresa" autoComplete="organization" maxLength={160} /></label></div>
-      <div className="field-row"><label>Correo electrónico *<input name="correo" type="email" autoComplete="email" maxLength={254} aria-invalid={!!errors.correo} />{errors.correo && <small>{errors.correo}</small>}</label><label>Teléfono<input name="telefono" type="tel" autoComplete="tel" maxLength={50} /></label></div>
-      <label>Mensaje *<textarea name="mensaje" rows={5} maxLength={4000} placeholder="Cuéntanos sobre tu empresa, proyecto o necesidad..." aria-invalid={!!errors.mensaje} />{errors.mensaje && <small>{errors.mensaje}</small>}</label>
+      <div className="form-heading"><p className="eyebrow dark"><span /> {copy.eyebrow}</p><span>{copy.responseTime}</span></div>
+      <div className="field-row"><label>{copy.name}<input name="nombre" autoComplete="name" maxLength={120} aria-invalid={!!errors.nombre} />{errors.nombre && <small>{errors.nombre}</small>}</label><label>{copy.company}<input name="empresa" autoComplete="organization" maxLength={160} /></label></div>
+      <div className="field-row"><label>{copy.email}<input name="correo" type="email" autoComplete="email" maxLength={254} aria-invalid={!!errors.correo} />{errors.correo && <small>{errors.correo}</small>}</label><label>{copy.phone}<input name="telefono" type="tel" autoComplete="tel" maxLength={50} /></label></div>
+      <label>{copy.message}<textarea name="mensaje" rows={5} maxLength={4000} placeholder={copy.placeholder} aria-invalid={!!errors.mensaje} />{errors.mensaje && <small>{errors.mensaje}</small>}</label>
       <label className="contact-honeypot" aria-hidden="true">Sitio web<input name="website" tabIndex={-1} autoComplete="off" /></label>
-      <button className="submit-button" type="submit" disabled={status === 'sending'}>{status === 'sending' ? 'Enviando…' : 'Enviar solicitud'} <span>→</span></button>
+      <button className="submit-button" type="submit" disabled={status === 'sending'}>{status === 'sending' ? copy.sending : copy.button} <span>→</span></button>
       <div className={`form-status ${status}`} role="status" aria-live="polite">{statusMessage}</div>
     </form>
   );

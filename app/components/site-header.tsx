@@ -4,13 +4,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { siteContent } from '../lib/content';
 
 const links = [
-  ['/', 'Inicio'],
-  ['/nosotros', 'Nosotros'],
-  ['/servicios', 'Servicios'],
-  ['/ventas-de-epp', 'Venta de EPP'],
-  ['/casos-de-exito', 'Casos de éxito'],
+  ['/', siteContent.general.navigation.home],
+  ['/nosotros', siteContent.general.navigation.about],
+  ['/servicios', siteContent.general.navigation.services],
+  ['/ventas-de-epp', siteContent.general.navigation.epp],
+  ['/casos-de-exito', siteContent.general.navigation.cases],
 ];
 
 export function SiteHeader() {
@@ -38,7 +39,7 @@ export function SiteHeader() {
           {links.map(([href, label]) => <Link className={pathname === href ? 'active' : ''} href={href} key={href}>{label}</Link>)}
         </nav>
 
-        <Link className="header-cta" href="/contacto">Solicitar asesoría <span aria-hidden="true">↗</span></Link>
+        <Link className="header-cta" href="/contacto">{siteContent.general.navigation.cta} <span aria-hidden="true">↗</span></Link>
         <button className="menu-button" type="button" onClick={() => setOpenPath(open ? null : pathname)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? 'Cerrar menú' : 'Abrir menú'}>
           <span /><span />
         </button>
@@ -47,9 +48,9 @@ export function SiteHeader() {
       <div className="mobile-menu" id="mobile-menu">
         <nav aria-label="Navegación móvil">
           {links.map(([href, label], index) => <Link href={href} onClick={() => setOpenPath(null)} key={href}><small>0{index + 1}</small>{label}<span>↗</span></Link>)}
-          <Link href="/contacto" onClick={() => setOpenPath(null)}><small>06</small>Contáctanos<span>↗</span></Link>
+          <Link href="/contacto" onClick={() => setOpenPath(null)}><small>06</small>{siteContent.general.navigation.contact}<span>↗</span></Link>
         </nav>
-        <p>Santiago de Chile · Cobertura nacional</p>
+        <p>{siteContent.general.coverage}</p>
       </div>
     </header>
   );
