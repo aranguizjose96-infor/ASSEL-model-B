@@ -11,22 +11,19 @@ const eppCategories = [
   {
     number: '01',
     title: 'Cabeza, vista y audición',
-    image: '/images/epp-elementos-proteccion-personal.png',
-    focus: '44% 46%',
+    image: '/images/epp-cabeza-vista-audicion.png',
     description: 'Cascos, lentes de seguridad y protectores auditivos para labores en terreno, plantas y zonas operativas.',
   },
   {
     number: '02',
     title: 'Manos y respiración',
-    image: '/images/epp-elementos-proteccion-personal.png',
-    focus: '50% 86%',
+    image: '/images/epp-manos-respiracion.png',
     description: 'Guantes de trabajo, mascarillas y respiradores para disminuir exposición a polvo, partículas y contacto directo.',
   },
   {
     number: '03',
     title: 'Ropa y calzado',
-    image: '/images/epp-elementos-proteccion-personal.png',
-    focus: '18% 50%',
+    image: '/images/epp-ropa-calzado.png',
     description: 'Calzado de seguridad, ropa de trabajo y prendas de alta visibilidad para continuidad operacional.',
   },
 ];
@@ -62,7 +59,7 @@ export default function VentasEppPage() {
       <section className="epp-category-grid" aria-label="Categorías de elementos de protección personal">
         {eppCategories.map((category) => (
           <article className="epp-category-card" key={category.number}>
-            <img src={category.image} alt="" style={{ objectPosition: category.focus }} />
+            <img src={category.image} alt="" />
             <div>
               <span>{category.number}</span>
               <h2>{category.title}</h2>
