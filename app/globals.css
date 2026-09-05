@@ -702,8 +702,8 @@ nav a.active::after {
 
 /* Contact */
 .contact-layout { padding: 78px max(48px, calc((100% - 1320px) / 2)) 84px; display: grid; grid-template-columns: .78fr 1.22fr; gap: 84px; align-items: start; }
-.contact-info h2 { margin: 0; font-size: clamp(42px, 4.2vw, 62px); line-height: 1; letter-spacing: -.055em; }
-.contact-info > p:not(.eyebrow):not(.provisional-note) { margin: 22px 0 28px; color: #657579; font-size: 14px; line-height: 1.7; }
+.contact-info h2 { max-width: 470px; margin: 0; font-size: clamp(40px, 3.7vw, 56px); line-height: 1.02; letter-spacing: -.055em; }
+.contact-info > p:not(.eyebrow):not(.provisional-note) { max-width: 500px; margin: 22px 0 32px; color: #657579; font-size: 15px; line-height: 1.7; }
 .contact-options { border-top: 1px solid #d8dfda; }
 .contact-options > a, .contact-options > div { min-height: 68px; display: grid; grid-template-columns: 43px 1fr 24px; align-items: center; gap: 13px; border-bottom: 1px solid #d8dfda; }
 .contact-options > * > span { width: 39px; height: 39px; display: grid; place-items: center; border-radius: 50%; background: var(--ink); color: var(--green); font-size: 12px; font-weight: 800; }
@@ -732,7 +732,7 @@ nav a.active::after {
 .contact-hours-copy span { color: #d6e0e2; }
 .contact-hours-status { display: flex; align-items: center; gap: 7px; color: var(--green); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; white-space: nowrap; }
 .contact-hours-status i { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(174, 247, 41, .1); }
-.contact-form { padding: 38px 42px; align-self: start; background: white; box-shadow: 0 25px 70px rgba(7,29,36,.07); }
+.contact-form { margin-top: 256px; padding: 38px 42px; align-self: start; background: white; box-shadow: 0 25px 70px rgba(7,29,36,.07); }
 .form-heading { margin-bottom: 28px; display: flex; justify-content: space-between; align-items: start; gap: 30px; }
 .form-heading > span { max-width: 210px; color: #7a888a; font-size: 12px; line-height: 1.6; }
 .contact-form label, .admin-editor label, .admin-item label { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; color: #46595e; font-size: 12px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
@@ -943,7 +943,7 @@ nav a.active::after {
   .contact-hours { grid-template-columns: 42px minmax(0, 1fr); }
   .contact-hours-copy p { flex-wrap: wrap; }
   .contact-hours-status { grid-column: 2; }
-  .contact-form { padding: 27px 20px; }
+  .contact-form { margin-top: 0; padding: 27px 20px; }
   .field-row { grid-template-columns: 1fr; gap: 0; }
   .form-heading { flex-direction: column; }
   .inner-cta { padding: 70px 20px; flex-direction: column; align-items: flex-start; }
