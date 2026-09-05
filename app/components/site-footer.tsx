@@ -10,10 +10,10 @@ export function SiteFooter() {
             <img src="/brand/logo-assel-oficial.png" alt="ASSEL SpA — Asesoría en Salud y Seguridad Laboral" />
           </Link>
           <p>Asesoría técnica con mirada humana para construir entornos de trabajo más seguros, saludables y sostenibles.</p>
-          <div className="footer-certification" aria-label="ASSEL es proveedor del Estado a través de ChileCompra">
-            <span>Registro público</span>
-            <img src="/brand/chilecompra-proveedores-estado.jpeg" alt="Somos proveedores del Estado, Dirección ChileCompra" />
-          </div>
+        </div>
+        <div className="footer-certification" aria-label="ASSEL es proveedor del Estado a través de ChileCompra">
+          <small>Registro público</small>
+          <img src="/brand/chilecompra-proveedores-estado.jpeg" alt="Somos proveedores del Estado, Dirección ChileCompra" />
         </div>
         <div className="footer-nav"><small>Navegación</small><Link href="/nosotros">Nosotros</Link><Link href="/servicios">Servicios</Link><Link href="/productos">Productos</Link><Link href="/casos-de-exito">Casos de éxito</Link><Link href="/contacto">Contacto</Link></div>
         <div><small>Contacto</small><a href="tel:+56971401031">+56 9 7140 1031</a><a href="mailto:contacto@assel.cl">contacto@assel.cl</a><p>Santiago de Chile</p></div>
