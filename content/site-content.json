@@ -25,7 +25,7 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Gestión preventiva para empresas y comunidades que avanzan",
+      "eyebrow": "Gestión preventiva para empresas y comunidades que avanzan.",
       "title": "Prevenir con criterio.",
       "accent": "Avanzar con confianza.",
       "intro": "Convertimos la seguridad laboral en una ventaja operacional: menos incertidumbre, mejores decisiones y equipos que saben cómo actuar.",
@@ -38,9 +38,18 @@
       "kicker": "Una mirada integral",
       "title": "De la obligación a la acción.",
       "steps": [
-        { "title": "Diagnosticar", "detail": "Entender brechas y prioridades" },
-        { "title": "Implementar", "detail": "Construir controles aplicables" },
-        { "title": "Acompañar", "detail": "Medir, corregir y mejorar" }
+        {
+          "title": "Diagnosticar",
+          "detail": "Entender brechas y prioridades"
+        },
+        {
+          "title": "Implementar",
+          "detail": "Construir controles aplicables"
+        },
+        {
+          "title": "Acompañar",
+          "detail": "Medir, corregir y mejorar"
+        }
       ],
       "footer": "Santiago · Cobertura nacional"
     },
@@ -69,9 +78,18 @@
       "imageKicker": "Nuestro enfoque",
       "imageTitle": "Presencia técnica. Cercanía real.",
       "attributes": [
-        { "title": "Mirada operacional", "detail": "Soluciones diseñadas para funcionar en terreno." },
-        { "title": "Acompañamiento cercano", "detail": "Presentes desde el diagnóstico hasta la verificación." },
-        { "title": "Evidencia y trazabilidad", "detail": "Avances respaldados y listos para ser demostrados." }
+        {
+          "title": "Mirada operacional",
+          "detail": "Soluciones diseñadas para funcionar en terreno."
+        },
+        {
+          "title": "Acompañamiento cercano",
+          "detail": "Presentes desde el diagnóstico hasta la verificación."
+        },
+        {
+          "title": "Evidencia y trazabilidad",
+          "detail": "Avances respaldados y listos para ser demostrados."
+        }
       ],
       "cta": "Conoce nuestra forma de trabajar"
     },
@@ -116,8 +134,18 @@
       "intro": "ASSEL reúne criterio estratégico y acompañamiento técnico para conectar la prevención con la realidad de cada organización.",
       "note": "Fotografías provisionales · Se reemplazarán con imágenes oficiales.",
       "members": [
-        { "role": "CEO", "name": "Cristóbal Andrés Valdés Navarrete", "credentials": "Ingeniero en Prevención de Riesgos · ITOP · NFPA 25 · Instructor de Trabajos Críticos", "email": "cristobal.valdes@assel.cl" },
-        { "role": "Cofundador", "name": "Hernán Patricio Valdés Chacón", "credentials": "Ingeniero Mecánico · Ingeniero Civil Industrial · MBA · Coach Integral", "email": "hernan.valdes@assel.cl" }
+        {
+          "role": "CEO",
+          "name": "Cristóbal Andrés Valdés Navarrete",
+          "credentials": "Ingeniero en Prevención de Riesgos · ITOP · NFPA 25 · Instructor de Trabajos Críticos",
+          "email": "cristobal.valdes@assel.cl"
+        },
+        {
+          "role": "Cofundador",
+          "name": "Hernán Patricio Valdés Chacón",
+          "credentials": "Ingeniero Mecánico · Ingeniero Civil Industrial · MBA · Coach Integral",
+          "email": "hernan.valdes@assel.cl"
+        }
       ]
     },
     "evidence": {
@@ -125,9 +153,24 @@
       "title": "Confianza que se construye con evidencia.",
       "intro": "Este espacio está preparado para incorporar antecedentes verificables de ASSEL sin promesas genéricas ni cifras inventadas.",
       "items": [
-        { "label": "Experiencia", "title": "Trayectoria profesional", "copy": "Años de experiencia y proyectos ejecutados se incorporarán cuando sean confirmados.", "note": "Dato por validar" },
-        { "label": "Credenciales", "title": "Competencias demostrables", "copy": "Títulos, registros y certificaciones del equipo tendrán respaldo verificable.", "note": "Dato por validar" },
-        { "label": "Sectores", "title": "Aplicación multisectorial", "copy": "Servicios, industria, logística, comercio y organizaciones con realidades diversas.", "note": "Cobertura por confirmar" }
+        {
+          "label": "Experiencia",
+          "title": "Trayectoria profesional",
+          "copy": "Años de experiencia y proyectos ejecutados se incorporarán cuando sean confirmados.",
+          "note": "Dato por validar"
+        },
+        {
+          "label": "Credenciales",
+          "title": "Competencias demostrables",
+          "copy": "Títulos, registros y certificaciones del equipo tendrán respaldo verificable.",
+          "note": "Dato por validar"
+        },
+        {
+          "label": "Sectores",
+          "title": "Aplicación multisectorial",
+          "copy": "Servicios, industria, logística, comercio y organizaciones con realidades diversas.",
+          "note": "Cobertura por confirmar"
+        }
       ]
     },
     "method": {
@@ -135,10 +178,22 @@
       "title": "Trabajamos con tu empresa, no alrededor de ella.",
       "intro": "Un proceso continuo que convierte el diagnóstico en acción y la acción en mejora demostrable.",
       "steps": [
-        { "title": "Escuchar", "copy": "Comprendemos la operación, sus personas y prioridades reales." },
-        { "title": "Diagnosticar", "copy": "Identificamos brechas, riesgos y oportunidades de mejora." },
-        { "title": "Diseñar", "copy": "Construimos una solución proporcional, clara y aplicable." },
-        { "title": "Acompañar", "copy": "Implementamos, medimos y ajustamos junto a cada equipo." }
+        {
+          "title": "Escuchar",
+          "copy": "Comprendemos la operación, sus personas y prioridades reales."
+        },
+        {
+          "title": "Diagnosticar",
+          "copy": "Identificamos brechas, riesgos y oportunidades de mejora."
+        },
+        {
+          "title": "Diseñar",
+          "copy": "Construimos una solución proporcional, clara y aplicable."
+        },
+        {
+          "title": "Acompañar",
+          "copy": "Implementamos, medimos y ajustamos junto a cada equipo."
+        }
       ]
     },
     "scale": {
@@ -146,19 +201,40 @@
       "title": "La misma cercanía. Una escala diferente.",
       "intro": "La solución crece en profundidad y alcance según la complejidad de cada organización.",
       "items": [
-        { "title": "Personas", "copy": "Orientación directa para profesionales y responsables de pequeñas operaciones." },
-        { "title": "Micro y pequeñas empresas", "copy": "Bases preventivas simples, ordenadas y preparadas para crecer." },
-        { "title": "Pymes", "copy": "Gestión continua que conecta cumplimiento, operación y cultura." },
-        { "title": "Organizaciones globales", "copy": "Trazabilidad y criterios consistentes entre sedes, procesos y equipos." }
+        {
+          "title": "Personas",
+          "copy": "Orientación directa para profesionales y responsables de pequeñas operaciones."
+        },
+        {
+          "title": "Micro y pequeñas empresas",
+          "copy": "Bases preventivas simples, ordenadas y preparadas para crecer."
+        },
+        {
+          "title": "Pymes",
+          "copy": "Gestión continua que conecta cumplimiento, operación y cultura."
+        },
+        {
+          "title": "Organizaciones globales",
+          "copy": "Trazabilidad y criterios consistentes entre sedes, procesos y equipos."
+        }
       ]
     },
     "purpose": {
       "eyebrow": "06 · Nuestra dirección",
       "title": "Un propósito común, tres compromisos claros.",
       "items": [
-        { "label": "01 / Propósito", "copy": "Co-crear entornos seguros, éticos y confiables que conviertan la seguridad y el bienestar en valor para las personas y el negocio." },
-        { "label": "02 / Misión", "copy": "Acompañar a nuestros clientes en la gestión de riesgos, fortaleciendo su operación y construyendo culturas de trabajo seguras y saludables." },
-        { "label": "03 / Visión", "copy": "Ser referentes en prevención y bienestar laboral por transformar organizaciones mediante colaboración, confianza y excelencia." }
+        {
+          "label": "01 / Propósito",
+          "copy": "Co-crear entornos seguros, éticos y confiables que conviertan la seguridad y el bienestar en valor para las personas y el negocio."
+        },
+        {
+          "label": "02 / Misión",
+          "copy": "Acompañar a nuestros clientes en la gestión de riesgos, fortaleciendo su operación y construyendo culturas de trabajo seguras y saludables."
+        },
+        {
+          "label": "03 / Visión",
+          "copy": "Ser referentes en prevención y bienestar laboral por transformar organizaciones mediante colaboración, confianza y excelencia."
+        }
       ]
     },
     "strategy": {
@@ -167,9 +243,18 @@
       "intro": "La seguridad deja de ser un gasto aislado cuando responde de forma simultánea a las necesidades legales, operativas y humanas.",
       "quote": "Una sola relación de colaboración para proteger personas, asegurar continuidad y demostrar cumplimiento.",
       "pillars": [
-        { "title": "Valor legal", "copy": "Obligaciones vigentes, evidencia disponible y menor exposición." },
-        { "title": "Valor operacional", "copy": "Controles aplicables, menos interrupciones y mejores decisiones." },
-        { "title": "Valor humano", "copy": "Equipos protegidos, involucrados y capaces de sostener mejoras." }
+        {
+          "title": "Valor legal",
+          "copy": "Obligaciones vigentes, evidencia disponible y menor exposición."
+        },
+        {
+          "title": "Valor operacional",
+          "copy": "Controles aplicables, menos interrupciones y mejores decisiones."
+        },
+        {
+          "title": "Valor humano",
+          "copy": "Equipos protegidos, involucrados y capaces de sostener mejoras."
+        }
       ]
     },
     "cta": {
@@ -197,13 +282,139 @@
       "contactButton": "Consultar por este servicio"
     },
     "items": [
-      { "id": "planes-emergencia", "tag": "Emergencias", "title": "Planes de Emergencia y GRD", "summary": "Preparación práctica para anticipar amenazas y responder de manera coordinada ante situaciones críticas.", "description": "Diseñamos y actualizamos planes de emergencia y herramientas de Gestión del Riesgo de Desastres (GRD), ajustados a las amenazas, instalaciones y personas de cada organización o comunidad.", "scope": ["Identificación de amenazas y escenarios", "Planes, procedimientos y rutas de evacuación", "Roles, brigadas y puntos de encuentro", "Capacitación, simulacros y mejora del plan"], "benefits": ["Respuesta coordinada", "Roles y recursos conocidos", "Mayor protección y continuidad operacional"], "audience": "Empresas, industrias, oficinas, centros logísticos, establecimientos educacionales, edificios y comunidades." },
-      { "id": "sistemas-contra-incendios", "tag": "Incendios", "title": "Mantenimiento de Sistemas Contra Incendios", "summary": "Inspección y mantenimiento planificado para conservar operativos los sistemas de protección contra incendios.", "description": "Coordinamos la revisión, el mantenimiento y la trazabilidad de los sistemas contra incendios, priorizando su disponibilidad, el registro de las intervenciones y la corrección oportuna de hallazgos.", "scope": ["Levantamiento e inventario de sistemas y equipos", "Inspección y mantenimiento preventivo", "Pruebas operativas y registros de intervención", "Informe de hallazgos y plan de acciones correctivas"], "benefits": ["Mayor disponibilidad de los sistemas", "Intervenciones y hallazgos trazables", "Respuesta más confiable ante emergencias"], "audience": "Edificios, condominios, bodegas, industrias, comercios e instalaciones que requieren mantener operativos sus sistemas de protección contra incendios." },
-      { "id": "capacitacion", "tag": "Personas", "title": "Capacitación y desarrollo de una Cultura Preventiva", "summary": "Formación práctica para que la prevención se convierta en una conducta cotidiana.", "description": "Diseñamos experiencias breves, aplicadas y conectadas con riesgos reales. Medimos comprensión y apoyamos a jefaturas para sostener los cambios.", "scope": ["Charlas y talleres presenciales", "Inducciones y derecho a saber", "Campañas de cultura preventiva", "Entrenamiento a supervisores"], "benefits": ["Mayor participación", "Mensajes comprensibles", "Liderazgo visible"], "audience": "Equipos operativos, supervisores y organizaciones que buscan activar una cultura preventiva real." },
-      { "id": "implementacion-ds44", "tag": "Normativa", "title": "Cumplimiento del DS N.º 44", "summary": "Una gestión preventiva actualizada, proporcional al tamaño y a la realidad de tu organización.", "description": "Acompañamos el diagnóstico y cumplimiento de los instrumentos preventivos establecidos por el Decreto Supremo N.º 44, conectando responsabilidades, participación de las personas trabajadoras y seguimiento en una ruta aplicable.", "scope": ["Diagnóstico de cumplimiento y brechas", "Matriz de peligros y evaluación de riesgos", "Programa de trabajo preventivo", "Estructura, responsabilidades y seguimiento"], "benefits": ["Cumplimiento trazable", "Riesgos mejor priorizados", "Gestión preventiva sostenible"], "audience": "Empresas, PYMES y organizaciones que necesitan implementar, actualizar o fortalecer su gestión preventiva conforme al DS N.º 44." },
-      { "id": "resoluciones-sanitarias", "tag": "Permisos", "title": "Resoluciones Sanitarias ante la SEREMI de Salud", "summary": "Acompañamiento técnico y documental para gestionar autorizaciones sanitarias con mayor claridad.", "description": "Orientamos la preparación, revisión y seguimiento de antecedentes para solicitudes de resoluciones sanitarias ante la SEREMI de Salud, considerando los requisitos aplicables a cada actividad e instalación.", "scope": ["Revisión inicial de requisitos y antecedentes", "Preparación y orden del expediente documental", "Seguimiento de observaciones de la autoridad", "Apoyo durante las etapas de la tramitación"], "benefits": ["Expedientes más completos", "Menos reprocesos", "Mayor visibilidad del estado de la gestión"], "audience": "Emprendimientos, PYMES y empresas que necesitan iniciar, regularizar o ampliar actividades sujetas a autorización sanitaria." },
-      { "id": "ley-karin", "tag": "Convivencia", "title": "Implementación de la Ley Karin", "summary": "Protocolos, capacitación y acompañamiento para construir ambientes laborales respetuosos.", "description": "Apoyamos a la organización en la prevención del acoso laboral, el acoso sexual y la violencia en el trabajo, mediante herramientas claras, formación y orientación documental alineada con la Ley N.º 21.643.", "scope": ["Diagnóstico de cumplimiento", "Protocolo de prevención y canales de denuncia", "Actualización del reglamento interno", "Capacitación y orientación en procesos internos"], "benefits": ["Procedimientos claros", "Mayor confianza de los equipos", "Menor exposición organizacional"], "audience": "Empresas, PYMES, instituciones y organizaciones que requieren implementar o fortalecer sus medidas preventivas y procedimientos internos." },
-      { "id": "organismos-administradores", "tag": "Acompañamiento", "title": "Asesoría técnica ante organismos administradores", "summary": "Apoyo para coordinar requerimientos y acciones preventivas con ACHS, Mutual de Seguridad e ISL.", "description": "Acompañamos a la organización en la coordinación técnica con su organismo administrador del Seguro de la Ley N.º 16.744, ayudando a ordenar requerimientos, asistencia técnica, medidas prescritas y evidencias de cumplimiento.", "scope": ["Revisión de requerimientos y medidas prescritas", "Coordinación de asistencia técnica y evaluaciones", "Seguimiento de compromisos y acciones preventivas", "Preparación de antecedentes y evidencias de cumplimiento"], "benefits": ["Interlocución técnica más clara", "Compromisos y plazos trazables", "Cierre oportuno de requerimientos"], "audience": "Entidades empleadoras afiliadas a ACHS, Mutual de Seguridad o ISL que requieren apoyo para gestionar solicitudes, medidas y asistencia preventiva." }
+      {
+        "id": "planes-emergencia",
+        "tag": "Emergencias",
+        "title": "Planes de Emergencia y GRD",
+        "summary": "Preparación práctica para anticipar amenazas y responder de manera coordinada ante situaciones críticas.",
+        "description": "Diseñamos y actualizamos planes de emergencia y herramientas de Gestión del Riesgo de Desastres (GRD), ajustados a las amenazas, instalaciones y personas de cada organización o comunidad.",
+        "scope": [
+          "Identificación de amenazas y escenarios",
+          "Planes, procedimientos y rutas de evacuación",
+          "Roles, brigadas y puntos de encuentro",
+          "Capacitación, simulacros y mejora del plan"
+        ],
+        "benefits": [
+          "Respuesta coordinada",
+          "Roles y recursos conocidos",
+          "Mayor protección y continuidad operacional"
+        ],
+        "audience": "Empresas, industrias, oficinas, centros logísticos, establecimientos educacionales, edificios y comunidades."
+      },
+      {
+        "id": "sistemas-contra-incendios",
+        "tag": "Incendios",
+        "title": "Mantenimiento de Sistemas Contra Incendios",
+        "summary": "Inspección y mantenimiento planificado para conservar operativos los sistemas de protección contra incendios.",
+        "description": "Coordinamos la revisión, el mantenimiento y la trazabilidad de los sistemas contra incendios, priorizando su disponibilidad, el registro de las intervenciones y la corrección oportuna de hallazgos.",
+        "scope": [
+          "Levantamiento e inventario de sistemas y equipos",
+          "Inspección y mantenimiento preventivo",
+          "Pruebas operativas y registros de intervención",
+          "Informe de hallazgos y plan de acciones correctivas"
+        ],
+        "benefits": [
+          "Mayor disponibilidad de los sistemas",
+          "Intervenciones y hallazgos trazables",
+          "Respuesta más confiable ante emergencias"
+        ],
+        "audience": "Edificios, condominios, bodegas, industrias, comercios e instalaciones que requieren mantener operativos sus sistemas de protección contra incendios."
+      },
+      {
+        "id": "capacitacion",
+        "tag": "Personas",
+        "title": "Capacitación y desarrollo de una Cultura Preventiva",
+        "summary": "Formación práctica para que la prevención se convierta en una conducta cotidiana.",
+        "description": "Diseñamos experiencias breves, aplicadas y conectadas con riesgos reales. Medimos comprensión y apoyamos a jefaturas para sostener los cambios.",
+        "scope": [
+          "Charlas y talleres presenciales",
+          "Inducciones y derecho a saber",
+          "Campañas de cultura preventiva",
+          "Entrenamiento a supervisores"
+        ],
+        "benefits": [
+          "Mayor participación",
+          "Mensajes comprensibles",
+          "Liderazgo visible"
+        ],
+        "audience": "Equipos operativos, supervisores y organizaciones que buscan activar una cultura preventiva real."
+      },
+      {
+        "id": "implementacion-ds44",
+        "tag": "Normativa",
+        "title": "Cumplimiento del DS N.º 44",
+        "summary": "Una gestión preventiva actualizada, proporcional al tamaño y a la realidad de tu organización.",
+        "description": "Acompañamos el diagnóstico y cumplimiento de los instrumentos preventivos establecidos por el Decreto Supremo N.º 44, conectando responsabilidades, participación de las personas trabajadoras y seguimiento en una ruta aplicable.",
+        "scope": [
+          "Diagnóstico de cumplimiento y brechas",
+          "Matriz de peligros y evaluación de riesgos",
+          "Programa de trabajo preventivo",
+          "Estructura, responsabilidades y seguimiento"
+        ],
+        "benefits": [
+          "Cumplimiento trazable",
+          "Riesgos mejor priorizados",
+          "Gestión preventiva sostenible"
+        ],
+        "audience": "Empresas, PYMES y organizaciones que necesitan implementar, actualizar o fortalecer su gestión preventiva conforme al DS N.º 44."
+      },
+      {
+        "id": "resoluciones-sanitarias",
+        "tag": "Permisos",
+        "title": "Resoluciones Sanitarias ante la SEREMI de Salud",
+        "summary": "Acompañamiento técnico y documental para gestionar autorizaciones sanitarias con mayor claridad.",
+        "description": "Orientamos la preparación, revisión y seguimiento de antecedentes para solicitudes de resoluciones sanitarias ante la SEREMI de Salud, considerando los requisitos aplicables a cada actividad e instalación.",
+        "scope": [
+          "Revisión inicial de requisitos y antecedentes",
+          "Preparación y orden del expediente documental",
+          "Seguimiento de observaciones de la autoridad",
+          "Apoyo durante las etapas de la tramitación"
+        ],
+        "benefits": [
+          "Expedientes más completos",
+          "Menos reprocesos",
+          "Mayor visibilidad del estado de la gestión"
+        ],
+        "audience": "Emprendimientos, PYMES y empresas que necesitan iniciar, regularizar o ampliar actividades sujetas a autorización sanitaria."
+      },
+      {
+        "id": "ley-karin",
+        "tag": "Convivencia",
+        "title": "Implementación de la Ley Karin",
+        "summary": "Protocolos, capacitación y acompañamiento para construir ambientes laborales respetuosos.",
+        "description": "Apoyamos a la organización en la prevención del acoso laboral, el acoso sexual y la violencia en el trabajo, mediante herramientas claras, formación y orientación documental alineada con la Ley N.º 21.643.",
+        "scope": [
+          "Diagnóstico de cumplimiento",
+          "Protocolo de prevención y canales de denuncia",
+          "Actualización del reglamento interno",
+          "Capacitación y orientación en procesos internos"
+        ],
+        "benefits": [
+          "Procedimientos claros",
+          "Mayor confianza de los equipos",
+          "Menor exposición organizacional"
+        ],
+        "audience": "Empresas, PYMES, instituciones y organizaciones que requieren implementar o fortalecer sus medidas preventivas y procedimientos internos."
+      },
+      {
+        "id": "organismos-administradores",
+        "tag": "Acompañamiento",
+        "title": "Asesoría técnica ante organismos administradores",
+        "summary": "Apoyo para coordinar requerimientos y acciones preventivas con ACHS, Mutual de Seguridad e ISL.",
+        "description": "Acompañamos a la organización en la coordinación técnica con su organismo administrador del Seguro de la Ley N.º 16.744, ayudando a ordenar requerimientos, asistencia técnica, medidas prescritas y evidencias de cumplimiento.",
+        "scope": [
+          "Revisión de requerimientos y medidas prescritas",
+          "Coordinación de asistencia técnica y evaluaciones",
+          "Seguimiento de compromisos y acciones preventivas",
+          "Preparación de antecedentes y evidencias de cumplimiento"
+        ],
+        "benefits": [
+          "Interlocución técnica más clara",
+          "Compromisos y plazos trazables",
+          "Cierre oportuno de requerimientos"
+        ],
+        "audience": "Entidades empleadoras afiliadas a ACHS, Mutual de Seguridad o ISL que requieren apoyo para gestionar solicitudes, medidas y asistencia preventiva."
+      }
     ],
     "plans": {
       "eyebrow": "Planes de acompañamiento",
@@ -212,9 +423,36 @@
       "featuredLabel": "Más elegido",
       "button": "Cotizar este plan",
       "items": [
-        { "name": "Plan Básico", "description": "Piso preventivo ordenado", "features": ["Diagnóstico inicial de cumplimiento", "Documentación preventiva prioritaria", "Matriz de riesgos y programa de trabajo", "Guía de acciones según tamaño y rubro"] },
-        { "name": "Plan Estándar", "description": "Cumplimiento con seguimiento", "features": ["Todo lo incluido en el Plan Básico", "Visitas periódicas de seguimiento", "Capacitación para el equipo", "Apoyo ante requerimientos preventivos"] },
-        { "name": "Plan Premium", "description": "Acompañamiento preventivo continuo", "features": ["Todo lo incluido en el Plan Estándar", "Plan anual de acompañamiento", "Auditorías e indicadores recurrentes", "Reporte ejecutivo y mejora continua"] }
+        {
+          "name": "Plan Básico",
+          "description": "Piso preventivo ordenado",
+          "features": [
+            "Diagnóstico inicial de cumplimiento",
+            "Documentación preventiva prioritaria",
+            "Matriz de riesgos y programa de trabajo",
+            "Guía de acciones según tamaño y rubro"
+          ]
+        },
+        {
+          "name": "Plan Estándar",
+          "description": "Cumplimiento con seguimiento",
+          "features": [
+            "Todo lo incluido en el Plan Básico",
+            "Visitas periódicas de seguimiento",
+            "Capacitación para el equipo",
+            "Apoyo ante requerimientos preventivos"
+          ]
+        },
+        {
+          "name": "Plan Premium",
+          "description": "Acompañamiento preventivo continuo",
+          "features": [
+            "Todo lo incluido en el Plan Estándar",
+            "Plan anual de acompañamiento",
+            "Auditorías e indicadores recurrentes",
+            "Reporte ejecutivo y mejora continua"
+          ]
+        }
       ],
       "note": "El alcance definitivo se define luego de conocer las necesidades y características de cada organización."
     },
@@ -222,10 +460,22 @@
       "eyebrow": "Método de trabajo",
       "title": "Una ruta clara. Sin soluciones de papel.",
       "steps": [
-        { "title": "Escuchamos y observamos", "copy": "Conocemos la operación, sus personas, exigencias y puntos de tensión." },
-        { "title": "Priorizamos lo importante", "copy": "Ordenamos brechas según riesgo, urgencia y capacidad real de implementación." },
-        { "title": "Implementamos contigo", "copy": "Diseñamos controles, documentos y rutinas junto a quienes deben utilizarlos." },
-        { "title": "Verificamos y mejoramos", "copy": "Medimos avances y ajustamos antes de que una desviación se transforme en incidente." }
+        {
+          "title": "Escuchamos y observamos",
+          "copy": "Conocemos la operación, sus personas, exigencias y puntos de tensión."
+        },
+        {
+          "title": "Priorizamos lo importante",
+          "copy": "Ordenamos brechas según riesgo, urgencia y capacidad real de implementación."
+        },
+        {
+          "title": "Implementamos contigo",
+          "copy": "Diseñamos controles, documentos y rutinas junto a quienes deben utilizarlos."
+        },
+        {
+          "title": "Verificamos y mejoramos",
+          "copy": "Medimos avances y ajustamos antes de que una desviación se transforme en incidente."
+        }
       ]
     },
     "cta": {
@@ -236,34 +486,153 @@
     }
   },
   "epp": {
-    "hero": { "eyebrow": "Venta de EPP", "title": "Distribución B2B.", "accent": "Protección para empresas.", "intro": "ASSEL también abastece elementos de protección personal para clientes empresariales, integrando criterio técnico, disponibilidad y acompañamiento preventivo." },
-    "intro": { "eyebrow": "Abastecimiento corporativo", "title": "Productos de seguridad para operaciones que necesitan continuidad.", "copy": "Esta página informa la línea de distribución de EPP de ASSEL. No funciona como tienda online: el objetivo es orientar a empresas que requieren cotizar, planificar compras o estandarizar sus elementos de protección personal." },
+    "hero": {
+      "eyebrow": "Venta de EPP",
+      "title": "Distribución B2B.",
+      "accent": "Protección para empresas.",
+      "intro": "ASSEL también abastece elementos de protección personal para clientes empresariales, integrando criterio técnico, disponibilidad y acompañamiento preventivo."
+    },
+    "intro": {
+      "eyebrow": "Abastecimiento corporativo",
+      "title": "Productos de seguridad para operaciones que necesitan continuidad.",
+      "copy": "Esta página informa la línea de distribución de EPP de ASSEL. No funciona como tienda online: el objetivo es orientar a empresas que requieren cotizar, planificar compras o estandarizar sus elementos de protección personal."
+    },
     "categories": [
-      { "title": "Cabeza, vista y audición", "description": "Cascos, lentes de seguridad y protectores auditivos para labores en terreno, plantas y zonas operativas." },
-      { "title": "Manos y respiración", "description": "Guantes de trabajo, mascarillas y respiradores para disminuir exposición a polvo, partículas y contacto directo." },
-      { "title": "Ropa y calzado", "description": "Calzado de seguridad, ropa de trabajo y prendas de alta visibilidad para continuidad operacional." }
+      {
+        "title": "Cabeza, vista y audición",
+        "description": "Cascos, lentes de seguridad y protectores auditivos para labores en terreno, plantas y zonas operativas."
+      },
+      {
+        "title": "Manos y respiración",
+        "description": "Guantes de trabajo, mascarillas y respiradores para disminuir exposición a polvo, partículas y contacto directo."
+      },
+      {
+        "title": "Ropa y calzado",
+        "description": "Calzado de seguridad, ropa de trabajo y prendas de alta visibilidad para continuidad operacional."
+      }
     ],
-    "b2b": { "eyebrow": "Clientes B2B", "title": "Distribución para empresas, no venta minorista.", "points": ["Atención para empresas, instituciones y compras corporativas.", "Selección de productos según actividad, exposición y necesidad operativa.", "Cotizaciones y abastecimiento pensados para volumen, reposición y trazabilidad."] },
-    "process": { "eyebrow": "Cómo trabajamos", "title": "Primero entendemos la operación, luego recomendamos el abastecimiento.", "copy": "La venta de EPP se coordina mediante contacto directo. Revisamos rubro, cantidad, uso esperado y condiciones de trabajo para apoyar una compra coherente con la realidad de cada empresa." },
-    "cta": { "eyebrow": "Solicitud empresarial", "title": "Conversemos sobre los EPP que necesita tu equipo.", "intro": "Podemos apoyar compras puntuales, reposición periódica o levantamientos por área de trabajo.", "button": "Solicitar cotización B2B" }
+    "b2b": {
+      "eyebrow": "Clientes B2B",
+      "title": "Distribución para empresas, no venta minorista.",
+      "points": [
+        "Atención para empresas, instituciones y compras corporativas.",
+        "Selección de productos según actividad, exposición y necesidad operativa.",
+        "Cotizaciones y abastecimiento pensados para volumen, reposición y trazabilidad."
+      ]
+    },
+    "process": {
+      "eyebrow": "Cómo trabajamos",
+      "title": "Primero entendemos la operación, luego recomendamos el abastecimiento.",
+      "copy": "La venta de EPP se coordina mediante contacto directo. Revisamos rubro, cantidad, uso esperado y condiciones de trabajo para apoyar una compra coherente con la realidad de cada empresa."
+    },
+    "cta": {
+      "eyebrow": "Solicitud empresarial",
+      "title": "Conversemos sobre los EPP que necesita tu equipo.",
+      "intro": "Podemos apoyar compras puntuales, reposición periódica o levantamientos por área de trabajo.",
+      "button": "Solicitar cotización B2B"
+    }
   },
   "cases": {
-    "hero": { "eyebrow": "Experiencia aplicada", "title": "Desafíos reales.", "accent": "Resultados visibles.", "intro": "Casos demostrativos que muestran nuestra forma de abordar una necesidad, construir una solución junto al cliente y dejar capacidades instaladas." },
-    "intro": { "eyebrow": "Casos seleccionados", "title": "La confianza se construye mostrando cómo trabajamos.", "copy": "Los nombres y resultados presentados son demostrativos y serán reemplazados por experiencias autorizadas de ASSEL." },
+    "hero": {
+      "eyebrow": "Experiencia aplicada",
+      "title": "Desafíos reales.",
+      "accent": "Resultados visibles.",
+      "intro": "Casos demostrativos que muestran nuestra forma de abordar una necesidad, construir una solución junto al cliente y dejar capacidades instaladas."
+    },
+    "intro": {
+      "eyebrow": "Casos seleccionados",
+      "title": "La confianza se construye mostrando cómo trabajamos.",
+      "copy": "Los nombres y resultados presentados son demostrativos y serán reemplazados por experiencias autorizadas de ASSEL."
+    },
     "items": [
-      { "id": "logistica-metropolitana", "title": "Centro logístico metropolitano", "sector": "Logística", "date": "Marzo 2026", "challenge": "Documentación dispersa, controles distintos por turno y baja trazabilidad de hallazgos operacionales.", "result": "Se implementó una ruta preventiva única, tablero de acciones y estándares visuales para supervisores.", "metric": "100% de áreas críticas con control asignado" },
-      { "id": "montaje-industrial", "title": "Montaje industrial sin improvisación", "sector": "Ingeniería", "date": "Noviembre 2025", "challenge": "Proyecto de alta coordinación con contratistas, tareas simultáneas y cambios frecuentes de planificación.", "result": "ASSEL integró permisos, análisis de trabajo y reuniones de coordinación en una rutina operacional simple.", "metric": "12 semanas de acompañamiento en terreno" },
-      { "id": "servicios-tecnicos", "title": "Cultura preventiva para equipos móviles", "sector": "Servicios técnicos", "date": "Agosto 2025", "challenge": "Equipos distribuidos con criterios diferentes para evaluar riesgos antes de cada intervención.", "result": "Se co-diseñó una pauta móvil, microcapacitaciones y conversaciones de seguridad lideradas por supervisores.", "metric": "4 sedes operando bajo un mismo estándar" }
+      {
+        "id": "logistica-metropolitana",
+        "title": "Centro logístico metropolitano",
+        "sector": "Logística",
+        "date": "Marzo 2026",
+        "challenge": "Documentación dispersa, controles distintos por turno y baja trazabilidad de hallazgos operacionales.",
+        "result": "Se implementó una ruta preventiva única, tablero de acciones y estándares visuales para supervisores.",
+        "metric": "100% de áreas críticas con control asignado"
+      },
+      {
+        "id": "montaje-industrial",
+        "title": "Montaje industrial sin improvisación",
+        "sector": "Ingeniería",
+        "date": "Noviembre 2025",
+        "challenge": "Proyecto de alta coordinación con contratistas, tareas simultáneas y cambios frecuentes de planificación.",
+        "result": "ASSEL integró permisos, análisis de trabajo y reuniones de coordinación en una rutina operacional simple.",
+        "metric": "12 semanas de acompañamiento en terreno"
+      },
+      {
+        "id": "servicios-tecnicos",
+        "title": "Cultura preventiva para equipos móviles",
+        "sector": "Servicios técnicos",
+        "date": "Agosto 2025",
+        "challenge": "Equipos distribuidos con criterios diferentes para evaluar riesgos antes de cada intervención.",
+        "result": "Se co-diseñó una pauta móvil, microcapacitaciones y conversaciones de seguridad lideradas por supervisores.",
+        "metric": "4 sedes operando bajo un mismo estándar"
+      }
     ],
-    "testimonial": { "quote": "No buscamos llenar carpetas. Buscamos que cada control sea entendido, aplicado y capaz de sostenerse en el tiempo.", "author": "Principio de trabajo ASSEL" },
-    "modal": { "challengeLabel": "El desafío", "responseLabel": "La respuesta", "metricLabel": "Resultado destacado", "button": "Conversemos sobre tu desafío" },
-    "cta": { "eyebrow": "Tu desafío puede ser el próximo", "title": "Conversemos sobre el resultado que necesitas alcanzar.", "button": "Iniciar conversación" }
+    "testimonial": {
+      "quote": "No buscamos llenar carpetas. Buscamos que cada control sea entendido, aplicado y capaz de sostenerse en el tiempo.",
+      "author": "Principio de trabajo ASSEL"
+    },
+    "modal": {
+      "challengeLabel": "El desafío",
+      "responseLabel": "La respuesta",
+      "metricLabel": "Resultado destacado",
+      "button": "Conversemos sobre tu desafío"
+    },
+    "cta": {
+      "eyebrow": "Tu desafío puede ser el próximo",
+      "title": "Conversemos sobre el resultado que necesitas alcanzar.",
+      "button": "Iniciar conversación"
+    }
   },
   "contact": {
-    "hero": { "eyebrow": "Conversemos", "title": "Cuéntanos el desafío.", "accent": "Diseñemos la respuesta.", "intro": "Una conversación inicial puede ayudarnos a entender tu contexto, ordenar prioridades y recomendar el mejor siguiente paso." },
-    "info": { "eyebrow": "Contacto directo", "title": "Hablemos de tu empresa.", "intro": "Cuéntanos qué necesitas y te orientamos por el canal más adecuado. También puedes escribirnos directo por WhatsApp o correo.", "whatsappLabel": "WhatsApp", "phone": "+56 9 7140 1031", "emailLabel": "Correo", "email": "contacto@assel.cl", "locationLabel": "Ubicación", "location": "Santiago de Chile", "linkedinLabel": "LinkedIn", "linkedinName": "Cristóbal Valdés", "instagramLabel": "Instagram", "instagramName": "@assel_asesorias" },
-    "hours": { "label": "Horario de atención", "days": "Lunes a viernes", "time": "09:00 — 18:00", "status": "Atención disponible" },
-    "form": { "eyebrow": "Solicitud de contacto", "responseTime": "Respondemos habitualmente dentro de un día hábil.", "name": "Nombre y apellido *", "company": "Empresa", "email": "Correo electrónico *", "phone": "Teléfono", "message": "Mensaje *", "placeholder": "Cuéntanos sobre tu empresa, proyecto o necesidad...", "button": "Enviar solicitud", "sending": "Enviando…", "success": "Gracias. Recibimos tu solicitud y te responderemos dentro de un día hábil." },
-    "map": { "city": "Santiago de Chile", "coverage": "Cobertura presencial en la Región Metropolitana y acompañamiento a nivel nacional." }
+    "hero": {
+      "eyebrow": "Conversemos",
+      "title": "Cuéntanos el desafío.",
+      "accent": "Diseñemos la respuesta.",
+      "intro": "Una conversación inicial puede ayudarnos a entender tu contexto, ordenar prioridades y recomendar el mejor siguiente paso."
+    },
+    "info": {
+      "eyebrow": "Contacto directo",
+      "title": "Hablemos de tu empresa.",
+      "intro": "Cuéntanos qué necesitas y te orientamos por el canal más adecuado. También puedes escribirnos directo por WhatsApp o correo.",
+      "whatsappLabel": "WhatsApp",
+      "phone": "+56 9 7140 1031",
+      "emailLabel": "Correo",
+      "email": "contacto@assel.cl",
+      "locationLabel": "Ubicación",
+      "location": "Santiago de Chile",
+      "linkedinLabel": "LinkedIn",
+      "linkedinName": "Cristóbal Valdés",
+      "instagramLabel": "Instagram",
+      "instagramName": "@assel_asesorias"
+    },
+    "hours": {
+      "label": "Horario de atención",
+      "days": "Lunes a viernes",
+      "time": "09:00 — 18:00",
+      "status": "Atención disponible"
+    },
+    "form": {
+      "eyebrow": "Solicitud de contacto",
+      "responseTime": "Respondemos habitualmente dentro de un día hábil.",
+      "name": "Nombre y apellido *",
+      "company": "Empresa",
+      "email": "Correo electrónico *",
+      "phone": "Teléfono",
+      "message": "Mensaje *",
+      "placeholder": "Cuéntanos sobre tu empresa, proyecto o necesidad...",
+      "button": "Enviar solicitud",
+      "sending": "Enviando…",
+      "success": "Gracias. Recibimos tu solicitud y te responderemos dentro de un día hábil."
+    },
+    "map": {
+      "city": "Santiago de Chile",
+      "coverage": "Cobertura presencial en la Región Metropolitana y acompañamiento a nivel nacional."
+    }
   }
 }
