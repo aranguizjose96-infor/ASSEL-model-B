@@ -15,6 +15,8 @@ type ContentContextType = {
 
 const ContentContext = createContext<ContentContextType | null>(null);
 const STORAGE_KEY = 'assel-demo-content-v1';
+const SERVICE_CATALOG_VERSION_KEY = 'assel-service-catalog-version';
+const SERVICE_CATALOG_VERSION = '2';
 
 export function ContentProvider({ children }: { children: React.ReactNode }) {
   const [content, setContent] = useState(defaultContent);
@@ -26,13 +28,13 @@ export function ContentProvider({ children }: { children: React.ReactNode }) {
       if (saved) {
         try {
           const parsed = JSON.parse(saved) as SiteContent;
-          const savedServices = parsed.services.map((service) => service.id === 'capacitacion' ? { ...service, image: '/images/capacitacion-cultura.jpg' } : service);
-          const savedServiceIds = new Set(savedServices.map((service) => service.id));
+          const hasCurrentServiceCatalog = window.localStorage.getItem(SERVICE_CATALOG_VERSION_KEY) === SERVICE_CATALOG_VERSION;
           setContent({
             ...defaultContent,
             ...parsed,
-            services: [...savedServices, ...defaultContent.services.filter((service) => !savedServiceIds.has(service.id))],
+            services: hasCurrentServiceCatalog ? parsed.services : defaultContent.services,
           });
+          window.localStorage.setItem(SERVICE_CATALOG_VERSION_KEY, SERVICE_CATALOG_VERSION);
         } catch { window.localStorage.removeItem(STORAGE_KEY); }
       }
       setHydrated(true);
@@ -53,7 +55,10 @@ export function ContentProvider({ children }: { children: React.ReactNode }) {
     removeService: (id) => setContent((current) => ({ ...current, services: current.services.filter((item) => item.id !== id) })),
     saveCase: (item) => setContent((current) => ({ ...current, cases: current.cases.some((entry) => entry.id === item.id) ? current.cases.map((entry) => entry.id === item.id ? item : entry) : [...current.cases, item] })),
     removeCase: (id) => setContent((current) => ({ ...current, cases: current.cases.filter((item) => item.id !== id) })),
-    resetContent: () => setContent(defaultContent),
+    resetContent: () => {
+      window.localStorage.setItem(SERVICE_CATALOG_VERSION_KEY, SERVICE_CATALOG_VERSION);
+      setContent(defaultContent);
+    },
   }), [content]);
 
   return <ContentContext.Provider value={value}>{children}</ContentContext.Provider>;

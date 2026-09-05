@@ -21,7 +21,7 @@ const scales = [
 
 export function NosotrosContent() {
   useEffect(() => {
-    const elements = Array.from(document.querySelectorAll<HTMLElement>('[data-about-reveal]'));
+    const elements = Array.from(document.querySelectorAll<HTMLElement>('[data-about-reveal], [data-about-method]'));
     if (!('IntersectionObserver' in window)) {
       elements.forEach((element) => element.classList.add('is-visible'));
       return;
@@ -66,7 +66,7 @@ export function NosotrosContent() {
 
     <section className="about-method">
       <div className="about-section-heading" data-about-reveal><p className="eyebrow"><span /> 04 · Método de colaboración</p><h2>Trabajamos con tu empresa, no alrededor de ella.</h2><p>Un proceso continuo que convierte el diagnóstico en acción y la acción en mejora demostrable.</p></div>
-      <div className="about-method-track">{methodSteps.map(([number, title, copy]) => <article data-about-reveal key={number}><span>{number}</span><i /><h3>{title}</h3><p>{copy}</p></article>)}</div>
+      <div className="about-method-track" data-about-method>{methodSteps.map(([number, title, copy]) => <article data-about-reveal key={number}><span>{number}</span><i /><h3>{title}</h3><p>{copy}</p></article>)}</div>
     </section>
 
     <section className="scale-band about-scale">

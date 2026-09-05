@@ -1,8 +1,28 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { type Service } from '../lib/content';
 import { useSiteContent } from './content-provider';
+
+const servicePlans = [
+  {
+    name: 'Plan Básico',
+    description: 'Piso preventivo ordenado',
+    items: ['Diagnóstico inicial de cumplimiento', 'Documentación preventiva prioritaria', 'Matriz de riesgos y programa de trabajo', 'Guía de acciones según tamaño y rubro'],
+  },
+  {
+    name: 'Plan Estándar',
+    description: 'Cumplimiento con seguimiento',
+    featured: true,
+    items: ['Todo lo incluido en el Plan Básico', 'Visitas periódicas de seguimiento', 'Capacitación para el equipo', 'Apoyo ante requerimientos preventivos'],
+  },
+  {
+    name: 'Plan Premium',
+    description: 'Acompañamiento preventivo continuo',
+    items: ['Todo lo incluido en el Plan Estándar', 'Plan anual de acompañamiento', 'Auditorías e indicadores recurrentes', 'Reporte ejecutivo y mejora continua'],
+  },
+];
 
 export function ServiceExplorer() {
   const { content } = useSiteContent();
@@ -28,6 +48,32 @@ export function ServiceExplorer() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="service-plans" aria-labelledby="service-plans-title">
+        <div className="service-plans-heading">
+          <p className="eyebrow"><span /> Planes de acompañamiento</p>
+          <h2 id="service-plans-title">Básico, Estándar y Premium</h2>
+          <p>Los tres planes buscan fortalecer el cumplimiento y la gestión preventiva. La diferencia está en la frecuencia y profundidad del acompañamiento.</p>
+        </div>
+        <div className="service-plans-grid">
+          {servicePlans.map((plan) => (
+            <article className={`service-plan-card${plan.featured ? ' is-featured' : ''}`} key={plan.name}>
+              <div className="service-plan-title">
+                <div>
+                  <h3>{plan.name}</h3>
+                  <p>{plan.description}</p>
+                </div>
+                {plan.featured && <span>Más elegido</span>}
+              </div>
+              <ul>
+                {plan.items.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+              <Link className="service-plan-cta" href="/contacto">Cotizar este plan <span>→</span></Link>
+            </article>
+          ))}
+        </div>
+        <p className="service-plans-note">El alcance definitivo se define luego de conocer las necesidades y características de cada organización.</p>
       </section>
 
       <section className="method-section">
