@@ -8,7 +8,7 @@ En **Project Settings → Environment Variables**, agrega las siguientes variabl
 
 - `ADMIN_USERNAME`: nombre de usuario elegido para el panel.
 - `ADMIN_PASSWORD`: contraseña larga y exclusiva para el panel.
-- `ADMIN_SESSION_SECRET`: cadena aleatoria de al menos 32 caracteres.
+- `ADMIN_SESSION_SECRET`: opcional. Si deseas usarlo, ingresa una cadena aleatoria de al menos 32 caracteres; de lo contrario el servidor deriva una clave de sesión segura desde los otros secretos.
 - `GITHUB_CONTENT_TOKEN`: token de GitHub de alcance fino con acceso solamente al repositorio `ASSEL-model-B` y permiso **Contents: Read and write**.
 - `GITHUB_CONTENT_OWNER`: `aranguizjose96-infor`.
 - `GITHUB_CONTENT_REPO`: `ASSEL-model-B`.

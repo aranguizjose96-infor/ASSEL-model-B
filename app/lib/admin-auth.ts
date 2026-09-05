@@ -1,4 +1,4 @@
-import { createHmac, timingSafeEqual } from 'node:crypto';
+import { createHash, createHmac, timingSafeEqual } from 'node:crypto';
 
 export const ADMIN_COOKIE = 'assel_admin_session';
 const SESSION_SECONDS = 60 * 60 * 8;
@@ -10,7 +10,11 @@ function safeEqual(left: string, right: string) {
 }
 
 function sessionSecret() {
-  return process.env.ADMIN_SESSION_SECRET || '';
+  if (process.env.ADMIN_SESSION_SECRET) return process.env.ADMIN_SESSION_SECRET;
+  if (process.env.ADMIN_PASSWORD && process.env.GITHUB_CONTENT_TOKEN) {
+    return createHash('sha256').update(`${process.env.ADMIN_PASSWORD}:${process.env.GITHUB_CONTENT_TOKEN}`).digest('hex');
+  }
+  return '';
 }
 
 export function adminIsConfigured() {
