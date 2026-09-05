@@ -6,7 +6,19 @@ import type { EditableSiteContent } from '../lib/content';
 
 type TabKey = 'general' | 'home' | 'about' | 'services' | 'epp' | 'cases' | 'contact' | 'history';
 type PublishStage = 'idle' | 'github' | 'deploying' | 'live' | 'error';
+type VisualPublishStage = PublishStage | 'dirty';
 type HistoryItem = { sha: string; url: string; message: string; author: string; date: string };
+
+const publishStatus: Record<VisualPublishStage, { label: string; activeStep: number }> = {
+  idle: { label: 'Sincronizado', activeStep: -1 },
+  dirty: { label: 'Cambios pendientes', activeStep: 0 },
+  github: { label: 'Guardando', activeStep: 1 },
+  deploying: { label: 'Actualizando sitio', activeStep: 2 },
+  live: { label: 'Publicado', activeStep: 3 },
+  error: { label: 'Requiere atención', activeStep: -1 },
+};
+
+const publishSteps = ['Cambios preparados', 'Guardado en GitHub', 'Visible en assel.cl'];
 
 const tabs: Array<{ key: TabKey; label: string }> = [
   { key: 'general', label: 'General' },
@@ -95,6 +107,8 @@ export function AdminPanel() {
   const [historyLoading, setHistoryLoading] = useState(false);
 
   const currentTab = useMemo(() => tabs.find((item) => item.key === tab)?.label || 'Contenido', [tab]);
+  const visualPublishStage: VisualPublishStage = dirty ? 'dirty' : publishStage;
+  const currentPublishStatus = publishStatus[visualPublishStage];
 
   const loadContent = useCallback(async () => {
     setLoadingContent(true);
@@ -219,7 +233,28 @@ export function AdminPanel() {
       <aside className="admin-sidebar"><Link className="brand" href="/"><span className="brand-mark"><i /></span><span className="brand-copy"><strong>ASSEL</strong><small>Administración</small></span></Link><nav>{tabs.map((item, index) => <button className={tab === item.key ? 'active' : ''} onClick={() => { setTab(item.key); if (item.key === 'history') void loadHistory(); }} key={item.key}><span>{String(index + 1).padStart(2, '0')}</span>{item.label}</button>)}</nav><div className="admin-sidebar-foot"><p><i /> Conectado a GitHub</p><Link href="/" target="_blank">Ver sitio público ↗</Link><button onClick={logout}>Cerrar sesión</button></div></aside>
       <section className="admin-workspace">
         <header><div><small>Panel de contenidos</small><h1>{currentTab}</h1></div><div className="admin-header-actions"><button className="reset-button" onClick={loadContent} disabled={loadingContent || publishStage === 'deploying'}>Descartar cambios</button><button className="admin-publish-button" onClick={publish} disabled={!dirty || publishStage === 'deploying'}>{publishStage === 'deploying' ? 'Publicando…' : 'Publicar cambios'}</button></div></header>
-        <div className={`admin-publish-status is-${publishStage}`} role="status"><span /> <div><b>{dirty ? 'Cambios pendientes' : publishStage === 'live' ? 'Sitio actualizado' : 'Contenido sincronizado'}</b><p>{notice || (dirty ? 'Revisa los textos y publícalos cuando estén listos.' : 'Edita cualquier texto para preparar una nueva versión.')}</p></div></div>
+        <div className={`admin-publish-status is-${visualPublishStage}`} role="status" aria-live="polite">
+          <div className="admin-status-summary">
+            <span className="admin-status-indicator" aria-hidden="true"><i /></span>
+            <div className="admin-status-copy">
+              <b>{dirty ? 'Cambios pendientes' : publishStage === 'live' ? 'Sitio actualizado' : publishStage === 'github' ? 'Guardando nueva versión' : publishStage === 'deploying' ? 'Actualizando assel.cl' : publishStage === 'error' ? 'No se pudo completar' : 'Contenido sincronizado'}</b>
+              <p>{notice || (dirty ? 'Revisa los textos y publícalos cuando estén listos.' : 'Edita cualquier texto para preparar una nueva versión.')}</p>
+            </div>
+            <strong className="admin-status-badge">{currentPublishStatus.label}</strong>
+          </div>
+          <ol className="admin-status-steps" aria-label="Progreso de publicación">
+            {publishSteps.map((step, index) => {
+              const state = visualPublishStage === 'error'
+                ? 'error'
+                : index < currentPublishStatus.activeStep
+                  ? 'complete'
+                  : index === currentPublishStatus.activeStep
+                    ? 'active'
+                    : 'waiting';
+              return <li className={`is-${state}`} key={step}><i aria-hidden="true">{state === 'complete' ? '✓' : index + 1}</i><span>{step}</span></li>;
+            })}
+          </ol>
+        </div>
         {loadingContent && <div className="admin-loading">Cargando textos desde GitHub…</div>}
         {!loadingContent && content && tab !== 'history' && <PageEditor pageKey={tab} content={content} onChange={(path, value) => { setContent((current) => current ? setAtPath(current, path, value) : current); setDirty(true); setPublishStage('idle'); setNotice(''); }} />}
         {tab === 'history' && <section className="admin-history"><div className="admin-history-intro"><h2>Versiones publicadas</h2><p>Cada publicación queda guardada. Restaurar una versión no borra el historial: crea una nueva publicación con esos textos.</p></div>{historyLoading ? <div className="admin-loading">Consultando versiones…</div> : <div className="admin-history-list">{history.map((item) => <article key={item.sha}><div><b>{item.message}</b><span>{new Date(item.date).toLocaleString('es-CL')} · {item.author}</span><a href={item.url} target="_blank" rel="noopener noreferrer">Ver en GitHub ↗</a></div><button onClick={() => restore(item)}>Restaurar esta versión</button></article>)}</div>}</section>}

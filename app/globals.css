@@ -854,13 +854,45 @@ nav a.active::after {
 .reset-button { padding: 10px 13px; border: 1px solid #bdc8c3; background: transparent; color: #627276; font-size: 12px; cursor: pointer; }
 .admin-publish-button { padding: 11px 18px; border: 0; background: var(--ink); color: white; font-size: 12px; font-weight: 800; cursor: pointer; }
 .admin-publish-button:disabled, .reset-button:disabled { opacity: .45; cursor: not-allowed; }
-.admin-publish-status { margin: 28px 0 18px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px; border: 1px solid #d6ded9; background: rgba(255,255,255,.65); }
-.admin-publish-status > span { width: 9px; height: 9px; margin-top: 5px; flex: 0 0 9px; border-radius: 50%; background: #91a09a; }
-.admin-publish-status.is-deploying > span { background: #e4a32d; animation: livePulse 1.2s infinite; }
-.admin-publish-status.is-live > span { background: #63b719; }
-.admin-publish-status.is-error > span { background: #b24e3e; }
-.admin-publish-status b { display: block; font-size: 13px; }
-.admin-publish-status p { margin: 3px 0 0; color: #657579; font-size: 12px; line-height: 1.45; }
+.admin-publish-status {
+  --status-accent: #71857e;
+  --status-bg: #f4f7f5;
+  --status-border: #cbd6d1;
+  margin: 28px 0 18px;
+  padding: 18px 20px 16px;
+  overflow: hidden;
+  border: 2px solid var(--status-border);
+  border-left-width: 6px;
+  background: var(--status-bg);
+  box-shadow: 0 9px 24px rgba(5, 32, 40, .06);
+  transition: background-color .4s ease, border-color .4s ease, box-shadow .4s ease;
+}
+.admin-publish-status.is-dirty { --status-accent: #a96c00; --status-bg: #fff8dc; --status-border: #e4b53b; box-shadow: 0 10px 26px rgba(169, 108, 0, .12); }
+.admin-publish-status.is-github { --status-accent: #1268cd; --status-bg: #eaf3ff; --status-border: #3886df; box-shadow: 0 10px 26px rgba(18, 104, 205, .14); }
+.admin-publish-status.is-deploying { --status-accent: #c65f00; --status-bg: #fff0df; --status-border: #ef9131; box-shadow: 0 10px 28px rgba(198, 95, 0, .16); }
+.admin-publish-status.is-live { --status-accent: #357f0c; --status-bg: #e9f8df; --status-border: #68b934; box-shadow: 0 10px 28px rgba(53, 127, 12, .14); }
+.admin-publish-status.is-error { --status-accent: #ad372d; --status-bg: #fff0ee; --status-border: #d75a4c; box-shadow: 0 10px 28px rgba(173, 55, 45, .14); }
+.admin-status-summary { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; align-items: start; gap: 12px; }
+.admin-status-indicator { width: 15px; height: 15px; margin-top: 2px; display: grid; place-items: center; border: 2px solid color-mix(in srgb, var(--status-accent) 42%, white); border-radius: 50%; }
+.admin-status-indicator i { width: 7px; height: 7px; border-radius: 50%; background: var(--status-accent); }
+.admin-publish-status.is-github .admin-status-indicator,
+.admin-publish-status.is-deploying .admin-status-indicator { animation: statusPulse 1.25s ease-in-out infinite; }
+.admin-status-copy b { display: block; color: #08242c; font-size: 14px; }
+.admin-status-copy p { margin: 4px 0 0; color: #52656a; font-size: 12px; line-height: 1.45; }
+.admin-status-badge { padding: 6px 9px; border-radius: 999px; background: var(--status-accent); color: white; font-size: 10px; line-height: 1; letter-spacing: .06em; text-transform: uppercase; }
+.admin-status-steps { margin: 15px 0 0 34px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; }
+.admin-status-steps li { position: relative; display: flex; align-items: center; gap: 8px; color: #83918d; font-size: 11px; font-weight: 700; }
+.admin-status-steps li:not(:last-child)::after { content: ''; position: absolute; z-index: 0; top: 10px; left: 23px; right: 7px; height: 2px; background: #cbd3cf; transition: background-color .35s ease; }
+.admin-status-steps li i { position: relative; z-index: 1; width: 20px; height: 20px; display: grid; place-items: center; flex: 0 0 20px; border: 1px solid #bcc8c2; border-radius: 50%; background: var(--status-bg); color: #71817c; font-size: 10px; font-style: normal; transition: all .35s ease; }
+.admin-status-steps li span { position: relative; z-index: 1; padding-right: 8px; background: var(--status-bg); transition: background-color .4s ease, color .35s ease; }
+.admin-status-steps li.is-active { color: var(--status-accent); }
+.admin-status-steps li.is-active i { border-color: var(--status-accent); background: var(--status-accent); color: white; box-shadow: 0 0 0 4px color-mix(in srgb, var(--status-accent) 16%, transparent); }
+.admin-status-steps li.is-complete { color: var(--status-accent); }
+.admin-status-steps li.is-complete i { border-color: var(--status-accent); background: var(--status-accent); color: white; }
+.admin-status-steps li.is-complete::after { background: var(--status-accent); }
+.admin-status-steps li.is-error { color: var(--status-accent); }
+.admin-status-steps li.is-error i { border-color: var(--status-accent); color: var(--status-accent); }
+@keyframes statusPulse { 0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 color-mix(in srgb, var(--status-accent) 28%, transparent); } 50% { transform: scale(1.08); box-shadow: 0 0 0 7px transparent; } }
 .admin-page-editor { display: flex; flex-direction: column; gap: 14px; }
 .admin-editor { padding: 30px; background: white; }
 .editor-title, .admin-section-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
@@ -1034,6 +1066,11 @@ nav a.active::after {
   .admin-workspace > header { align-items: flex-start; flex-direction: column; gap: 20px; }
   .admin-header-actions { width: 100%; }
   .admin-header-actions button { flex: 1; }
+  .admin-publish-status { padding: 16px 15px; }
+  .admin-status-summary { grid-template-columns: 22px minmax(0, 1fr); }
+  .admin-status-badge { grid-column: 2; justify-self: start; }
+  .admin-status-steps { margin-left: 34px; grid-template-columns: 1fr; gap: 9px; }
+  .admin-status-steps li:not(:last-child)::after { display: none; }
   .admin-editor { padding: 24px 18px; }
   .editor-title { align-items: flex-start; flex-direction: column; gap: 20px; }
   .admin-history-list article { align-items: flex-start; flex-direction: column; }
