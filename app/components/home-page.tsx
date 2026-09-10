@@ -81,7 +81,7 @@ export function HomePage() {
         <div className="solutions-intro">
           <div className="section-heading"><p className="eyebrow dark"><span /> {copy.solutions.eyebrow}</p><div><h2>{copy.solutions.title}</h2><p>{copy.solutions.intro}</p></div></div>
           <div className="solutions-video" data-reveal>
-            <video autoPlay muted loop playsInline preload="metadata" aria-label="Video de soluciones preventivas ASSEL en terreno">
+            <video autoPlay muted playsInline preload="metadata" aria-label="Video de soluciones preventivas ASSEL en terreno">
               <source src="/videos/soluciones-assel.mp4" type="video/mp4" />
             </video>
           </div>

@@ -26,15 +26,26 @@ export function NosotrosContent() {
   }, []);
 
   return <main className="inner-page about-page">
-    <PageHero index="02" eyebrow={copy.hero.eyebrow} title={copy.hero.title} accent={copy.hero.accent} intro={copy.hero.intro} image="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=84" />
+    <PageHero eyebrow={copy.hero.eyebrow} title={copy.hero.title} accent={copy.hero.accent} intro={copy.hero.intro} image="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=84" />
 
     <section className="about-story">
       <div className="about-lead" data-about-reveal><p className="eyebrow dark"><span /> {copy.value.eyebrow}</p><h2>{copy.value.title}</h2></div>
       <div className="about-copy" data-about-reveal>{copy.value.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}<div className="signature"><span>AS</span><p><strong>{copy.value.signatureTitle}</strong><small>{copy.value.signatureDetail}</small></p></div></div>
     </section>
 
+    <section className="purpose-section">
+      <div className="about-section-heading" data-about-reveal><p className="eyebrow dark"><span /> {copy.purpose.eyebrow}</p><h2>{copy.purpose.title}</h2></div>
+      <div className="purpose-grid purpose-grid-balanced">{copy.purpose.items.map((item, index) => <article className={index === 0 ? 'purpose-card-featured' : ''} data-about-reveal key={item.label}><small>{item.label}</small><h3>{item.copy}</h3></article>)}</div>
+    </section>
+
     <section className="about-team">
-      <div className="about-team-heading" data-about-reveal><p className="eyebrow"><span /> {copy.team.eyebrow}</p><h2>{copy.team.title}</h2><p>{copy.team.intro}</p><small>{copy.team.note}</small></div>
+      <div className="about-team-heading" data-about-reveal>
+        <p className="eyebrow"><span /> {copy.team.eyebrow}</p>
+        <h2>{copy.team.title}</h2>
+        <p>{copy.team.intro}</p>
+        {'highlights' in copy.team && Array.isArray(copy.team.highlights) && <ul className="team-highlights">{copy.team.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul>}
+        {copy.team.note && <small>{copy.team.note}</small>}
+      </div>
       <div className="team-profiles">
         <article data-about-reveal>
           <div className="team-portrait"><Image src="/images/perfil-provisorio-01.png" alt="Retrato provisional de Cristóbal Andrés Valdés Navarrete" width={500} height={500} sizes="(max-width: 760px) 230px, 250px" /><span>01</span></div>
@@ -47,11 +58,6 @@ export function NosotrosContent() {
       </div>
     </section>
 
-    <section className="about-evidence">
-      <div className="about-section-heading" data-about-reveal><p className="eyebrow dark"><span /> {copy.evidence.eyebrow}</p><h2>{copy.evidence.title}</h2><p>{copy.evidence.intro}</p></div>
-      <div className="evidence-grid">{copy.evidence.items.map((item) => <article data-about-reveal key={item.label}><span>{item.label}</span><strong>{item.title}</strong><p>{item.copy}</p><small>{item.note}</small></article>)}</div>
-    </section>
-
     <section className="about-method">
       <div className="about-section-heading" data-about-reveal><p className="eyebrow"><span /> {copy.method.eyebrow}</p><h2>{copy.method.title}</h2><p>{copy.method.intro}</p></div>
       <div className="about-method-track" data-about-method>{copy.method.steps.map((step, index) => <article data-about-reveal key={step.title}><span>0{index + 1}</span><i /><h3>{step.title}</h3><p>{step.copy}</p></article>)}</div>
@@ -60,11 +66,6 @@ export function NosotrosContent() {
     <section className="scale-band about-scale">
       <div data-about-reveal><p className="eyebrow"><span /> {copy.scale.eyebrow}</p><h2>{copy.scale.title}</h2><p className="scale-intro">{copy.scale.intro}</p></div>
       <div className="scale-progression">{copy.scale.items.map((item, index) => <article data-about-reveal key={item.title}><div className="scale-level" style={{ '--scale-level': `${25 + index * 25}%` } as CSSProperties}><span>0{index + 1}</span><i /></div><div><strong>{item.title}</strong><p>{item.copy}</p></div></article>)}</div>
-    </section>
-
-    <section className="purpose-section">
-      <div className="about-section-heading" data-about-reveal><p className="eyebrow dark"><span /> {copy.purpose.eyebrow}</p><h2>{copy.purpose.title}</h2></div>
-      <div className="purpose-grid purpose-grid-balanced">{copy.purpose.items.map((item, index) => <article className={index === 0 ? 'purpose-card-featured' : ''} data-about-reveal key={item.label}><small>{item.label}</small><h3>{item.copy}</h3></article>)}</div>
     </section>
 
     <section className="commercial-strategy">

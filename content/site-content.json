@@ -5,7 +5,7 @@
       "home": "Inicio",
       "about": "Nosotros",
       "services": "Servicios",
-      "epp": "Venta de EPP",
+      "epp": "Productos",
       "cases": "Casos de éxito",
       "contact": "Contáctanos",
       "cta": "Solicitar asesoría"
@@ -25,58 +25,62 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Gestión preventiva para empresas y comunidades que avanzan.",
+      "eyebrow": "Gestión preventiva para personas y organizaciones que avanzan.",
       "title": "Prevenir con criterio.",
-      "accent": "Avanzar con confianza.",
-      "intro": "Convertimos la seguridad laboral en una ventaja operacional: menos incertidumbre, mejores decisiones y equipos que saben cómo actuar.",
-      "primaryCta": "Conversemos de tu empresa",
-      "secondaryCta": "Explorar servicios"
+      "accent": "Gestionar con seguridad.",
+      "intro": "Convertimos la seguridad laboral en una ventaja operacional: menos incertidumbre, visión integral, mejores decisiones y equipos de trabajo que saben cómo actuar.",
+      "primaryCta": "Conversación para la Acción",
+      "secondaryCta": "Explorar Servicios"
     },
     "assurance": {
       "status": "Acompañamiento activo",
       "code": "ASL / 360",
       "kicker": "Una mirada integral",
-      "title": "De la obligación a la acción.",
+      "title": "De la obligación. A la acción.",
       "steps": [
         {
-          "title": "Diagnosticar",
-          "detail": "Entender brechas y prioridades"
+          "title": "Escuchar",
+          "detail": "De forma empática y activa"
         },
         {
-          "title": "Implementar",
-          "detail": "Construir controles aplicables"
+          "title": "Diagnosticar",
+          "detail": "Identificar brechas y prioridades"
+        },
+        {
+          "title": "Diseñar",
+          "detail": "Co-Construir soluciones aplicables"
         },
         {
           "title": "Acompañar",
-          "detail": "Medir, corregir y mejorar"
+          "detail": "Implementar, medir y ajustar"
         }
       ],
       "footer": "Santiago · Cobertura nacional"
     },
     "rail": [
-      "Cumplimiento que se demuestra",
-      "Riesgos que se anticipan",
-      "Equipos que se involucran"
+      "Cumplimiento que se registran",
+      "Anticiparse a los riesgos",
+      "Colaboradores que se involucran"
     ],
     "solutions": {
       "eyebrow": "Soluciones ASSEL",
       "title": "Seguridad que se integra a tu forma de trabajar.",
-      "intro": "No entregamos documentos para archivar. Diseñamos sistemas preventivos claros, utilizables y sostenibles.",
+      "intro": "No entregamos documentos para archivar. Diseñamos sistemas preventivos integrales, utilizables y sostenibles.",
       "resultLabel": "Resultado",
       "results": [
         "Una hoja de ruta preventiva clara y aplicable.",
         "Sistemas críticos disponibles y con trazabilidad.",
         "Equipos que comprenden y aplican la prevención."
       ],
-      "cardLink": "Conocer solución",
+      "cardLink": "Conocer soluciones",
       "allLink": "Ver todas las soluciones"
     },
     "why": {
       "eyebrow": "Por qué ASSEL",
-      "title": "La prevención funciona cuando las personas pueden usarla.",
+      "title": "La prevención funciona cuando las personas pueden aplicarla.",
       "intro": "Convertimos normativa y conocimiento técnico en decisiones claras que jefaturas y equipos pueden aplicar en terreno.",
       "imageKicker": "Nuestro enfoque",
-      "imageTitle": "Presencia técnica. Cercanía real.",
+      "imageTitle": "Presencia Técnica. Cercanía y Acompañamiento.",
       "attributes": [
         {
           "title": "Mirada operacional",
@@ -114,25 +118,29 @@
   "about": {
     "hero": {
       "eyebrow": "Quiénes somos",
-      "title": "Aliados presentes.",
-      "accent": "Valor que permanece.",
+      "title": "Un Aliado cercano.",
+      "accent": "Co-creamos una inversión colaborativa de alto valor.",
       "intro": "Integramos prevención, gestión y acompañamiento para proteger a las personas y fortalecer el negocio."
     },
     "value": {
       "eyebrow": "01 · Propuesta de valor",
-      "title": "La prevención es una inversión que protege, ordena y permite avanzar.",
+      "title": "Integramos operación, legalidad, técnica y bienestar humano.",
       "paragraphs": [
-        "ASSEL transforma exigencias legales y riesgos operativos en decisiones comprensibles, controles utilizables y capacidades que permanecen dentro de la organización.",
-        "Más que entregar documentos, colaboramos para reducir incertidumbre, cuidar a las personas y agregar valor sostenible al negocio."
+        "Colaboramos en integrar la operación, la legalidad, la técnica y el bienestar humano en una solución única, que convierte el cumplimiento en una inversión de alto valor para toda la organización."
       ],
-      "signatureTitle": "Colaboración estratégica ASSEL",
-      "signatureDetail": "Criterio técnico · Presencia activa · Valor sostenible"
+      "signatureTitle": "ASSEL: Inversión Colaborativa de alto valor",
+      "signatureDetail": "Operación · Legalidad · Técnica · Bienestar humano"
     },
     "team": {
-      "eyebrow": "02 · Quiénes forman ASSEL",
-      "title": "Dos miradas. Un mismo compromiso.",
-      "intro": "ASSEL reúne criterio estratégico y acompañamiento técnico para conectar la prevención con la realidad de cada organización.",
-      "note": "Fotografías provisionales · Se reemplazarán con imágenes oficiales.",
+      "eyebrow": "03 · Personas",
+      "title": "Un equipo profesional, cercano y orientado a la acción.",
+      "intro": "Un equipo profesional, cercano y orientado a la acción, con:",
+      "highlights": [
+        "Una larga y variada trayectoria profesional.",
+        "Diversas competencias personales y habilidades técnicas y de liderazgo integral.",
+        "Actuación en funciones, proyectos y organizaciones en diversas áreas multisectoriales."
+      ],
+      "note": "",
       "members": [
         {
           "role": "CEO",
@@ -174,13 +182,13 @@
       ]
     },
     "method": {
-      "eyebrow": "04 · Método de colaboración",
-      "title": "Trabajamos con tu empresa, no alrededor de ella.",
-      "intro": "Un proceso continuo que convierte el diagnóstico en acción y la acción en mejora demostrable.",
+      "eyebrow": "04 · Trabajamos con tu empresa",
+      "title": "Nos integramos a ella.",
+      "intro": "Un proceso de mejoramiento continuo que convierte el diagnóstico en acción y la acción en mejora demostrable.",
       "steps": [
         {
           "title": "Escuchar",
-          "copy": "Comprendemos la operación, sus personas y prioridades reales."
+          "copy": "Conocer la operación, sus personas y prioridades."
         },
         {
           "title": "Diagnosticar",
@@ -192,12 +200,12 @@
         },
         {
           "title": "Acompañar",
-          "copy": "Implementamos, medimos y ajustamos junto a cada equipo."
+          "copy": "Implementamos, medimos y ajustamos, junto a cada equipo."
         }
       ]
     },
     "scale": {
-      "eyebrow": "05 · Alcance adaptable",
+      "eyebrow": "05 · Alcances adaptables",
       "title": "La misma cercanía. Una escala diferente.",
       "intro": "La solución crece en profundidad y alcance según la complejidad de cada organización.",
       "items": [
@@ -206,59 +214,59 @@
           "copy": "Orientación directa para profesionales y responsables de pequeñas operaciones."
         },
         {
-          "title": "Micro y pequeñas empresas",
+          "title": "Micro y Pequeñas Empresas",
           "copy": "Bases preventivas simples, ordenadas y preparadas para crecer."
         },
         {
-          "title": "Pymes",
-          "copy": "Gestión continua que conecta cumplimiento, operación y cultura."
+          "title": "PYMES",
+          "copy": "Gestión continua que conecta cumplimiento, operación y cultura organizacional."
         },
         {
-          "title": "Organizaciones globales",
-          "copy": "Trazabilidad y criterios consistentes entre sedes, procesos y equipos."
+          "title": "Organizaciones",
+          "copy": "Trazabilidad y criterios consistentes entre sedes, procesos y equipos de trabajo."
         }
       ]
     },
     "purpose": {
-      "eyebrow": "06 · Nuestra dirección",
-      "title": "Un propósito común, tres compromisos claros.",
+      "eyebrow": "02 · Desarrollo organizacional",
+      "title": "Propósito, misión y visión para una prevención de alto valor.",
       "items": [
         {
-          "label": "01 / Propósito",
-          "copy": "Co-crear entornos seguros, éticos y confiables que conviertan la seguridad y el bienestar en valor para las personas y el negocio."
+          "label": "Propósito",
+          "copy": "Actuar como aliados y colaboradores estratégicos de nuestros clientes, co-creando entornos seguros, éticos y confiables que transforman la seguridad y el bienestar en una inversión colaborativa de alto valor."
         },
         {
-          "label": "02 / Misión",
-          "copy": "Acompañar a nuestros clientes en la gestión de riesgos, fortaleciendo su operación y construyendo culturas de trabajo seguras y saludables."
+          "label": "Misión",
+          "copy": "Ser aliados estratégicos en la gestión de riesgos, co-creando culturas de trabajo seguras y saludables que potencien la eficiencia operacional, protejan a las personas y conviertan la prevención en una inversión de alto valor sostenible."
         },
         {
-          "label": "03 / Visión",
-          "copy": "Ser referentes en prevención y bienestar laboral por transformar organizaciones mediante colaboración, confianza y excelencia."
+          "label": "Visión",
+          "copy": "Consolidarnos como referentes en el ámbito de la seguridad, la prevención y el bienestar laboral, reconocidos por transformar las organizaciones en espacios de confianza y alto rendimiento a través de la colaboración estratégica."
         }
       ]
     },
     "strategy": {
-      "eyebrow": "07 · Estrategia integral",
-      "title": "Entornos seguros. Negocios más sólidos.",
-      "intro": "La seguridad deja de ser un gasto aislado cuando responde de forma simultánea a las necesidades legales, operativas y humanas.",
-      "quote": "Una sola relación de colaboración para proteger personas, asegurar continuidad y demostrar cumplimiento.",
+      "eyebrow": "06 · Estrategia integral",
+      "title": "Entornos y comportamientos seguros. Negocios más fortalecidos y sostenibles.",
+      "intro": "La seguridad es una inversión cuando responde de forma simultánea a las necesidades legales, operativas y humanas.",
+      "quote": "Una relación de colaboración para proteger personas, asegurar continuidad y demostrar cumplimiento.",
       "pillars": [
         {
-          "title": "Valor legal",
+          "title": "Valor Legal.",
           "copy": "Obligaciones vigentes, evidencia disponible y menor exposición."
         },
         {
-          "title": "Valor operacional",
-          "copy": "Controles aplicables, menos interrupciones y mejores decisiones."
+          "title": "Valor Operacional.",
+          "copy": "Controles aplicables, menos interrupciones y mejoramiento continuo."
         },
         {
-          "title": "Valor humano",
-          "copy": "Equipos protegidos, involucrados y capaces de sostener mejoras."
+          "title": "Valor Humano.",
+          "copy": "Personas protegidas, involucradas y capaces de sostener las mejoras."
         }
       ]
     },
     "cta": {
-      "eyebrow": "Conversemos",
+      "eyebrow": "Conversación para la Acción",
       "title": "Diseñemos una prevención proporcional a tu realidad.",
       "intro": "Partimos escuchando tu operación, sus riesgos y sus objetivos.",
       "button": "Iniciar una conversación"
@@ -274,7 +282,7 @@
     "explorer": {
       "heading": "Explora nuestras soluciones",
       "available": "servicios disponibles",
-      "detailButton": "Ver detalle",
+      "detailButton": "Ver descripción",
       "solutionLabel": "Solución ASSEL",
       "scopeLabel": "Alcance",
       "benefitsLabel": "Beneficios",
@@ -322,22 +330,25 @@
       },
       {
         "id": "capacitacion",
-        "tag": "Personas",
-        "title": "Capacitación y desarrollo de una Cultura Preventiva",
-        "summary": "Formación práctica para que la prevención se convierta en una conducta cotidiana.",
-        "description": "Diseñamos experiencias breves, aplicadas y conectadas con riesgos reales. Medimos comprensión y apoyamos a jefaturas para sostener los cambios.",
+        "tag": "Cultura",
+        "title": "Desarrollo de Cultura Preventiva",
+        "summary": "Transformar los hábitos y comportamientos organizacionales para que la seguridad, la legalidad y el bienestar operen de forma natural, logrando reducir costos por riesgos y convertir el cumplimiento en una ventaja competitiva y un motor de productividad.",
+        "description": "Diseñar, implementar y acompañar el desarrollo de una Cultura Organizacional, con el objeto de lograr que la Prevención deje de ser un reglamento colgado en la pared o un conjunto de normativas impuestas por obligación, y se convierta en un valor cultural compartido.",
         "scope": [
-          "Charlas y talleres presenciales",
-          "Inducciones y derecho a saber",
-          "Campañas de cultura preventiva",
-          "Entrenamiento a supervisores"
+          "Acompañamiento para alinear el discurso corporativo con las prácticas cotidianas, modelando con el ejemplo.",
+          "Rediseño e integración de los protocolos técnicos de seguridad dentro del flujo normal de trabajo.",
+          "Programas formativos y de sensibilización para transformar la mentalidad del equipo de trabajo.",
+          "Asegurar el cumplimiento de los marcos regulatorios vigentes, blindando a la empresa frente a fiscalizaciones, demandas y pasivos laborales."
         ],
         "benefits": [
-          "Mayor participación",
-          "Mensajes comprensibles",
-          "Liderazgo visible"
+          "Reducción drástica de la accidentabilidad y el ausentismo.",
+          "Evitar los gastos asociados a reemplazos de emergencia, juicios laborales prolongados y alzas en primas de seguros.",
+          "Colaboradores que sienten que la empresa protege genuinamente su integridad física y psicológica.",
+          "Reducir la rotación de personal, especialmente en puestos críticos o de alta exposición operativa.",
+          "Una empresa con una sólida cultura preventiva es percibida en el mercado como un empleador ético y responsable.",
+          "Mitigar el riesgo de responsabilidades penales o civiles, sabiendo que la organización opera bajo estrictos estándares éticos y de seguridad."
         ],
-        "audience": "Equipos operativos, supervisores y organizaciones que buscan activar una cultura preventiva real."
+        "audience": "A organizaciones con o sin fines de lucro, comunidades y personas; que gestionan procesos operativos, comerciales y otras funciones; y/o lideran emprendimientos, ejercen cargo de supervisión o de responsabilidades productivas."
       },
       {
         "id": "implementacion-ds44",
@@ -487,15 +498,15 @@
   },
   "epp": {
     "hero": {
-      "eyebrow": "Venta de EPP",
+      "eyebrow": "Productos de prevención y seguridad",
       "title": "Distribución B2B.",
       "accent": "Protección para empresas.",
-      "intro": "ASSEL también abastece elementos de protección personal para clientes empresariales, integrando criterio técnico, disponibilidad y acompañamiento preventivo."
+      "intro": "Abastecemos de elementos de protección personal y de seguridad, integrando criterio técnico, disponibilidad y acompañamiento preventivo."
     },
     "intro": {
       "eyebrow": "Abastecimiento corporativo",
       "title": "Productos de seguridad para operaciones que necesitan continuidad.",
-      "copy": "Esta página informa la línea de distribución de EPP de ASSEL. No funciona como tienda online: el objetivo es orientar a empresas que requieren cotizar, planificar compras o estandarizar sus elementos de protección personal."
+      "copy": "Disponemos de una línea de distribución de EPP y de otros elementos de prevención de accidentes y de riesgos. El objetivo es orientar a empresas que requieren cotizar, planificar compras o estandarizar sus elementos de protección personal."
     },
     "categories": [
       {

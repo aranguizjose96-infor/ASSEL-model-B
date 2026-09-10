@@ -4,8 +4,8 @@ import { PageHero } from '../components/page-hero';
 import { siteContent } from '../lib/content';
 
 export const metadata: Metadata = {
-  title: 'Venta de EPP',
-  description: 'ASSEL distribuye elementos de protección personal para empresas y clientes B2B, con orientación técnica para compras corporativas.',
+  title: 'Productos',
+  description: 'ASSEL distribuye productos de prevención y seguridad para empresas, con orientación técnica para compras corporativas.',
 };
 
 const categoryImages = ['/images/epp-cabeza-vista-audicion.png', '/images/epp-manos-respiracion.png', '/images/epp-ropa-calzado.png'];
@@ -15,7 +15,6 @@ export default function VentasEppPage() {
   return (
     <main className="inner-page epp-page">
       <PageHero
-        index="04"
         eyebrow={copy.hero.eyebrow}
         title={copy.hero.title}
         accent={copy.hero.accent}
