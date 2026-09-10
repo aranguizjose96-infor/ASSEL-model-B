@@ -239,7 +239,7 @@ export function AdminPanel() {
 
   return (
     <main className="admin-page">
-      <aside className="admin-sidebar"><Link className="brand" href="/"><span className="brand-mark"><i /></span><span className="brand-copy"><strong>ASSEL</strong><small>Administración</small></span></Link><nav>{tabs.map((item, index) => <button className={tab === item.key ? 'active' : ''} onClick={() => { setTab(item.key); if (item.key === 'history') void loadHistory(); }} key={item.key}><span>{String(index + 1).padStart(2, '0')}</span>{item.label}</button>)}</nav><div className="admin-sidebar-foot"><p><i /> Conectado a GitHub</p><Link href="/" target="_blank">Ver sitio público ↗</Link><button onClick={logout}>Cerrar sesión</button></div></aside>
+      <aside className="admin-sidebar"><Link className="brand" href="/"><span className="brand-mark"><i /></span><span className="brand-copy"><strong>ASSEL</strong><small>Administración</small></span></Link><nav>{tabs.map((item, index) => <button className={tab === item.key ? 'active' : ''} onClick={() => { setTab(item.key); if (item.key === 'history') void loadHistory(); }} key={item.key}><span>{String(index + 1).padStart(2, '0')}</span>{item.label}</button>)}</nav><div className="admin-sidebar-foot"><p><i /> {localPreview ? 'Modo local' : 'Conectado a GitHub'}</p><Link href="/" target="_blank">Ver sitio público ↗</Link><button onClick={logout}>Cerrar sesión</button></div></aside>
       <section className="admin-workspace">
         <header><div><small>{localPreview ? 'Panel local de contenidos' : 'Panel de contenidos'}</small><h1>{currentTab}</h1></div><div className="admin-header-actions"><button className="reset-button" onClick={loadContent} disabled={loadingContent || publishStage === 'deploying'}>Descartar cambios</button><button className="admin-publish-button" onClick={publish} disabled={!dirty || localPreview || publishStage === 'deploying'}>{publishStage === 'deploying' ? 'Publicando…' : localPreview ? 'Publicación no configurada' : 'Publicar cambios'}</button></div></header>
         <div className={`admin-publish-status is-${visualPublishStage}`} role="status" aria-live="polite">
@@ -264,7 +264,7 @@ export function AdminPanel() {
             })}
           </ol>
         </div>
-        {loadingContent && <div className="admin-loading">Cargando textos desde GitHub…</div>}
+        {loadingContent && <div className="admin-loading">{localPreview ? 'Cargando textos locales…' : 'Cargando textos desde GitHub…'}</div>}
         {!loadingContent && content && tab !== 'history' && <PageEditor pageKey={tab} content={content} onChange={(path, value) => { setContent((current) => current ? setAtPath(current, path, value) : current); setDirty(true); setPublishStage('idle'); setNotice(''); }} />}
         {tab === 'history' && <section className="admin-history"><div className="admin-history-intro"><h2>Versiones publicadas</h2><p>Cada publicación queda guardada. Restaurar una versión no borra el historial: crea una nueva publicación con esos textos.</p></div>{historyLoading ? <div className="admin-loading">Consultando versiones…</div> : <div className="admin-history-list">{history.map((item) => <article key={item.sha}><div><b>{item.message}</b><span>{new Date(item.date).toLocaleString('es-CL')} · {item.author}</span><a href={item.url} target="_blank" rel="noopener noreferrer">Ver en GitHub ↗</a></div><button onClick={() => restore(item)}>Restaurar esta versión</button></article>)}</div>}</section>}
       </section>
