@@ -109,6 +109,7 @@ export function AdminPanel() {
   const currentTab = useMemo(() => tabs.find((item) => item.key === tab)?.label || 'Contenido', [tab]);
   const visualPublishStage: VisualPublishStage = dirty ? 'dirty' : publishStage;
   const currentPublishStatus = publishStatus[visualPublishStage];
+  const localPreview = sha === 'local-preview';
 
   const loadContent = useCallback(async () => {
     setLoadingContent(true);
@@ -121,6 +122,9 @@ export function AdminPanel() {
       setContent(result.content);
       setSha(result.sha);
       setDirty(false);
+      if (result.sha === 'local-preview') {
+        setNotice('Modo local: puedes revisar y editar los textos en este computador. Para publicar desde el panel faltan las credenciales de GitHub.');
+      }
     } catch (error) {
       setNotice(error instanceof Error ? error.message : 'No se pudo cargar el contenido.');
     } finally {
@@ -192,6 +196,11 @@ export function AdminPanel() {
 
   async function publish() {
     if (!content || !sha || !dirty) return;
+    if (localPreview) {
+      setPublishStage('error');
+      setNotice('Este panel está en modo local. Para publicar desde aquí hay que configurar usuario, contraseña y token de GitHub.');
+      return;
+    }
     setPublishStage('github');
     setNotice('Guardando una nueva versión en GitHub…');
     const response = await fetch('/api/admin/content', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ content, expectedSha: sha, message: `Actualiza textos de ${currentTab} desde el panel ASSEL` }) });
@@ -224,7 +233,7 @@ export function AdminPanel() {
 
   if (authState === 'login') return (
     <main className="admin-login-page">
-      <section className="admin-login-card"><Link className="brand brand-dark" href="/"><span className="brand-mark"><i /></span><span className="brand-copy"><strong>ASSEL</strong><small>Administración</small></span></Link><div><p className="eyebrow dark"><span /> Acceso restringido</p><h1>Actualiza los textos<br />sin tocar el código.</h1><p>Los cambios se publican como versiones en GitHub y Vercel actualiza el sitio automáticamente.</p></div><form onSubmit={login}><label>Usuario<input name="usuario" autoComplete="username" required /></label><label>Contraseña<input name="clave" type="password" autoComplete="current-password" required /></label>{!configured && <p className="login-error">Falta configurar las credenciales seguras en Vercel.</p>}{loginError && <p className="login-error">{loginError}</p>}<button className="button-dark" type="submit" disabled={!configured}>Ingresar al panel <span>→</span></button></form></section>
+      <section className="admin-login-card"><Link className="brand brand-dark" href="/"><span className="brand-mark"><i /></span><span className="brand-copy"><strong>ASSEL</strong><small>Administración</small></span></Link><div><p className="eyebrow dark"><span /> Acceso restringido</p><h1>Actualiza los textos<br />sin tocar el código.</h1><p>Los cambios se publican como versiones en GitHub y Vercel actualiza el sitio automáticamente.</p></div><form onSubmit={login}><label>Usuario<input name="usuario" autoComplete="username" required /></label><label>Contraseña<input name="clave" type="password" autoComplete="current-password" required /></label>{!configured && <p className="login-error">Falta configurar las credenciales seguras del panel. En local el panel puede abrirse en modo de revisión; en Vercel hay que agregar las variables de entorno.</p>}{loginError && <p className="login-error">{loginError}</p>}<button className="button-dark" type="submit" disabled={!configured}>Ingresar al panel <span>→</span></button></form></section>
     </main>
   );
 
@@ -232,7 +241,7 @@ export function AdminPanel() {
     <main className="admin-page">
       <aside className="admin-sidebar"><Link className="brand" href="/"><span className="brand-mark"><i /></span><span className="brand-copy"><strong>ASSEL</strong><small>Administración</small></span></Link><nav>{tabs.map((item, index) => <button className={tab === item.key ? 'active' : ''} onClick={() => { setTab(item.key); if (item.key === 'history') void loadHistory(); }} key={item.key}><span>{String(index + 1).padStart(2, '0')}</span>{item.label}</button>)}</nav><div className="admin-sidebar-foot"><p><i /> Conectado a GitHub</p><Link href="/" target="_blank">Ver sitio público ↗</Link><button onClick={logout}>Cerrar sesión</button></div></aside>
       <section className="admin-workspace">
-        <header><div><small>Panel de contenidos</small><h1>{currentTab}</h1></div><div className="admin-header-actions"><button className="reset-button" onClick={loadContent} disabled={loadingContent || publishStage === 'deploying'}>Descartar cambios</button><button className="admin-publish-button" onClick={publish} disabled={!dirty || publishStage === 'deploying'}>{publishStage === 'deploying' ? 'Publicando…' : 'Publicar cambios'}</button></div></header>
+        <header><div><small>{localPreview ? 'Panel local de contenidos' : 'Panel de contenidos'}</small><h1>{currentTab}</h1></div><div className="admin-header-actions"><button className="reset-button" onClick={loadContent} disabled={loadingContent || publishStage === 'deploying'}>Descartar cambios</button><button className="admin-publish-button" onClick={publish} disabled={!dirty || localPreview || publishStage === 'deploying'}>{publishStage === 'deploying' ? 'Publicando…' : localPreview ? 'Publicación no configurada' : 'Publicar cambios'}</button></div></header>
         <div className={`admin-publish-status is-${visualPublishStage}`} role="status" aria-live="polite">
           <div className="admin-status-summary">
             <span className="admin-status-indicator" aria-hidden="true"><i /></span>

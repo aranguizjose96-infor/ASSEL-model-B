@@ -9,7 +9,8 @@ function validateNode(candidate: unknown, template: unknown, path: string, error
       errors.push(`${path}: debe ser texto.`);
       return;
     }
-    if (!candidate.trim()) errors.push(`${path}: no puede quedar vacío.`);
+    const optionalText = path.endsWith('.note');
+    if (!candidate.trim() && !optionalText) errors.push(`${path}: no puede quedar vacío.`);
     if (candidate.length > MAX_TEXT_LENGTH) errors.push(`${path}: supera ${MAX_TEXT_LENGTH} caracteres.`);
     return;
   }
